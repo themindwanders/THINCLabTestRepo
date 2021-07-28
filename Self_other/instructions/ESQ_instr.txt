@@ -1,0 +1,14 @@
+We are interested in the thoughts that you experienced during the last task block.
+
+A list of descriptions and a rating scale ranging from 1 to 10 will be presented on the screen.
+
+Please use the three buttons to indicate how much each description reflects your experience:
+
+Press "1" to move the tick mark towards 1, indicates "not at all".
+Press "2" to move the tick mark towards 10, indicates "completely".
+Press "4" to confirm the rating.
+
+Please note that there are no right or wrong answers.
+Answer the questions as fast as possible.
+
+Press <Return> to start the task.

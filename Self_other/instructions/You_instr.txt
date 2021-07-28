@@ -1,0 +1,19 @@
+Advancing to instructions...
+#
+Welcome to our experiment.
+
+In the experiment, you will respond to a number of trials. You will need to wear headphones.
+
+Each trial will start with a fixation cross, followed by a prompt.  The prompt will prompt you to decide whether the upcoming word describes you or is in uppercase.
+
+You are required to respond with {ans_0}/{ans_1} according to the prompt:  If the prompt is You; press Yes if the upcoming word describes you or No if it does not. If the prompt is Uppercase; press Yes if the upcoming word is in uppercase or No if it is not uppercase.
+
+If the answer is:
+	- {ans_0} - press {key_0}
+	- {ans_1} - press {key_1}
+
+
+You should try to be as quick and accurate as possible.
+
+
+Press <Return> to start ...
