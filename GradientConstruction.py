@@ -1,18 +1,40 @@
 
 
-database = 'C:/Users/gooda/CondensedArr/Test2/database.txt'
+database = 'C:/Users/gooda/CondensedArr/VSCode/database.txt'
 annotations = 'C:/Users/gooda/CondensedArr/analyses/'
-outdir = 'C:/Users/gooda/CondensedArr/Test2/'
-dataset = 'C:/Users/gooda/CondensedArr/Test2/topicdset400.pkl'
-Savedir = "C:\\Users\\gooda\\CondensedArr\\Test2\\"
+annotationsnew2 = 'C:/Users/gooda/CondensedArr/analyses/v5-topics-400.txt'
+outdir = 'C:/Users/gooda/CondensedArr/VSCode/'
+outdir2 = 'C:/Users/gooda/CondensedArr/VSCode/database.pkl'
+dataset = 'C:/Users/gooda/CondensedArr/VSCode/topicdset400.pkl'
+Savedir = "C:\\Users\\gooda\\CondensedArr\\VSCode\\"
 name = "topicarr"
-datasetpath = 'C:/Users/gooda/CondensedArr/Test2/'
+datasetpath = 'C:/Users/gooda/CondensedArr/VSCode/database.pkl'
 keypath = 'C:/Users/gooda/CondensedArr/keys/v5-topics-400.txt'
 
 def Constructandsave(database, annotations, outdir):
+    import os
     import nimare
-    ns_dset = nimare.io.convert_neurosynth_to_dataset(database,annotations_file=annotations)
-    ns_dset.save(outdir)
+    import requests
+    import tarfile
+    import zipfile
+    if (os.path.exists('tempDir') == False):
+        os.mkdir('tempDir')
+    url = "https://github.com/neurosynth/neurosynth-data/blob/master/current_data.tar.gz?raw=true"
+    resp = requests.get(url, stream=True)
+    print(resp.headers.get('content-type'))
+    with open('tempDir/current_data', 'wb') as fd:
+        for chunk in resp.iter_content(chunk_size=128):
+            fd.write(chunk)
+    tarf = tarfile.open('tempDir/current_data')
+    tarf.extractall(path='tempDir')
+    dbase = 'tempDir/database.txt'
+    feats = 'tempDir/features.txt'
+    #dbasezip = zipfile.ZipFile(resp.raw)
+    #dbasef = tarfile.open(resp.raw, mode="r|gz") 
+    #dbasef.extractall(path="tempDir")
+    ns_dset = nimare.io.convert_neurosynth_to_dataset(dbase,annotations_file=feats)
+    ns_dset.save('tempDir/currentDatabase.pkl')
+
 def CompareCorr(datasetpath, outdir, nameconv, threshold, chunksize):
     import nimare
     import numpy as np
@@ -486,6 +508,8 @@ def standardizeandsort():
     StandardizedDists = np.array(CDistlists).astype(float).reshape(len(toermar), l)
     return "Complete"
 
+
+
 def saveloadings(Savedir,  Upper_Vals = 10, Lower_Vals = 10):
     global terdir
     global loadir
@@ -510,6 +534,8 @@ def saveloadings(Savedir,  Upper_Vals = 10, Lower_Vals = 10):
         np.savetxt(Savedir + "ClusterTerms" + '%d' %(i+1) + ".csv", termls, delimiter =",",fmt ='% s') 
         np.savetxt(Savedir + "ClusterLoadings" + '%d' %(i+1) + ".csv", Loadings, delimiter =",",fmt ='% s') 
         
+
+
 # %% Read in data
 # read in neurosynth term loading data for caps 5 & 6
 def Cloud(Savedir, outdir):
@@ -583,4 +609,26 @@ def Cloud(Savedir, outdir):
             # generate wordcloud from loadings in frequency dict
 
         wc = wc.generate_from_frequencies((freq_dict))
-        wc.to_file('WordCloudCluster%d.png'.format(key, col_index+5) %(p+1))    
+        wc.to_file('WordCloudCluster%d.png'.format(key, col_index+5) %(p+1)) 
+
+
+
+
+
+#%%
+Constructandsave(database, annotationsnew2, outdir2)
+
+#CompareCorr(datasetpath, Savedir, name, .1, 2)
+
+#CreateListOfTermsinCSV(datasetpath, Savedir, "NSCITerms")
+
+#CreateListOfCoordsinCSV(datasetpath, Savedir, name, 2, "DataNSCI")
+
+#cluster(Savedir, 6, weightings=True, keypath=keypath)
+
+#standardizeandsort()
+
+#saveloadings(Savedir, Lower_Vals = 0)
+
+#Cloud(Savedir, Savedir)
+# %%
