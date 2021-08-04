@@ -16,24 +16,45 @@ def Constructandsave(database, annotations, outdir):
     import nimare
     import requests
     import tarfile
-    import zipfile
+    import gc
     if (os.path.exists('tempDir') == False):
         os.mkdir('tempDir')
-    url = "https://github.com/neurosynth/neurosynth-data/blob/master/current_data.tar.gz?raw=true"
-    resp = requests.get(url, stream=True)
-    print(resp.headers.get('content-type'))
-    with open('tempDir/current_data', 'wb') as fd:
-        for chunk in resp.iter_content(chunk_size=128):
-            fd.write(chunk)
-    tarf = tarfile.open('tempDir/current_data')
-    tarf.extractall(path='tempDir')
+    if (os.path.exists('Data') == False):
+        os.mkdir('Data')
+    if (os.path.exists('Gradients') == False):
+        os.mkdir('Gradients')
+
+    url1 = "https://github.com/neurosynth/neurosynth-data/blob/master/current_data.tar.gz?raw=true"
+    resp1 = requests.get(url1, stream=True)
+    print(resp1.headers.get('content-type'))
+    with open('tempDir/current_data', 'wb') as fd1:
+        for chunk1 in resp1.iter_content(chunk_size=128):
+            fd1.write(chunk1)
+    tarfile.open('tempDir/current_data').extractall(path='tempDir')
     dbase = 'tempDir/database.txt'
     feats = 'tempDir/features.txt'
-    #dbasezip = zipfile.ZipFile(resp.raw)
-    #dbasef = tarfile.open(resp.raw, mode="r|gz") 
-    #dbasef.extractall(path="tempDir")
     ns_dset = nimare.io.convert_neurosynth_to_dataset(dbase,annotations_file=feats)
-    ns_dset.save('tempDir/currentDatabase.pkl')
+    ns_dset.save('Data/currentDatabase.pkl')
+    gc.collect()
+    os.remove('tempDir/database.txt')
+    os.remove('tempDir/features.txt')
+    os.remove('tempDir/current_data')
+
+    url2 = "https://github.com/17iwgh/dbasepub/blob/main/GradRepo.tar?raw=true"
+    resp2 = requests.get(url2, stream=True)
+    with open('tempDir/Gradients', 'wb') as fd2:
+        for chunk2 in resp2.iter_content(chunk_size=128):
+            fd2.write(chunk2)
+    tarfile.open('tempDir/Gradients').extractall(path='Gradients')
+    gc.collect()
+    os.remove('tempDir/Gradients')
+    
+
+
+
+
+
+
 
 def CompareCorr(datasetpath, outdir, nameconv, threshold, chunksize):
     import nimare
