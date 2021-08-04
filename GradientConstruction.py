@@ -23,6 +23,8 @@ def Constructandsave(database, annotations, outdir):
         os.mkdir('Data')
     if (os.path.exists('Gradients') == False):
         os.mkdir('Gradients')
+    if (os.path.exists('Topics') == False):
+        os.mkdir('Topics')
 
     url1 = "https://github.com/neurosynth/neurosynth-data/blob/master/current_data.tar.gz?raw=true"
     resp1 = requests.get(url1, stream=True)
@@ -48,6 +50,15 @@ def Constructandsave(database, annotations, outdir):
     tarfile.open('tempDir/Gradients').extractall(path='Gradients')
     gc.collect()
     os.remove('tempDir/Gradients')
+
+    url3 = "https://github.com/neurosynth/neurosynth-data/blob/master/topics/v5-topics.tar.gz?raw=true"
+    resp3 = requests.get(url3, stream=True)
+    with open('tempDir/Topics', 'wb') as fd3:
+        for chunk3 in resp3.iter_content(chunk_size=128):
+            fd3.write(chunk3)
+    tarfile.open('tempDir/Topics').extractall(path='Topics')
+    gc.collect()
+    os.remove('tempDir/Topics')
     
 
 
@@ -93,6 +104,18 @@ def CompareCorr(datasetpath, outdir, nameconv, threshold, chunksize):
         Arrrrr = np.asarray(Arrrrr)
         np.save((outdir + nameconv + '%d' % (i)), Arrrrr)
         gc.collect()
+
+
+
+
+
+
+
+
+
+
+
+
 
 def CreateListOfTermsinCSV(datasetpath, savedir, nameco):   
     import csv 
