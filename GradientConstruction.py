@@ -35,8 +35,8 @@ def Constructandsave(database, annotations, outdir):
     tarfile.open('tempDir/current_data').extractall(path='tempDir')
     dbase = 'tempDir/database.txt'
     feats = 'tempDir/features.txt'
-    ns_dset = nimare.io.convert_neurosynth_to_dataset(dbase,annotations_file=feats)
-    ns_dset.save('Data/currentDatabase.pkl')
+    #ns_dset = nimare.io.convert_neurosynth_to_dataset(dbase,annotations_file=feats)
+    #ns_dset.save('Data/currentDatabase.pkl')
     gc.collect()
     os.remove('tempDir/database.txt')
     os.remove('tempDir/features.txt')
