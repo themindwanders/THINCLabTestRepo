@@ -1,11 +1,9 @@
 METADATA:
 Experiment Seed,"Number of ""Go/No Go"" stimuli","Number of ""Other"" stimuli","Number of ""Self"" stimuli",Number of Finger Tapping blocks (5 stimuli per block),Number of Memory stimuli,Number of Reading stimuli,Subject,Version
 1,2,2,2,2,2,2,2,2
-2.082903500064276
+1.9172865999998976
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID
 EXPERIMENT DATA:,Memory Task
-Start Time,2.083210799959488
-"('Prompt One', 'started')",2.6344950000056997,,,,Memory Task,1,2
-"('Prompt One', 'ended')",6.640467099961825,,,,Memory Task,1,2
-"('a a', 'started')",10.642060599988326,,,,Memory Task,1,2
-"('a a', 'ended')",15.641903799958527,,,,Memory Task,1,2
+Start Time,1.9180168000002595
+"('Prompt One', 'started')",2.4634525000001304,,,,Memory Task,1,2
+"('Prompt One', 'ended')",7.455240600000252,,,,Memory Task,1,2

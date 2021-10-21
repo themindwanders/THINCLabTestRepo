@@ -329,8 +329,8 @@ class my_instructions(object):
         return self.instruction_txt
 
     def showf(self):
-        with open('C:/Users/Ian/Documents/TaskRepo/instructions/You_instr.txt') as f:
-            lines = f.readlines()
+        with open('instructions/You_instr.txt') as f:
+            lines = f.read()
         instext = lines
 
         

@@ -65,7 +65,12 @@ class task(taskbattery,metadatacollection):
                 self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, writer, taskbattery.resultdict, self.numtrial)
                 f.close()
                 taskbattery.resultdict = {'Timepoint': None, 'Time': None, 'Is_correct': None, 'Experience Sampling Question': None, 'Experience Sampling Response':None, 'Task' : None, 'Task Iteration': None, 'Participant ID': None}
+import os
 
+# Get the current working directory
+cwd = os.path.dirname(os.path.abspath(__file__))  # Get the current working directory (cwd)
+print(cwd)
+os.chdir(cwd)  # Get all the files in that directory
 
 INFO = {
                 'Experiment Seed': '1',  # compulsory: name of program, used for trial definition in ./parameter/~.csv
