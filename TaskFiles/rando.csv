@@ -1,0 +1,50 @@
+Trial_No,Type,Condition,Stim1,Stim1_F1,Stim2,Stim2_F1,Stim2_F2,Corr_Resp,trialstart_time,keystart_time,resp_key,response,keypress_time,key_RT
+1,E,2,You,C,malicious,CU,Negative,NIL,9.73584880004637,11.256663499865681,None,None,nan,nan
+2,E,3,Upper Case,C,mean,CU,Negative,Yes,12.773638600017875,13.79261969984509,None,None,nan,nan
+3,E,1,You,C,quiet,CU,Positive,NIL,15.300713999895379,16.8200530000031,None,None,nan,nan
+4,E,3,Upper Case,C,dishonest,CU,Negative,Yes,18.328015599865466,18.847580399829894,None,None,nan,nan
+5,E,3,Upper Case,C,obnoxious,CU,Negative,Yes,20.35545270005241,20.87491080001928,None,None,nan,nan
+6,E,3,Upper Case,C,perfectionistic,CU,Positive,Yes,22.38323749997653,23.528328399872407,None,None,nan,nan
+7,E,2,You,C,untrustworthy,CL,Negative,NIL,25.037598999915645,26.05708339996636,None,None,nan,nan
+8,E,2,You,C,unkind,CL,Negative,NIL,27.564377799862996,28.5833625998348,None,None,nan,nan
+9,E,4,Upper Case,C,conceited,CL,Negative,No,30.091936599928886,31.612190899904817,None,None,nan,nan
+10,E,1,You,C,bold,CU,Positive,NIL,33.118793699890375,34.6395562000107,None,None,nan,nan
+11,E,2,You,C,narrow-minded,CL,Negative,NIL,36.14951359992847,36.667840499896556,None,None,nan,nan
+12,E,4,Upper Case,C,loud-mouthed,CL,Negative,No,38.17693379987031,38.69469120004214,None,None,nan,nan
+13,E,4,Upper Case,C,unsociable,CL,Negative,No,40.20508660003543,40.72270939988084,None,None,nan,nan
+14,E,3,Upper Case,C,persistent,CU,Positive,Yes,42.23106649983674,43.75151349999942,None,None,nan,nan
+15,E,2,You,C,self -centered,CU,Negative,NIL,45.25813920004293,45.77895599999465,None,None,nan,nan
+16,E,1,You,C,talkative,CL,Positive,NIL,47.285779600031674,48.306125399889424,None,None,nan,nan
+17,E,4,Upper Case,C,daring,CL,Positive,No,49.813734399853274,50.333949599880725,None,None,nan,nan
+18,E,4,Upper Case,C,nonconforming,CL,Positive,No,51.84143289993517,52.86175399995409,None,None,nan,nan
+19,E,4,Upper Case,C,thrifty,CL,Positive,No,54.37029909994453,54.88966650003567,None,None,nan,nan
+20,E,4,Upper Case,C,distrustful,CL,Negative,No,56.39794009993784,57.91783669986762,None,None,nan,nan
+21,E,2,You,C,nosey,CU,Negative,NIL,59.42547529982403,59.946709000039846,None,None,nan,nan
+22,E,2,You,C,jealous,CU,Negative,NIL,61.452833799878135,62.47351209982298,None,None,nan,nan
+23,E,3,Upper Case,C,persuasive,CU,Positive,Yes,63.98173419991508,65.00099479989149,None,None,nan,nan
+24,E,4,Upper Case,C,unreliable,CL,Negative,No,66.50814509997144,68.03046639985405,None,None,nan,nan
+25,E,3,Upper Case,C,idealistic,CU,Positive,Yes,69.53630149993114,70.55880389991216,None,None,nan,nan
+26,E,4,Upper Case,C,prejudiced,CL,Negative,No,72.06409140001051,73.0856732998509,None,None,nan,nan
+27,E,4,Upper Case,C,careful,CL,Positive,No,74.59210000000894,75.11225789994933,None,None,nan,nan
+28,E,1,You,C,confident,CL,Positive,NIL,76.62365640001372,77.14691030001268,None,None,nan,nan
+29,E,2,You,C,discourteous,CL,Negative,NIL,78.65538859996013,79.67533989995718,None,None,nan,nan
+30,E,3,Upper Case,C,cold,CU,Negative,Yes,81.18383520003408,82.20371809997596,None,None,nan,nan
+31,E,1,You,C,self-assured,CU,Positive,NIL,83.71055800002068,84.73138380004093,None,None,nan,nan
+32,E,1,You,C,easygoing,CL,Positive,NIL,86.23954219999723,87.25824730005115,None,None,nan,nan
+33,E,2,You,C,irritating,CL,Negative,NIL,88.76638319995254,89.28608859982342,None,None,nan,nan
+34,E,3,Upper Case,C,boastful,CU,Negative,Yes,90.79573519993573,91.81400340003893,None,None,nan,nan
+35,E,3,Upper Case,C,lazy,CU,Negative,Yes,93.3222479999531,93.84177939989604,None,None,nan,nan
+36,E,1,You,C,studious,CL,Positive,NIL,95.35031259991229,95.87171399989165,None,None,nan,nan
+37,E,2,You,C,disobedient,CL,Negative,NIL,97.37717729993165,98.39727979991585,None,None,nan,nan
+38,E,1,You,C,practical,CU,Positive,NIL,99.9053006998729,100.92509709997103,None,None,nan,nan
+39,E,1,You,C,modest,CL,Positive,NIL,102.43431779998355,103.45485109998845,None,None,nan,nan
+40,E,4,Upper Case,C,curious,CL,Positive,No,104.96125619998202,106.48190420004539,None,None,nan,nan
+41,E,2,You,C,gloomy,CU,Negative,NIL,107.98860879987478,109.50925899995491,None,None,nan,nan
+42,E,3,Upper Case,C,competent,CU,Positive,Yes,111.01687169983052,112.0365442999173,None,None,nan,nan
+43,E,1,You,C,frank,CU,Positive,NIL,113.54396139993332,114.06387660000473,None,None,nan,nan
+44,E,1,You,C,energetic,CL,Positive,NIL,115.5734810999129,116.09400789998472,None,None,nan,nan
+45,E,2,You,C,irritable,CU,Negative,NIL,117.60093539999798,118.6199930999428,None,None,nan,nan
+46,E,4,Upper Case,C,amusing,CL,Positive,No,120.12856790004298,120.65058010001667,None,None,nan,nan
+47,E,3,Upper Case,C,creative,CU,Positive,Yes,122.15809609997086,122.68411769997329,None,None,nan,nan
+48,E,1,You,C,sensible,CU,Positive,NIL,124.19018210005015,125.21047629998066,None,None,nan,nan
+48,E,1,You,C,sensible,CU,Positive,NIL,124.19018210005015,125.21047629998066,None,None,nan,nan

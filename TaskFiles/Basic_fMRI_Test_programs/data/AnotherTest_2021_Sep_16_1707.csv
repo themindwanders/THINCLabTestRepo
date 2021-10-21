@@ -1,0 +1,6 @@
+﻿trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,key_resp_2.keys,mouse.x,mouse.y,mouse.leftButton,mouse.midButton,mouse.rightButton,left,right,test,session,participant,date,expName,frameRate,
+,,,,None,,,,,,,,,001,AnotherTest,2021_Sep_16_1707,Finger_tapping_5mins_15s_on_15s_off,140.57757702043168,
+,,,,,0.7361505,-2.3556817,1,0,0,,,,001,AnotherTest,2021_Sep_16_1707,Finger_tapping_5mins_15s_on_15s_off,140.57757702043168,
+0,0,0,0,,,,,,,Yes,,20.048552599997493,001,AnotherTest,2021_Sep_16_1707,Finger_tapping_5mins_15s_on_15s_off,140.57757702043168,
+1,0,1,0,,,,,,,,Yes,50.04944919998525,001,AnotherTest,2021_Sep_16_1707,Finger_tapping_5mins_15s_on_15s_off,140.57757702043168,
+2,0,2,0,,,,,,,,Yes,80.05013999997755,001,AnotherTest,2021_Sep_16_1707,Finger_tapping_5mins_15s_on_15s_off,140.57757702043168,

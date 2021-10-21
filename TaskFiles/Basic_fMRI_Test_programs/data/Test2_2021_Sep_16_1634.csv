@@ -1,0 +1,7 @@
+﻿trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,key_resp_2.keys,key_resp_2.rt,mouse.x,mouse.y,mouse.leftButton,mouse.midButton,mouse.rightButton,right,left,test,session,participant,date,expName,frameRate,
+,,,,t,1.7761649999883957,,,,,,,,,001,Test2,2021_Sep_16_1634,Finger_tapping_5mins_15s_on_15s_off,146.1293975733649,
+,,,,,,1.0011647,5.3591757,0,0,0,,,,001,Test2,2021_Sep_16_1634,Finger_tapping_5mins_15s_on_15s_off,146.1293975733649,
+0,0,0,0,,,,,,,,Yes,,<psychopy.clock.Clock object at 0x000001BB41AF5710>,001,Test2,2021_Sep_16_1634,Finger_tapping_5mins_15s_on_15s_off,146.1293975733649,
+1,0,1,0,,,,,,,,Yes,,<psychopy.clock.Clock object at 0x000001BB41AF5710>,001,Test2,2021_Sep_16_1634,Finger_tapping_5mins_15s_on_15s_off,146.1293975733649,
+2,0,2,0,,,,,,,,Yes,,<psychopy.clock.Clock object at 0x000001BB41AF5710>,001,Test2,2021_Sep_16_1634,Finger_tapping_5mins_15s_on_15s_off,146.1293975733649,
+3,0,3,0,,,,,,,,Yes,,<psychopy.clock.Clock object at 0x000001BB41AF5710>,001,Test2,2021_Sep_16_1634,Finger_tapping_5mins_15s_on_15s_off,146.1293975733649,

@@ -1,0 +1,5 @@
+Trial_No,Type,Condition,Stim1,Stim1_F1,Stim2,Stim2_F1,Stim2_F2,Corr_Resp,trialstart_time,keystart_time,resp_key,response,keypress_time,key_RT
+1,E,1,Friend,C,excitable,CU,Positive,NIL,130.7041265000007,133.55471949999628,None,None,nan,nan
+2,E,1,Friend,C,cautious,CU,Positive,NIL,135.06297739999718,136.98560580000049,None,None,nan,nan
+3,E,3,Upper Case,C,phony,CU,Negative,Yes,138.49329990000115,140.8397748999996,None,None,nan,nan
+3,E,3,Upper Case,C,phony,CU,Negative,Yes,138.49329990000115,140.8397748999996,None,None,nan,nan

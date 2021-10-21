@@ -1,0 +1,45 @@
+37.1409 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+37.2092 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+37.2134 	WARNING 	Monitor specification not found. Creating a temporary one...
+62.7462 	EXP 	window1: recordFrameIntervals = False
+62.9076 	EXP 	window1: recordFrameIntervals = True
+62.9367 	WARNING 	t of last frame was 9.22ms (=1/108)
+63.0042 	EXP 	window1: recordFrameIntervals = False
+63.4037 	EXP 	Created memoryPrompt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='memoryPrompt', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Please recall (PROMPT)', units='norm', win=Window(...), wrapWidth=1)
+63.4057 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+63.4064 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+63.4068 	EXP 	New trial (rep=0, index=0): None
+63.4468 	EXP 	memoryPrompt: autoDraw = True
+68.4124 	EXP 	memoryPrompt: autoDraw = False
+68.4124 	EXP 	memoryPrompt: autoDraw = False
+68.4124 	EXP 	text: autoDraw = True
+73.4098 	EXP 	New trial (rep=1, index=0): None
+73.4190 	EXP 	text: autoDraw = False
+73.4190 	EXP 	text: autoDraw = False
+73.4190 	EXP 	memoryPrompt: autoDraw = True
+78.4123 	EXP 	memoryPrompt: autoDraw = False
+78.4123 	EXP 	memoryPrompt: autoDraw = False
+78.4123 	EXP 	text: autoDraw = True
+83.4102 	EXP 	New trial (rep=2, index=0): None
+83.4205 	EXP 	text: autoDraw = False
+83.4205 	EXP 	text: autoDraw = False
+83.4205 	EXP 	memoryPrompt: autoDraw = True
+88.4125 	EXP 	memoryPrompt: autoDraw = False
+88.4125 	EXP 	memoryPrompt: autoDraw = False
+88.4125 	EXP 	text: autoDraw = True
+93.4162 	EXP 	New trial (rep=3, index=0): None
+93.4280 	EXP 	text: autoDraw = False
+93.4280 	EXP 	text: autoDraw = False
+93.4280 	EXP 	memoryPrompt: autoDraw = True
+97.4210 	EXP 	memoryPrompt: autoDraw = False
+97.4210 	EXP 	memoryPrompt: autoDraw = False
+97.4210 	EXP 	text: autoDraw = True
+101.4163 	EXP 	New trial (rep=4, index=0): None
+101.4271 	EXP 	text: autoDraw = False
+101.4271 	EXP 	text: autoDraw = False
+101.4271 	EXP 	memoryPrompt: autoDraw = True
+106.4281 	EXP 	memoryPrompt: autoDraw = False
+106.4281 	EXP 	memoryPrompt: autoDraw = False
+106.4281 	EXP 	text: autoDraw = True
+111.4280 	EXP 	text: autoDraw = False
+111.4280 	EXP 	text: autoDraw = False

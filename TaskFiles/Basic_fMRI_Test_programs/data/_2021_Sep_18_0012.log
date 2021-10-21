@@ -1,0 +1,102 @@
+0.4615 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+0.9403 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+6.0491 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1, -1, -1]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000021F006679A0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000021F006B1C10>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='deg', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.0496 	EXP 	window1: mouseVisible = True
+6.0497 	EXP 	window1: recordFrameIntervals = False
+6.1173 	EXP 	window1: recordFrameIntervals = True
+6.1937 	EXP 	window1: recordFrameIntervals = False
+6.5370 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0, pos=array([ 0.  , -0.95]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=2)
+6.5372 	EXP 	window1: mouseVisible = True
+6.5460 	EXP 	Created text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=2, italic=False, languageStyle='LTR', name='text_2', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Tap the fingers of your right hand', units='deg', win=Window(...), wrapWidth=15.0)
+6.5483 	EXP 	Created polygon = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0.0, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.0, name='polygon', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([5., 5.]), units='deg', vertices=ndarray(...), win=Window(...))
+6.5523 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=' ', units='deg', win=Window(...), wrapWidth=15.0)
+6.5538 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=' ', units='deg', win=Window(...), wrapWidth=15.0)
+6.5820 	EXP 	text: autoDraw = True
+15.2438 	DATA 	Keypress: t
+15.2461 	EXP 	Created sequence: random, trialTypes=1, nReps=10, seed=None
+15.2462 	EXP 	New trial (rep=0, index=0): None
+15.2563 	EXP 	text: autoDraw = False
+15.2563 	EXP 	text_2: autoDraw = True
+18.2495 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+18.2496 	EXP 	New trial (rep=0, index=0): None
+18.2629 	EXP 	text_2: autoDraw = False
+18.2629 	EXP 	polygon: autoDraw = True
+18.8874 	DATA 	Keypress: space
+18.8948 	EXP 	polygon: autoDraw = False
+18.8948 	EXP 	text_4: autoDraw = True
+19.8900 	EXP 	New trial (rep=1, index=0): None
+19.8948 	EXP 	text_4: autoDraw = False
+19.8948 	EXP 	text_4: autoDraw = False
+19.8948 	EXP 	polygon: autoDraw = True
+20.6723 	DATA 	Keypress: space
+20.6795 	EXP 	polygon: autoDraw = False
+20.6795 	EXP 	text_4: autoDraw = True
+24.6750 	EXP 	New trial (rep=2, index=0): None
+24.6796 	EXP 	text_4: autoDraw = False
+24.6796 	EXP 	text_4: autoDraw = False
+24.6796 	EXP 	polygon: autoDraw = True
+25.0110 	DATA 	Keypress: space
+25.0269 	EXP 	polygon: autoDraw = False
+25.0269 	EXP 	text_4: autoDraw = True
+28.0231 	EXP 	New trial (rep=3, index=0): None
+28.0339 	EXP 	text_4: autoDraw = False
+28.0339 	EXP 	text_4: autoDraw = False
+28.0339 	EXP 	polygon: autoDraw = True
+28.4941 	DATA 	Keypress: space
+28.5000 	EXP 	polygon: autoDraw = False
+28.5000 	EXP 	text_4: autoDraw = True
+28.5036 	DATA 	Keypress: n
+29.4939 	EXP 	New trial (rep=4, index=0): None
+29.4992 	EXP 	text_4: autoDraw = False
+29.4992 	EXP 	text_4: autoDraw = False
+29.4992 	EXP 	polygon: autoDraw = True
+30.0333 	DATA 	Keypress: space
+30.0409 	EXP 	polygon: autoDraw = False
+30.0409 	EXP 	text_4: autoDraw = True
+31.0409 	EXP 	text_4: autoDraw = False
+31.0409 	EXP 	text_4: autoDraw = False
+31.0409 	EXP 	text_4: autoDraw = True
+35.0360 	EXP 	New trial (rep=1, index=0): None
+35.0410 	EXP 	text_4: autoDraw = False
+35.0410 	EXP 	text_4: autoDraw = False
+35.0410 	EXP 	text_2: autoDraw = True
+35.7470 	DATA 	Keypress: lalt
+38.0367 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+38.0368 	EXP 	New trial (rep=0, index=0): None
+38.0410 	EXP 	text_2: autoDraw = False
+38.0410 	EXP 	text_2: autoDraw = False
+38.0410 	EXP 	polygon: autoDraw = True
+39.5223 	EXP 	polygon: autoDraw = False
+39.5223 	EXP 	text_4: autoDraw = True
+41.5238 	EXP 	New trial (rep=1, index=0): None
+41.5280 	EXP 	text_4: autoDraw = False
+41.5280 	EXP 	text_4: autoDraw = False
+41.5280 	EXP 	polygon: autoDraw = True
+41.7656 	EXP 	polygon: autoDraw = False
+41.7656 	EXP 	text_4: autoDraw = True
+44.7666 	EXP 	New trial (rep=2, index=0): None
+44.7710 	EXP 	text_4: autoDraw = False
+44.7710 	EXP 	text_4: autoDraw = False
+44.7710 	EXP 	polygon: autoDraw = True
+45.0241 	EXP 	polygon: autoDraw = False
+45.0241 	EXP 	text_4: autoDraw = True
+46.0227 	EXP 	New trial (rep=3, index=0): None
+46.0278 	EXP 	text_4: autoDraw = False
+46.0278 	EXP 	text_4: autoDraw = False
+46.0278 	EXP 	polygon: autoDraw = True
+46.4440 	EXP 	polygon: autoDraw = False
+46.4440 	EXP 	text_4: autoDraw = True
+50.4397 	EXP 	New trial (rep=4, index=0): None
+50.4442 	EXP 	text_4: autoDraw = False
+50.4442 	EXP 	text_4: autoDraw = False
+50.4442 	EXP 	polygon: autoDraw = True
+51.0252 	EXP 	polygon: autoDraw = False
+51.0252 	EXP 	text_4: autoDraw = True
+53.0276 	EXP 	text_4: autoDraw = False
+53.0276 	EXP 	text_4: autoDraw = False
+53.0276 	EXP 	text_4: autoDraw = True
+57.0229 	EXP 	New trial (rep=2, index=0): None
+57.0276 	EXP 	text_4: autoDraw = False
+57.0276 	EXP 	text_4: autoDraw = False
+57.0276 	EXP 	text_2: autoDraw = True
+59.8643 	EXP 	window1: mouseVisible = True

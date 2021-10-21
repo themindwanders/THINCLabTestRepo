@@ -1,0 +1,43 @@
+36.5425 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+36.5988 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+38.4676 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1, -1, -1]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000002280DA4DD68>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000002280F47A550>, multiSample=False, name='window1', numSamples=2, pos=[320.0, 28.0], screen=0, size=array([1280, 1024]), stencilBits=0, stereo=False, units='deg', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+38.4680 	EXP 	window1: mouseVisible = True
+38.4681 	EXP 	window1: recordFrameIntervals = False
+38.5355 	EXP 	window1: recordFrameIntervals = True
+38.5992 	WARNING 	t of last frame was 8.83ms (=1/113)
+38.6329 	EXP 	window1: recordFrameIntervals = False
+38.6982 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0, pos=array([ 0.  , -0.95]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=2)
+38.6983 	EXP 	window1: mouseVisible = True
+38.7040 	EXP 	Created cirst = Circle(__class__=<class 'psychopy.visual.circle.Circle'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0.0, fillColor=array([0, 0, 0]), fillColorSpace='rgb', fillRGB=array([0, 0, 0]), interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineRGB=array([0, 0, 0]), lineWidth=1.5, name='cirst', opacity=0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), units='deg', vertices=ndarray(...), win=Window(...))
+38.7199 	EXP 	Created text_2r = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=2, italic=False, languageStyle='LTR', name='text_2r', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Tap the fingers of your right hand', units='deg', win=Window(...), wrapWidth=15.0)
+38.7288 	EXP 	Created text_2l = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=2, italic=False, languageStyle='LTR', name='text_2l', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Tap the fingers of your left hand', units='deg', win=Window(...), wrapWidth=15.0)
+38.7426 	EXP 	Created text_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_3', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Stop tapping', units='deg', win=Window(...), wrapWidth=15.0)
+38.7488 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=' ', units='deg', win=Window(...), wrapWidth=15.0)
+38.7563 	EXP 	text: autoDraw = True
+39.9243 	DATA 	Mouse: Left button down, pos=(551,702)
+39.9256 	EXP 	Created sequence: random, trialTypes=1, nReps=10, seed=None
+40.0314 	EXP 	New trial (rep=0, index=0): None
+40.0322 	DATA 	Mouse:  Left button up, pos=(551,702)
+40.0407 	EXP 	text: autoDraw = False
+40.0407 	EXP 	text_2l: autoDraw = True
+49.9593 	EXP 	text_2l: autoDraw = False
+49.9593 	EXP 	cirst: autoDraw = True
+50.3915 	DATA 	Mouse: Left button down, pos=(572,978)
+50.4799 	DATA 	Mouse:  Left button up, pos=(572,978)
+53.1633 	DATA 	Mouse: Left button down, pos=(1023,612)
+53.2711 	DATA 	Mouse:  Left button up, pos=(1023,612)
+54.9384 	EXP 	text_2r: autoDraw = False
+54.9384 	EXP 	text_2l: autoDraw = False
+54.9384 	EXP 	text_3: autoDraw = True
+54.9384 	EXP 	text_4: autoDraw = True
+55.9382 	EXP 	text_3: autoDraw = False
+56.9318 	EXP 	New trial (rep=1, index=0): None
+56.9382 	EXP 	text_4: autoDraw = False
+56.9382 	EXP 	text_3: autoDraw = False
+56.9382 	EXP 	text_4: autoDraw = False
+56.9382 	EXP 	text_2l: autoDraw = True
+61.4880 	EXP 	text_2l: autoDraw = False
+61.4880 	EXP 	cirst: autoDraw = True
+75.0583 	DATA 	Mouse: Left button down, pos=(1069,756)
+75.1327 	DATA 	Mouse:  Left button up, pos=(1069,756)
+79.8159 	EXP 	window1: mouseVisible = True

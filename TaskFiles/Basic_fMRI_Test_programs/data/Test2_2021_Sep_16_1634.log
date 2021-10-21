@@ -1,0 +1,62 @@
+39.3215 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+39.3892 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+45.7056 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1, -1, -1]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001BB39C0AB38>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001BB3B607DA0>, multiSample=False, name='window1', numSamples=2, pos=[320.0, 28.0], screen=0, size=array([1280, 1024]), stencilBits=0, stereo=False, units='deg', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+45.7062 	EXP 	window1: mouseVisible = True
+45.7062 	EXP 	window1: recordFrameIntervals = False
+45.7836 	EXP 	window1: recordFrameIntervals = True
+45.8231 	WARNING 	t of last frame was 8.25ms (=1/121)
+45.8645 	EXP 	window1: recordFrameIntervals = False
+45.9371 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0, pos=array([ 0.  , -0.95]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=2)
+45.9372 	EXP 	window1: mouseVisible = True
+45.9536 	EXP 	Created text_2r = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=2, italic=False, languageStyle='LTR', name='text_2r', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Tap the fingers of your right hand', units='deg', win=Window(...), wrapWidth=15.0)
+45.9620 	EXP 	Created text_2l = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=2, italic=False, languageStyle='LTR', name='text_2l', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Tap the fingers of your left hand', units='deg', win=Window(...), wrapWidth=15.0)
+45.9760 	EXP 	Created text_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_3', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Stop tapping', units='deg', win=Window(...), wrapWidth=15.0)
+45.9828 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=' ', units='deg', win=Window(...), wrapWidth=15.0)
+45.9941 	EXP 	text: autoDraw = True
+47.7589 	DATA 	Keypress: t
+47.7604 	EXP 	Created sequence: random, trialTypes=1, nReps=10, seed=None
+47.8735 	EXP 	New trial (rep=0, index=0): None
+47.8821 	EXP 	text: autoDraw = False
+47.8821 	EXP 	text_2r: autoDraw = True
+62.7734 	EXP 	text_2r: autoDraw = False
+62.7734 	EXP 	text_2l: autoDraw = False
+62.7734 	EXP 	text_3: autoDraw = True
+62.7734 	EXP 	text_4: autoDraw = True
+63.7737 	EXP 	text_3: autoDraw = False
+77.7673 	EXP 	New trial (rep=1, index=0): None
+77.7742 	EXP 	text_3: autoDraw = False
+77.7742 	EXP 	text_4: autoDraw = False
+77.7742 	EXP 	text_2r: autoDraw = True
+92.7731 	EXP 	text_2r: autoDraw = False
+92.7731 	EXP 	text_2l: autoDraw = False
+92.7731 	EXP 	text_3: autoDraw = True
+92.7731 	EXP 	text_4: autoDraw = True
+93.7670 	EXP 	text_3: autoDraw = False
+107.7611 	EXP 	New trial (rep=2, index=0): None
+107.7675 	EXP 	text_3: autoDraw = False
+107.7675 	EXP 	text_4: autoDraw = False
+107.7675 	EXP 	text_2r: autoDraw = True
+122.7679 	EXP 	text_2r: autoDraw = False
+122.7679 	EXP 	text_2l: autoDraw = False
+122.7679 	EXP 	text_3: autoDraw = True
+122.7679 	EXP 	text_4: autoDraw = True
+123.7674 	EXP 	text_3: autoDraw = False
+125.2397 	DATA 	Mouse: Left button down, pos=(920,666)
+125.2825 	DATA 	Mouse:  Left button up, pos=(920,666)
+137.7613 	EXP 	New trial (rep=3, index=0): None
+137.7678 	EXP 	text_3: autoDraw = False
+137.7678 	EXP 	text_4: autoDraw = False
+137.7678 	EXP 	text_2r: autoDraw = True
+152.7680 	EXP 	text_2r: autoDraw = False
+152.7680 	EXP 	text_2l: autoDraw = False
+152.7680 	EXP 	text_3: autoDraw = True
+152.7680 	EXP 	text_4: autoDraw = True
+153.7681 	EXP 	text_3: autoDraw = False
+167.7621 	EXP 	New trial (rep=4, index=0): None
+167.7703 	EXP 	text_3: autoDraw = False
+167.7703 	EXP 	text_4: autoDraw = False
+167.7703 	EXP 	text_2r: autoDraw = True
+170.9422 	DATA 	Mouse: Left button down, pos=(623,384)
+171.0192 	DATA 	Mouse:  Left button up, pos=(623,384)
+171.5623 	DATA 	Keypress: escape
+172.0939 	EXP 	window1: mouseVisible = True

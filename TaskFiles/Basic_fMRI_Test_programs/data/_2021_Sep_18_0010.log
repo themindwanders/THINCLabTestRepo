@@ -1,0 +1,111 @@
+0.4481 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+0.8789 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+3.5500 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1, -1, -1]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001E851428970>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001E851471BE0>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='deg', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+3.5502 	EXP 	window1: mouseVisible = True
+3.5503 	EXP 	window1: recordFrameIntervals = False
+3.6183 	EXP 	window1: recordFrameIntervals = True
+3.6947 	EXP 	window1: recordFrameIntervals = False
+4.0353 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.03, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0, pos=array([ 0.  , -0.95]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=2)
+4.0354 	EXP 	window1: mouseVisible = True
+4.0445 	EXP 	Created text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=2, italic=False, languageStyle='LTR', name='text_2', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='Tap the fingers of your right hand', units='deg', win=Window(...), wrapWidth=15.0)
+4.0464 	EXP 	Created polygon = Rect(__class__=<class 'psychopy.visual.rect.Rect'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0.0, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([1., 1., 1.]), lineColorSpace='rgb', lineRGB=array([1, 1, 1]), lineWidth=1.0, name='polygon', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([5., 5.]), units='deg', vertices=ndarray(...), win=Window(...))
+4.0497 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=' ', units='deg', win=Window(...), wrapWidth=15.0)
+4.0512 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text=' ', units='deg', win=Window(...), wrapWidth=15.0)
+4.1469 	EXP 	text: autoDraw = True
+4.4882 	DATA 	Mouse: Left button down, pos=(827,672)
+4.4901 	EXP 	Created sequence: random, trialTypes=1, nReps=10, seed=None
+4.4903 	EXP 	New trial (rep=0, index=0): None
+4.4932 	EXP 	text: autoDraw = False
+4.4932 	EXP 	text_2: autoDraw = True
+4.6142 	DATA 	Mouse:  Left button up, pos=(827,672)
+4.8642 	DATA 	Mouse: Left button down, pos=(827,672)
+4.9752 	DATA 	Mouse:  Left button up, pos=(827,672)
+7.4901 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+7.4902 	EXP 	New trial (rep=0, index=0): None
+7.5003 	EXP 	text_2: autoDraw = False
+7.5003 	EXP 	text_2: autoDraw = False
+7.5003 	EXP 	polygon: autoDraw = True
+8.2029 	DATA 	Keypress: space
+8.2091 	EXP 	polygon: autoDraw = False
+8.2091 	EXP 	text_4: autoDraw = True
+10.2041 	EXP 	New trial (rep=1, index=0): None
+10.2087 	EXP 	text_4: autoDraw = False
+10.2087 	EXP 	text_4: autoDraw = False
+10.2087 	EXP 	polygon: autoDraw = True
+10.6596 	DATA 	Keypress: space
+10.6675 	EXP 	polygon: autoDraw = False
+10.6675 	EXP 	text_4: autoDraw = True
+11.6620 	EXP 	New trial (rep=2, index=0): None
+11.6671 	EXP 	text_4: autoDraw = False
+11.6671 	EXP 	text_4: autoDraw = False
+11.6671 	EXP 	polygon: autoDraw = True
+12.0183 	DATA 	Keypress: space
+12.0351 	EXP 	polygon: autoDraw = False
+12.0351 	EXP 	text_4: autoDraw = True
+13.0300 	EXP 	New trial (rep=3, index=0): None
+13.0351 	EXP 	text_4: autoDraw = False
+13.0351 	EXP 	text_4: autoDraw = False
+13.0351 	EXP 	polygon: autoDraw = True
+13.2763 	DATA 	Keypress: space
+13.2928 	EXP 	polygon: autoDraw = False
+13.2928 	EXP 	text_4: autoDraw = True
+17.2870 	EXP 	New trial (rep=4, index=0): None
+17.2921 	EXP 	text_4: autoDraw = False
+17.2921 	EXP 	text_4: autoDraw = False
+17.2921 	EXP 	polygon: autoDraw = True
+17.5673 	DATA 	Keypress: space
+17.5842 	EXP 	polygon: autoDraw = False
+17.5842 	EXP 	text_4: autoDraw = True
+19.5839 	EXP 	text_4: autoDraw = False
+19.5839 	EXP 	text_4: autoDraw = False
+19.5839 	EXP 	text_4: autoDraw = True
+21.5791 	EXP 	New trial (rep=1, index=0): None
+21.5839 	EXP 	text_4: autoDraw = False
+21.5839 	EXP 	text_4: autoDraw = False
+21.5839 	EXP 	text_2: autoDraw = True
+24.5791 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+24.5792 	EXP 	New trial (rep=0, index=0): None
+24.5840 	EXP 	text_2: autoDraw = False
+24.5840 	EXP 	text_2: autoDraw = False
+24.5840 	EXP 	polygon: autoDraw = True
+25.7914 	DATA 	Keypress: space
+25.7998 	EXP 	polygon: autoDraw = False
+25.7998 	EXP 	text_4: autoDraw = True
+29.7951 	EXP 	New trial (rep=1, index=0): None
+29.7994 	EXP 	text_4: autoDraw = False
+29.7994 	EXP 	text_4: autoDraw = False
+29.7994 	EXP 	polygon: autoDraw = True
+30.0903 	DATA 	Keypress: space
+30.0985 	EXP 	polygon: autoDraw = False
+30.0985 	EXP 	text_4: autoDraw = True
+31.0930 	EXP 	New trial (rep=2, index=0): None
+31.0981 	EXP 	text_4: autoDraw = False
+31.0981 	EXP 	text_4: autoDraw = False
+31.0981 	EXP 	polygon: autoDraw = True
+31.3593 	DATA 	Keypress: space
+31.3763 	EXP 	polygon: autoDraw = False
+31.3763 	EXP 	text_4: autoDraw = True
+34.3710 	EXP 	New trial (rep=3, index=0): None
+34.3759 	EXP 	text_4: autoDraw = False
+34.3759 	EXP 	text_4: autoDraw = False
+34.3759 	EXP 	polygon: autoDraw = True
+34.6373 	DATA 	Keypress: space
+34.6537 	EXP 	polygon: autoDraw = False
+34.6537 	EXP 	text_4: autoDraw = True
+38.6490 	EXP 	New trial (rep=4, index=0): None
+38.6538 	EXP 	text_4: autoDraw = False
+38.6538 	EXP 	text_4: autoDraw = False
+38.6538 	EXP 	polygon: autoDraw = True
+39.0264 	DATA 	Keypress: space
+39.0431 	EXP 	polygon: autoDraw = False
+39.0431 	EXP 	text_4: autoDraw = True
+43.0428 	EXP 	text_4: autoDraw = False
+43.0428 	EXP 	text_4: autoDraw = False
+43.0428 	EXP 	text_4: autoDraw = True
+47.0380 	EXP 	New trial (rep=2, index=0): None
+47.0429 	EXP 	text_4: autoDraw = False
+47.0429 	EXP 	text_4: autoDraw = False
+47.0429 	EXP 	text_2: autoDraw = True
+47.2953 	DATA 	Keypress: space
+48.4903 	DATA 	Keypress: escape
+48.7137 	EXP 	window1: mouseVisible = True
