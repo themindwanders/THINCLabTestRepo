@@ -1,14 +1,15 @@
-import semtask as sem
-import GoNoGo
-import FingTap as fing
-import ESQ
+#import semtask as sem
+#import GoNoGo
+#import FingTap as fing
+#import ESQ
 from psychopy import core, visual, gui
-import friendtask
+#import friendtask
 import psychopy
 import csv
-import ReadingMemory as rm
-import memoryTask as memtask
-
+#import ReadingMemory as rm
+#import memoryTask as memtask
+import taskScripts
+import os
 class metadatacollection():
         def __init__(self, INFO, main_log_location):
                 self.INFO = INFO
@@ -17,8 +18,8 @@ class metadatacollection():
         def rungui(self):
                 self.sbINFO = gui.DlgFromDict(self.INFO)
         def collect_metadata(self):  
-                
-                f = open(self.main_log_location, 'w')
+                print(os.getcwd())
+                f = open(os.getcwd() + "/taskScripts/" + self.main_log_location, 'w')
                 metawriter = csv.writer(f)
                 metawriter.writerow(["METADATA:"])
                 metawriter.writerow(self.sbINFO.inputFieldNames)
@@ -56,6 +57,8 @@ class task(taskbattery,metadatacollection):
                 self.numtrial = numtrial
                 self.trialclass = trialclass
         def run(self):
+                if not os.path.exists(self.main_log_location):
+                        os.mkdir(self.main_log_location.split("/")[0])
                 f = open(self.main_log_location, 'a')
                 r = csv.writer(f)
                 writer = csv.DictWriter(f, fieldnames=taskbattery.resultdict)
@@ -69,7 +72,7 @@ import os
 
 # Get the current working directory
 cwd = os.path.dirname(os.path.abspath(__file__))  # Get the current working directory (cwd)
-print(cwd)
+
 os.chdir(cwd)  # Get all the files in that directory
 
 INFO = {
@@ -83,21 +86,22 @@ INFO = {
                 'Number of Reading stimuli': '2',
                 'Number of Memory stimuli': '2'
                 }
-
-
-metacoll = metadatacollection(INFO, 'log_file/testfull.csv')
+print(cwd)
+datafile = 'log_file/testfull.csv'
+datafileBackup = 'log_file/testfullbackup.csv'
+metacoll = metadatacollection(INFO, datafile)
 metacoll.rungui()
 metacoll.collect_metadata()
+print(cwd)
 
-
-ESQTask = task(ESQ, 'log_file/testfull.csv', 'log_file/testfullbackup.csv', "Experience Sampling Questions", 2, metacoll.sbINFO.data)
-friendTask = task(sem, 'log_file/testfull.csv', 'log_file/testfullbackup.csv', "Friend Task", int(metacoll.INFO['Number of "Other" stimuli']), metacoll.sbINFO.data)
-youTask = task(friendtask, 'log_file/testfull.csv', 'log_file/testfullbackup.csv', "You Task", int(metacoll.INFO['Number of "Self" stimuli']), metacoll.sbINFO.data)
-gonogoTask = task(GoNoGo, 'log_file/testfull.csv', 'log_file/testfullbackup.csv', "Go/NoGo Task", int(metacoll.INFO['Number of "Go/No Go" stimuli']), metacoll.sbINFO.data)
-fingertapTask = task(fing, 'log_file/testfull.csv', 'log_file/testfullbackup.csv', "Finger Tapping Task", int(metacoll.INFO['Number of Finger Tapping blocks (5 stimuli per block)']), metacoll.sbINFO.data)
-readingTask = task(rm, 'log_file/testfull.csv', 'log_file/testfullbackup.csv', "Reading Task", int(metacoll.INFO['Number of Reading stimuli']), metacoll.sbINFO.data)
-memTask = task(memtask, 'log_file/testfull.csv','log_file/testfullbackup.csv',"Memory Task", int(metacoll.INFO['Number of Memory stimuli']), metacoll.sbINFO.data)
-tasks = list([memTask, youTask,gonogoTask,fingertapTask,readingTask,friendTask])
+ESQTask = task(taskScripts.ESQ, datafile, datafileBackup, "Experience Sampling Questions", 2, metacoll.sbINFO.data)
+friendTask = task(taskScripts.otherTask, datafile, datafileBackup, "Friend Task", int(metacoll.INFO['Number of "Other" stimuli']), metacoll.sbINFO.data)
+youTask = task(taskScripts.selfTask, datafile, datafileBackup, "You Task", int(metacoll.INFO['Number of "Self" stimuli']), metacoll.sbINFO.data)
+gonogoTask = task(taskScripts.gonogoTask, datafile, datafileBackup, "Go/NoGo Task", int(metacoll.INFO['Number of "Go/No Go" stimuli']), metacoll.sbINFO.data)
+fingertapTask = task(taskScripts.fingertappingTask, datafile, datafileBackup, "Finger Tapping Task", int(metacoll.INFO['Number of Finger Tapping blocks (5 stimuli per block)']), metacoll.sbINFO.data)
+readingTask = task(taskScripts.readingTask, datafile, datafileBackup, "Reading Task", int(metacoll.INFO['Number of Reading stimuli']), metacoll.sbINFO.data)
+memTask = task(taskScripts.memoryTask, datafile, datafileBackup,"Memory Task", int(metacoll.INFO['Number of Memory stimuli']), metacoll.sbINFO.data)
+tasks = list([friendTask])
 
 tbt = taskbattery(tasks, ESQTask, INFO)
 

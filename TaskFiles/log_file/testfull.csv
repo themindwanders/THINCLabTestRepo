@@ -1,15 +1,4 @@
-METADATA:
-Experiment Seed,"Number of ""Go/No Go"" stimuli","Number of ""Other"" stimuli","Number of ""Self"" stimuli",Number of Finger Tapping blocks (5 stimuli per block),Number of Memory stimuli,Number of Reading stimuli,Subject,Version
-1,2,2,2,2,2,2,2,2
-2.8347624000161886
-Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID
-EXPERIMENT DATA:,Memory Task
-Start Time,2.835208399919793
-"('Prompt One', 'started')",3.4794302999507636,,,,Memory Task,1,2
-"('Prompt One', 'ended')",7.481911899987608,,,,Memory Task,1,2
-"('Last week', 'started')",11.492751199984923,,,,Memory Task,1,2
-"('Last week', 'ended')",16.49141489993781,,,,Memory Task,1,2
-EXPERIMENT DATA:,Experience Sampling Questions
-Start Time,21.506025000009686
-ESQ,25.653924699989147,,Focus,5.5,Experience Sampling Questions,1,2
-ESQ,27.10799109993968,,Future,5.5,Experience Sampling Questions,1,2
+EXPERIMENT DATA:,Friend Task
+Start Time,3.0253014999907464
+"['Friend', 'excitable']",8.364783399971202,,,,Friend Task,1,2
+"['Friend', 'cautious']",12.912555599934421,,,,Friend Task,1,2
