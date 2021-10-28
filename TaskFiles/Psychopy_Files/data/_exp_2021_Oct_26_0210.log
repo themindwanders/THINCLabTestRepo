@@ -1,0 +1,45 @@
+0.3490 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+1.1903 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+6.4217 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000018C583F8A90>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000018C58446100>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+6.4218 	EXP 	window1: mouseVisible = True
+6.4218 	EXP 	window1: recordFrameIntervals = False
+6.4901 	EXP 	window1: recordFrameIntervals = True
+6.5666 	EXP 	window1: recordFrameIntervals = False
+6.9077 	EXP 	Created memoryPrompt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='memoryPrompt', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Please recall (PROMPT)', units='height', win=Window(...), wrapWidth=1)
+6.9308 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+6.9311 	EXP 	Created sequence: random, trialTypes=1, nReps=5, seed=None
+6.9313 	EXP 	New trial (rep=0, index=0): None
+7.0738 	EXP 	textbox: autoLog = True
+7.0738 	EXP 	memoryPrompt: autoDraw = True
+7.0738 	EXP 	textbox: autoDraw = True
+10.8132 	DATA 	Keypress: backspace
+11.9991 	DATA 	Keypress: g
+12.1802 	DATA 	Keypress: a
+12.1830 	DATA 	Keypress: s
+12.2023 	DATA 	Keypress: j
+12.3471 	DATA 	Keypress: b
+12.4862 	DATA 	Keypress: a
+12.4994 	DATA 	Keypress: j
+12.4998 	DATA 	Keypress: k
+12.5030 	DATA 	Keypress: s
+12.6116 	DATA 	Keypress: d
+12.7155 	DATA 	Keypress: s
+12.7283 	DATA 	Keypress: a
+13.1734 	DATA 	Keypress: g
+13.2772 	DATA 	Keypress: f
+13.3055 	DATA 	Keypress: s
+13.5145 	DATA 	Keypress: g
+13.6824 	DATA 	Keypress: d
+14.2585 	DATA 	Keypress: return
+15.9869 	DATA 	Keypress: return
+16.3501 	DATA 	Keypress: return
+16.6272 	DATA 	Keypress: return
+17.2371 	DATA 	Keypress: backspace
+17.4939 	DATA 	Keypress: backspace
+17.9192 	DATA 	Keypress: backspace
+18.4333 	DATA 	Mouse: Left button down, pos=(1191,293)
+18.4879 	DATA 	Mouse:  Left button up, pos=(1191,293)
+19.1747 	DATA 	Keypress: return
+19.8827 	DATA 	Keypress: backspace
+24.5992 	DATA 	Keypress: escape
+24.7558 	EXP 	window1: mouseVisible = True
