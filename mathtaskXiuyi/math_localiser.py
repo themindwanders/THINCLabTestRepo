@@ -44,7 +44,7 @@ import numpy as np
 import random
 from collections import OrderedDict
 
-def mathTask(time, win=visual.Window(size=(1280, 800),color='white', winType='pyglet')):
+def mathTask(time, win):
     ### Initialize variables
 
     # file related
@@ -212,7 +212,7 @@ def mathTask(time, win=visual.Window(size=(1280, 800),color='white', winType='py
     # prepare the content on the screen
     # removed height from function
     def prep_cont(line, pos):
-        line_text = visual.TextStim(win,line,color = win_text_col,pos = pos)
+        line_text = visual.TextStim(win,line,color = 'black',pos = 0)
         return line_text
 
     # display the content on the screen
@@ -255,7 +255,7 @@ def mathTask(time, win=visual.Window(size=(1280, 800),color='white', winType='py
 
     def end_exp():
 
-        trigger = prep_cont('End of Experiment',instru_pos,instru_h )
+        trigger = prep_cont('End of Experiment',instru_pos )
         trigger.draw()
         end_onset = win.flip()
         keys = event.waitKeys(keyList =['return'],timeStamped = True)
@@ -278,8 +278,8 @@ def mathTask(time, win=visual.Window(size=(1280, 800),color='white', winType='py
         f=open(filename_fixa,'a')
         
         # prepare fixation and blank screen for drawing
-        fixa = prep_cont('+',word_pos,fixa_h)
-        blank = prep_cont(' ',word_pos,text_h)
+        fixa = prep_cont('+',word_pos)
+        blank = prep_cont(' ',word_pos)
         
         # wait for the scanner to trigger the experiment
         # trigger_exp(curr_dic,trigger_figure)
@@ -315,9 +315,9 @@ def mathTask(time, win=visual.Window(size=(1280, 800),color='white', winType='py
         for trial in all_trials: 
             
             #''' trial is a ordered dictionary. The key is the first raw of the stimuli csv file'''
-            expression = prep_cont(trial['expression'],word_pos,text_h)
-            choice     = prep_cont(trial['choice'][0:4],choice_left_pos,text_h)
-            choice_right = prep_cont(trial['choice'][len(trial['choice'])-4::],choice_right_pos, text_h)
+            expression = prep_cont(trial['expression'],word_pos)
+            choice     = prep_cont(trial['choice'][0:4],choice_left_pos)
+            choice_right = prep_cont(trial['choice'][len(trial['choice'])-4::],choice_right_pos)
 
 
 
@@ -460,4 +460,6 @@ def mathTask(time, win=visual.Window(size=(1280, 800),color='white', winType='py
     #expClock.reset()     
     #    
         
-    # Experiment()   
+    # Experiment()  
+time = core.Clock
+mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet')) 

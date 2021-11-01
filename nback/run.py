@@ -80,9 +80,17 @@ def nback(win, time):
         endtxt = open('./instructions/end_instr.txt', 'r').read().split('#\n')[0]
         end_msg = visual.TextStim(Experiment.window, text=endtxt, color='black',
                                 wrapWidth=1100)
+        
 
         # generate trials
         Experiment.trials = next(trial_generator)
+        listof = []
+        if not trial_generator.gi_frame.f_locals.get('run') == None:
+            for test in trial_generator.gi_frame.f_locals.get('run'):
+                if not test['TrialType'] == 'ExpSample':
+                    listof.append(test)
+        Experiment.trials = listof
+            #if test
         if experiment_info['Environment'] is 'mri':
             # wait trigger
             instructions.waitTrigger(trigger_code)

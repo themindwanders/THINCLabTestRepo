@@ -142,8 +142,10 @@ class responsescreen(object):
         self.keyans = []
 
     def set_trial(self, trial):
+        
         self.duration = trial['stim_duration']
         self.ans = trial['Ans']
+        
         # change color of self.line and self.dash base on go trial task
         if 'NoGo'in trial['TrialType']:
             self.line.fillColor = 'black'
@@ -157,11 +159,12 @@ class responsescreen(object):
 
         elif 'Back' in trial['TrialType']:
             if 'Zero' in trial['TrialType']:
-                self.line.fillColor = self.version['0_back_color']
-                self.dash.fillColor = self.version['0_back_color']
+                self.line.fillColor =  [0,0,1]#self.version['0_back_color']
+                self.dash.fillColor = [0,0,1]
+                self.line.lineColor = [0,0,1]#self.version['0_back_color']
             elif 'One' in trial['TrialType']:
-                self.line.fillColor = self.version['1_back_color']
-                self.dash.fillColor = self.version['1_back_color']
+                self.line.fillColor = [1,0,0] #self.version['1_back_color']
+                self.dash.fillColor = [1,0,0] #self.version['1_back_color']
             else:
                 self.line.fillColor = self.version['loc_color']
                 self.dash.fillColor = self.version['loc_color']
