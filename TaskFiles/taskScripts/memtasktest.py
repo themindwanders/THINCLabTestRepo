@@ -12,7 +12,7 @@ If you publish work using this script the most relevant publication is:
 """
 
 from __future__ import absolute_import, division
-
+import csv
 from psychopy import locale_setup
 from psychopy import prefs
 from psychopy import sound, gui, visual, core, data, event, logging, clock, colors
@@ -97,7 +97,7 @@ key_resp_2 = keyboard.Keyboard()
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
 memoryPrompt = visual.TextStim(win=win, name='memoryPrompt',
-    text='Please recall (PROMPT)',
+    text='',
     font='Open Sans',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
     color='white', colorSpace='rgb', opacity=None, 
@@ -267,7 +267,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials = data.TrialHandler(nReps=5.0, method='random', 
+trials = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=[None],
     seed=None, name='trials')
@@ -306,7 +306,13 @@ for thisTrial in trials:
     _timeToFirstFrame = win.getFutureFlipTime(clock="now")
     trialClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
     frameN = -1
-    
+    a = 0
+    stimlist = []
+    print(os.getcwd())
+    with open(os.getcwd()+"//resources//Memory_Task//Memory_prompts.csv", newline='') as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        for row in spamreader:
+            stimlist.append(row[0].strip())
     # -------Run Routine "trial"-------
     while continueRoutine:
         # get current time
@@ -319,6 +325,7 @@ for thisTrial in trials:
         # *memoryPrompt* updates
         if memoryPrompt.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
+            memoryPrompt.setText(stimlist[a])
             memoryPrompt.frameNStart = frameN  # exact frame index
             memoryPrompt.tStart = t  # local t and not account for scr refresh
             memoryPrompt.tStartRefresh = tThisFlipGlobal  # on global time
@@ -631,7 +638,7 @@ for thisTrial in trials:
     
     # ------Prepare to start Routine "end"-------
     continueRoutine = True
-    routineTimer.add(5.000000)
+    routineTimer.add(45.000000)
     # update component parameters for each repeat
     # keep track of which components have finished
     endComponents = [text_4]
