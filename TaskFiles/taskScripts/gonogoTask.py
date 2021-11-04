@@ -171,9 +171,9 @@ def get_response(input_method, resp_device, timeStamped, myClock):
     sans = ['Helvetica','Gill Sans MT', 'Arial','Verdana'] #use the first font found on this list
 
     #set up instructions and clock (so you can time stamp duration or trials, RT etc..)
-    with open("C://Users//Ian//Documents//GitHub//THINCLabTestRepo//TaskFiles//taskScripts//resources//GoNoGo_Task//GoNoGo_instr_1.txt") as f:
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//GoNoGo_Task//GoNoGo_instr_1.txt") as f:
         lines1 = f.read()
-    with open("C://Users//Ian//Documents//GitHub//THINCLabTestRepo//TaskFiles//taskScripts//resources//GoNoGo_Task//GoNoGo_instr_2.txt") as f:
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//GoNoGo_Task//GoNoGo_instr_2.txt") as f:
         lines2 = f.read()
     instrTxt1 = visual.TextStim(myWin,text=lines1, height = 0.05, color='black')
     # For this task, a series of words and pictures framed by a black box will appear in the centre of the screen. \
@@ -353,21 +353,24 @@ def HelpWin(myClock, myWin, trialnums):
 
     #set up some fonts. If a list is provided, the first font found will be used.
     sans = ['Helvetica','Gill Sans MT', 'Arial','Verdana'] #use the first font found on this list
-
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//GoNoGo_Task//GoNoGo_instr_1.txt") as f:
+        lines1 = f.read()
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//GoNoGo_Task//GoNoGo_instr_2.txt") as f:
+        lines2 = f.read()
+    instrTxt1 = visual.TextStim(myWin,text=lines1, height = 0.05, color='black')
+    # For this task, a series of words and pictures framed by a black box will appear in the centre of the screen. \
+    # Your job is to press the left button every time a stimulus appears, except when that stimulus is an animal. Then, don't press anything. \n\
+    # \nYou will be given around 1 second to respond to each stimulus, after which time, another one will appear. \n\
+    # \nSometimes, instead of words or pictures, you will see a scrambled image framed by a box. In that case, your job is to press the left button \
+    # on the keyboard every time a stimulus appear that is more slanted than the one that is normally presented.\n\
+    # \n(press the left button to continue)
     #set up instructions and clock (so you can time stamp duration or trials, RT etc..)
-    instrTxt1 = visual.TextStim(myWin,text="For this task, a series of words and pictures framed by a black box will appear in the centre of the screen. \
-    Your job is to press the left button every time a stimulus appears, except when that stimulus is an animal. Then, don't press anything. \n\
-    \nYou will be given around 1 second to respond to each stimulus, after which time, another one will appear. \n\
-    \nSometimes, instead of words or pictures, you will see a scrambled image framed by a box. In that case, your job is to press the left button \
-    on the keyboard every time a stimulus appear that is more slanted than the one that is normally presented.\n\
-    \n(press the left button to continue)", height = 0.05, color='black')
-
-    #set up instructions and clock (so you can time stamp duration or trials, RT etc..)
-    instrTxt2 = visual.TextStim(myWin,text="Before each part of the task begins, you will be informed what type of stimuli you will have to attend to by a cue in red (WORD, PICTURE or BOX).\n\
-    \nPlease give equal importance to SPEED and ACCURACY when completing this task. We would like you to respond as FAST as possible while maintaining a high \
-    level of ACCURACY.\n\
-    \nIf you have any questions, please ask the researcher before we start.\n\
-    \nWhen you are ready to begin the task, please press the left button.", height = 0.05, color='black')
+    instrTxt2 = visual.TextStim(myWin,text=lines2, height = 0.05, color='black')
+    # Before each part of the task begins, you will be informed what type of stimuli you will have to attend to by a cue in red (WORD, PICTURE or BOX).\n\
+    # \nPlease give equal importance to SPEED and ACCURACY when completing this task. We would like you to respond as FAST as possible while maintaining a high \
+    # level of ACCURACY.\n\
+    # \nIf you have any questions, please ask the researcher before we start.\n\
+    # \nWhen you are ready to begin the task, please press the left button.
 
     readyTxt = visual.TextStim(myWin, text = 'The experiment will start shortly.', color='black')
     finishTxt = visual.TextStim(myWin, text = 'End of Experiment!', color='black')
@@ -464,16 +467,16 @@ def HelpWin(myClock, myWin, trialnums):
     if trig_collector:
         trig_collector.start()
 
-    readyTxt.draw()
-    myWin.flip()
-    event.waitKeys(keyList=['return'])
+    #readyTxt.draw()
+    #myWin.flip()
+    #event.waitKeys(keyList=['return'])
 
     print ('got here')
 
     if trig_collector:
         trig_collector.waitForVolume(5)
-    else:
-        event.waitKeys(keyList=['return'])
+    #else:
+        #event.waitKeys(keyList=['return'])
 
 
     return scrambled_word, scrambled_pic,input_method,resp_device,Part_ID,sans
@@ -799,9 +802,9 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
                         font=sans, 
                         alignHoriz = 'center',
                         color='black')
-    rest_screen.draw()
-    myWin.flip() 
-    core.wait(5)
+    #rest_screen.draw()
+    #myWin.flip() 
+    #core.wait(5)
 
 def main(logloc, myClock, myWin, writer, resdict, trialnums, runtime):
     #instrTxt1, myWin, instrTxt2, readyTxt, sans, resp_device, Part_ID, f, input_method, nogo_words, go_words, scrambled_pic, scrambled_word, fmri_log, finishTxt = runexp(logloc, myWin)

@@ -605,7 +605,7 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime):
     expInfo['subjName']='b'
     expInfo['run']=''
     # record subjects info and create a csv file with the info about subjects
-    filename, stimuli_file, fixa_file = 'testdataread.csv', "C://Users//Ian//Documents//TaskRepo//sem_stim_run.csv","C://Users//Ian//Documents//TaskRepo//sem_fixa_run.csv"
+    filename, stimuli_file, fixa_file = 'testdataread.csv', os.path.dirname(os.path.abspath(__file__))+ "//resources//Reading_Task//sem_stim_run.csv",os.path.dirname(os.path.abspath(__file__))+ "//resources//Reading_Task//sem_fixa_run.csv"
 
     # if the data does not exist, create one, otherwise,  rename one –filename-repeat-n
     write_file_not_exist(filename)

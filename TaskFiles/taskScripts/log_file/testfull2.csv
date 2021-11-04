@@ -1,0 +1,7 @@
+METADATA:
+Block Runtime,Experiment Seed,"Number of ""Go/No Go"" stimuli","Number of ""Other"" stimuli","Number of ""Self"" stimuli",Number of Finger Tapping blocks (5 stimuli per block),Number of Memory stimuli,Number of Reading stimuli,Subject,Version
+10,1,2,2,2,2,2,2,2,2
+1.8094770000316203
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data
+EXPERIMENT DATA:,Friend Task
+Start Time,1.8102676998823881

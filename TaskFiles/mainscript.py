@@ -111,7 +111,7 @@ fingertapTask = task(taskScripts.fingertappingTask, datafile, datafileBackup, "F
 readingTask = task(taskScripts.readingTask, datafile, datafileBackup, "Reading Task", int(metacoll.INFO['Number of Reading stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']))
 memTask = task(taskScripts.memoryTask, datafile, datafileBackup,"Memory Task", int(metacoll.INFO['Number of Memory stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']))
 tasks = list([friendTask,youTask,gonogoTask,fingertapTask,readingTask,memTask])
-
+#tasks = list([readingTask,memTask])
 tbt = taskbattery(tasks, ESQTask, INFO)
 
 

@@ -90,7 +90,7 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime):
 
     # Initialize components for Routine "Trigger"
     TriggerClock = core.Clock()
-    with open("C://Users//Ian//Documents//GitHub//THINCLabTestRepo//TaskFiles//taskScripts//resources//Fingertapping_Task//Fingertapping_instr.txt") as f:
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//Fingertapping_Task//Fingertapping_instr.txt") as f:
         lines = f.read()
     text = visual.TextStim(win=win, name='text',
         text=lines,

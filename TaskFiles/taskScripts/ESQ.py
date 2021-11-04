@@ -23,7 +23,7 @@ def load_instruction(PATH):
     load and then parse instrucition
     return a list
     '''
-    PATH = "C://Users//Ian//Documents//GitHub//THINCLabTestRepo//TaskFiles//taskScripts//resources//ESQ//ESQ_instr.txt"
+    PATH = os.path.dirname(os.path.abspath(__file__)) + "//resources//ESQ//ESQ_instr.txt"
     print(os.path.dirname(os.path.abspath(__file__)))
     with codecs.open(PATH, 'r', encoding='utf8') as f:
         input_data = f.read()
@@ -214,7 +214,7 @@ def runexp(filename, timer, win, writer, resdict, trialnum, runtime):
             instruction_txt=ESQ_txt, ready_txt=ready_txt, 
             instruction_size=instruction_parameter['inst_size'], instruction_font=instruction_parameter['inst_font'],
             instruction_color='black', parseflag=0)
-    with open("C://Users//Ian//Documents//GitHub//THINCLabTestRepo//TaskFiles//taskScripts//resources//ESQ//ESQ_instr.txt") as f:
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//ESQ//ESQ_instr.txt") as f:
         lines = f.read()
     ESQ_msg.display.setText(lines)
     ESQ_msg.display.draw()
