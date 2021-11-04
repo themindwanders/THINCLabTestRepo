@@ -167,7 +167,7 @@ def get_settings(env, ver):
 
     return settings
 
-def runexp(filename, timer, win, writer, resdict, trialnum):
+def runexp(filename, timer, win, writer, resdict, trialnum, runtime):
     print(os.path.dirname(os.path.abspath(__file__)))
     instr_path = './taskScripts/resources/ESQ/'  # path for instructions
     instr_name = '_instr.txt' # filename (preceded by subtask name) for instructions
@@ -176,8 +176,8 @@ def runexp(filename, timer, win, writer, resdict, trialnum):
     exp_end_name = 'taskend_instr.txt' # instruction: wait trigger screen
     ESQ_name = 'ESQ_instr.txt'
     end_name = 'end_instr.txt'
-    trial_setup_path = './resources/' # path for trial setup
-    fixed_ESQ_name = './taskScripts//resources//ESQ//ESQ_Questions.csv' # experience sampling questions - fixed
+    trial_setup_path = '.' # path for trial setup
+    fixed_ESQ_name = os.path.dirname(os.path.abspath(__file__)) + '//resources//ESQ//ESQ_Questions.csv' # experience sampling questions - fixed
 
     win.flip() 
     
@@ -244,8 +244,12 @@ def runexp(filename, timer, win, writer, resdict, trialnum):
         if enum < trialnum:
             if i < len(ES_fixed.trialList):
                 question = ES_fixed.next()
+                resdict['Timepoint'], resdict['Time'], resdict['Experience Sampling Question'] = 'ESQ', timer.getTime(), str(question['Label'] + "_start")
+                writer.writerow(resdict)
+                resdict['Timepoint'], resdict['Time'],resdict['Experience Sampling Question'],resdict['Experience Sampling Response'], resdict['Auxillary Data'] = None,None,None,None,None
             ratingScale.noResponse = True
-            ratingScale
+            rand = random.randrange(1,10,1)
+            ratingScale.markerStart = rand
             keyState=key.KeyStateHandler()
             win.winHandle.push_handlers(keyState)
 
@@ -273,11 +277,11 @@ def runexp(filename, timer, win, writer, resdict, trialnum):
             time.sleep(1)
             responded = ratingScale.getRating()
 
-            resdict['Timepoint'], resdict['Time'], resdict['Experience Sampling Question'], resdict['Experience Sampling Response'] = 'ESQ', timer.getTime(), str(question['Label']), responded
+            resdict['Timepoint'], resdict['Time'], resdict['Experience Sampling Question'], resdict['Experience Sampling Response'],resdict['Auxillary Data'] = 'ESQ', timer.getTime(), str(question['Label'] + "_response"), responded, str("Marker Started at " + str(rand +1))
             
             writer.writerow(resdict)
             
-            resdict['Timepoint'], resdict['Time'],resdict['Experience Sampling Question'],resdict['Experience Sampling Response'] = None,None,None,None
+            resdict['Timepoint'], resdict['Time'],resdict['Experience Sampling Question'],resdict['Experience Sampling Response'], resdict['Auxillary Data'] = None,None,None,None,None
         
 
     

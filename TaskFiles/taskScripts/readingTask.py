@@ -35,7 +35,7 @@ from psychopy.hardware import keyboard
 
 # Experiment constants
 
-def runexp(logfile, expClock, win, writer, resultdict, numtrial):
+def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime):
     # Experiment constants
     instruct_file = 'semantic_relation_instru.csv' 
     rest_file = 'semantic_relation_judgement_rest.csv'
@@ -255,6 +255,7 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial):
         line.draw()
         win.flip()
         keys = event.waitKeys(keyList =['return','escape'])
+
         if keys[0][0]=='escape':
             shutdown()
 
@@ -308,9 +309,9 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial):
 
     # display each trial on the screen at the appropriate time
     def run_stimuli(stimuli_file,fixa_list, timer, resultdict, writer):
-        resultdict['Timepoint'], resultdict['Time'] = "Reading/Memory start", timer.getTime()
+        resultdict['Timepoint'], resultdict['Time'] = "Reading start", timer.getTime()
         writer.writerow(resultdict)
-
+        resultdict['Timepoint'], resultdict['Time'] = None,None
 
         """
         stimuli file is sem_stim_runi.csv file, including the stimuli for each run
@@ -347,11 +348,15 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial):
         run_onset = win.flip() 
 
         print ('run_onset',run_onset)
-
+        insts = visual.TextStim(win,text="Instructions go here",color = win_text_col)
+        insts.draw()
+        win.flip()
+        event.waitKeys(keyList=['return'], timeStamped=True)
+        trialtimer = core.MonotonicClock()
+        
         for enum, trial in enumerate(all_trials):
-            if enum < numtrial:       
-                resultdict['Timepoint'], resultdict['Time'] = "Reading/Memory trial", timer.getTime()
-                writer.writerow(resultdict)
+            if enum < numtrial and trialtimer.getTime() < runtime:       
+                
                 #''' trial is a ordered dictionary. The key is the first raw of the stimuli csv file'''
 
                 # prepare fixation, clue, probe and target for dispaly
@@ -368,11 +373,10 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial):
                 for i in range (1,16):
                     word = trial['word'+str(i)]
                     sen_list.append(word)
-
-                insts = visual.TextStim(win,text="Instructions go here",color = win_text_col)
-                insts.draw()
-                win.flip()
-                event.waitKeys(keyList=['return'], timeStamped=True)
+                resultdict['Timepoint'], resultdict['Time'], resultdict['Auxillary Data'] = "Reading trial start", timer.getTime(), sen_list
+                writer.writerow(resultdict)
+                resultdict['Timepoint'], resultdict['Time'], resultdict['Auxillary Data'] = None,None,None
+                
 
 
                 # draw fixation and flip the window
@@ -472,11 +476,12 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial):
                         word_onset = win.flip()
                         words_onset.append(word_onset)
 
-                resultdict['Timepoint'], resultdict['Time'] = "Reading/Memory trial ended", timer.getTime()
+                resultdict['Timepoint'], resultdict['Time'] = "Reading trial ended", timer.getTime()
                 writer.writerow(resultdict)
+                resultdict['Timepoint'], resultdict['Time'] = None,None
                 # draw ratings for reading and memory recall trials
                 if trial['task'] != 'xxxxxxxx':
-                    break
+                    continue
                     # draw fixation between sentences and ratings and flip the window
                     fixa.draw()
                     timetodraw = fixa1_onset + fixa_list[fixa_num] + clue_time + task_instr_time + sen_time

@@ -96,7 +96,7 @@ def get_response(input_method, resp_device, timeStamped, myClock):
 
 #Implement absolute paths in any computer
 
-def runexp(logpath, myWin, trialnums):
+#def runexp(logpath, myWin, trialnums):
     # global instrTxt1
     # #global myWin
     # global instrTxt2
@@ -483,648 +483,12 @@ def HelpWin(myClock, myWin, trialnums):
 
 
 
-####### EXPERIMENTAL LOOP #################
-### THIS IS WHERE DATA COLLECTION OCCURS ########
-
-###LOOP 1. TEXT###
-# def Block_A(thisrun, myClock, myWin):
-#     global go_words
-#     random.shuffle(go_words)
-#     global nogo_words
-#     random.shuffle(nogo_words)
-#     global go_box
-#     global nogo_box
-#     global Part_ID
-#     #List of numbers we can select from to determine number of consecutive go trials before a no go 
-#     consecutive_gotrials = [1,2,3,4,5,6]
-#     #length of jitter options in seconds for item and fixation
-#     jitter_item = [0.75,1,1.25]
-#     jitter_fixation = [0.5,0.75,1]
-#     #create a fixation cross
-#     fixation = visual.TextStim(myWin,text='+',color='black')
-#     #SPLIT THE MINIBLOCKS HERE
-#     # if thisrun == 1:
-#     #     slants = ['e', 'h']
-#     # elif thisrun == 2:
-#     #     slants = ['h', 'e']
-#     slants = ['h']
-#     #Cue block 1
-#     Cue1 = visual.TextStim(myWin,text="TEXT",
-#                                 units = 'norm', height = 0.3, pos = (0, 0), rgb=(1,-1,-1))
-#     Cue1.draw()
-#     myWin.flip()
-#     #This will wait for 3 seconds
-#     core.wait(2)
-#     Cue1a = visual.TextStim(myWin,text="Remember: \n\
-# \nPress the LEFT BUTTON if it's an OBJECT.\n\
-# \nDON'T PRESS anything if it's an ANIMAL.",
-# height = 0.1, color='black')
-#     Cue1a.draw()
-#     myWin.flip()
-#     #This will wait for 3 seconds
-#     core.wait(5)
-#     for i in slants:
-#         diff = i
-#         print ('difficulty', diff)
-#         # Number of go trials in the block
-#         remaining_trials = 50
-#         # Keeping a track of how many trials we have completed 
-#         while remaining_trials > 8:
-#             if len(consecutive_gotrials) == 0:
-#                 consecutive_gotrials = [1,2,3,4,5,6]
-#             random_gotrials = np.random.choice(consecutive_gotrials, 1, replace=False)
-#             # As the above line returns a one-value list, we need to select that value so that we have an int to manipulate (this is important for the next line)
-#             number_gotrials = random_gotrials[0]
-#             # select the int number_gotrials from our word list pool - this does not sample without replacement so later we will remove these items from the list to ensure no items are repeated
-#             rand_items = np.random.choice(go_words, number_gotrials,replace=False)
-#             # Then after a random number of go trials we will present a nogo item        
-#             nogo_item = np.random.choice(nogo_words, 1, replace=False) 
-#             #-I made this, trying to choose one of the three box conditions in the xlsx file at random, with replacement.
-#             if diff == 'e':
-#                 cond = 'words easy'
-#             elif diff == 'h':
-#                 cond = 'words hard'
-
-#             # Now we can go through the list line by line and call the stimuli in
-
-#         # Start consecutive_gotrials
-#             for i in range(0, len(rand_items)):
-#                 # Present item 
-#                 #Decide Box
-#                     cointoss = np.random.choice((1, 2), 1)
-#                     # Draw fixation cross
-#                     fixation.draw()
-#                     rand_jitter_fix = random.choice(jitter_fixation)
-#                     myWin.flip()
-#                     core.wait(rand_jitter_fix)
-#                     rt_clock = core.Clock()
-                    
-#                     # Prepare go stimulus each iteration
-#                     go_stimulus = visual.TextStim(myWin, 
-#                                         units='norm',height = 0.1,
-#                                         pos=(0, 0), text=rand_items[i],
-#                                         font=sans, 
-#                                         alignHoriz = 'center',
-#                                         color='black')
-
-#                     if diff == 'e':
-#                         if cointoss[0] == 1:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.22, 0.5), (0.78, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.12, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                     elif diff == 'h':
-#                         if cointoss[0] == 1:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.31, 0.5), (0.69, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.09, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-
-
-#                     durStim = random.choice(jitter_item)
-#                     contTrial=True
-#                     event.clearEvents() #start each trial by clearing event buffer to prevent any previous keys interfering with the current trial
-#                     rt_clock.reset()
-#                     Onset = myClock.getTime()
-                    
-#                     while contTrial and rt_clock.getTime() < durStim:
-#                         go_stimulusv.draw()
-#                         go_stimulus.draw()
-#                         myWin.flip()
-#                         thisResp, thisRT = get_response(input_method, resp_device, myClock)
-#                         RT = 0
-#                         corrAns = 'left'
-#                         isCorrect = 'noResponse'
-#                         if thisResp is not None:
-#                             contTrial = False
-#                             RT = rt_clock.getTime()
-#                             isCorrect = int(thisResp == corrAns)
-#                             if isCorrect == 1:
-#                                 isCorrect = True
-#                             else:
-#                                 isCorrect = False 
-#                     while rt_clock.getTime() < durStim:
-#                         go_stimulusv.draw()
-#                         go_stimulus.draw()
-#                         myWin.flip()
-
-
-#                     #Write data into logfile
-#                     boxtype = 'unknown'
-#                     itemname = rand_items[i]
-#                     if cointoss[0] == 1:
-#                         boxtype = 'square'
-#                     elif cointoss[0] == 2 and diff =='e':
-#                         boxtype = 'easy'
-#                     elif cointoss[0] == 2 and diff == 'h':
-#                         boxtype = 'hard'
-#                     f.write('%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f\n' %(Part_ID,'Block A', cond, 'GO', itemname, boxtype, isCorrect, thisResp, RT, Onset, durStim))
-#                     f.flush()
-#                     remaining_trials = remaining_trials - 1
-
-#         #Start No Go Trial
-#             #Decide Box
-#             cointoss = np.random.choice((1, 2), 1)
-
-#             # Draw fixation point
-#             fixation.draw()
-#             rand_jitter_fix = random.choice(jitter_fixation)
-#             myWin.flip()
-#             core.wait(rand_jitter_fix)
-#             rt_clock = core.Clock()
-            
-#             # Prepare and draw the stimulus
-#             for line_nogo in nogo_item:
-#                     nogo_stimulus = visual.TextStim(myWin, 
-#                                         units='norm',height = 0.1,
-#                                         pos=(0, 0), text=line_nogo,
-#                                         font=sans, 
-#                                         alignHoriz = 'center',
-#                                         color='black')
-
-#                     if diff == 'e':
-#                         if cointoss[0] == 1:
-#                             nogo_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             nogo_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.22, 0.5), (0.78, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.12, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                     elif diff == 'h':
-#                         if cointoss[0] == 1:
-#                             nogo_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             nogo_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.31, 0.5), (0.69, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.09, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-
-#                     durStim = random.choice(jitter_item)
-#                     contTrial=True
-#                     event.clearEvents() #start each trial by clearing event buffer to prevent any previous keys interfering with the current trial
-#                     rt_clock.reset()
-#                     Onset = myClock.getTime()
-#                     while contTrial and rt_clock.getTime() < durStim:
-#                         nogo_stimulusv.draw()
-#                         nogo_stimulus.draw()
-#                         myWin.flip()
-#                         thisResp, thisRT = get_response(input_method, resp_device, myClock)
-#                         RT = 0
-#                         isCorrect = 'noResponse'
-#                         if thisResp is not None:
-#                             contTrial = False
-#                             isCorrect = False
-#                             RT = rt_clock.getTime()
-#                         else:
-#                             isCorrect = True
-                                                        
-#                     while rt_clock.getTime() < durStim:
-#                         nogo_stimulusv.draw()
-#                         nogo_stimulus.draw()
-#                         myWin.flip()
-
-#                     #Write data into logfile
-#                     boxtype = 'unknown'
-#                     itemname = line_nogo
-#                     if cointoss[0] == 1:
-#                         boxtype = 'square'
-#                     elif cointoss[0] == 2 and diff =='e':
-#                         boxtype = 'easy'
-#                     elif cointoss[0] == 2 and diff == 'h':
-#                         boxtype = 'hard'
-#                     f.write('%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f\n' %(Part_ID,'Block A', cond, 'NO GO', itemname, boxtype, isCorrect, thisResp, RT, Onset, durStim))
-#                     f.flush()
-#                     remaining_trials = remaining_trials - 1
-
-
-#             go_words = [ x for x  in go_words if x not in rand_items]
-#             nogo_words = [ x for x  in nogo_words if x not in nogo_item]
-#             consecutive_gotrials = [ x for x in consecutive_gotrials if x not in random_gotrials]
-
-#         # If the while statement is no longer true then do the following
-#         else:
-#             #select the items left in go_items. We use len(go_items) as this value will change on each block
-#                 # When there's less than 8 trials, we choose a random number to complete +4
-#             print ('last run with %i remaining trials' %(remaining_trials))
-#             random.shuffle(go_words)
-#             rand_items = np.random.choice(go_words, (remaining_trials + random.randint(1, 3)), replace=False)
-#             if diff == 'e':
-#                 cond = 'words easy'
-#             elif diff == 'h':
-#                 cond = 'words hard'
-
-
-#             for i in range(0, len(rand_items)):
-#                 #Decide Box
-#                 cointoss = np.random.choice((1, 2), 1)
-                
-#                 # Draw fixation cross
-#                 fixation.draw()
-#                 rand_jitter_fix = random.choice(jitter_fixation)
-#                 myWin.flip()
-#                 core.wait(rand_jitter_fix)
-                
-#                 #prepare consecutive go trials
-#                 go_stimulus = visual.TextStim(myWin, 
-#                                     units='norm',height = 0.1,
-#                                     pos=(0, 0), text=rand_items[i],
-#                                     font=sans, 
-#                                     alignHoriz = 'center',
-#                                     color='black')
-
-#                 if diff == 'e':
-#                     if cointoss[0] == 1:
-#                         go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                 closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                     elif cointoss[0] == 2:
-#                         go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.22, 0.5), (0.78, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                 closeShape=True, pos=(-0.12, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                 elif diff == 'h':
-#                     if cointoss[0] == 1:
-#                         go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                 closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                     elif cointoss[0] == 2:
-#                         go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.31, 0.5), (0.69, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                 closeShape=True, pos=(-0.09, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-
-
-#                     durStim = random.choice(jitter_item)
-#                     contTrial=True
-#                     event.clearEvents() #start each trial by clearing event buffer to prevent any previous keys interfering with the current trial
-#                     rt_clock.reset()
-#                     Onset = myClock.getTime()
-                    
-#                     while contTrial and rt_clock.getTime() < durStim:
-#                         go_stimulusv.draw()
-#                         go_stimulus.draw()
-#                         myWin.flip()
-#                         thisResp, thisRT = get_response(input_method, resp_device, myClock)
-#                         RT = 0
-#                         corrAns = 'left'
-#                         isCorrect = 'noResponse'
-#                         if thisResp is not None:
-#                             contTrial = False
-#                             RT = rt_clock.getTime()
-#                             isCorrect = int(thisResp == corrAns)
-#                             if isCorrect == 1:
-#                                 isCorrect = True
-#                             else:
-#                                 isCorrect = False 
-#                     while rt_clock.getTime() < durStim:
-#                         go_stimulusv.draw()
-#                         go_stimulus.draw()
-#                         myWin.flip()
-                                
-#                     #Write data into logfile
-#                     boxtype = 'unknown'
-#                     itemname = rand_items[i]
-#                     if cointoss[0] == 1:
-#                         boxtype = 'square'
-#                     elif cointoss[0] == 2 and diff =='e':
-#                         boxtype = 'easy'
-#                     elif cointoss[0] == 2 and diff == 'h':
-#                         boxtype = 'hard'
-#                     f.write('%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f\n' %(Part_ID,'Block A', cond, 'GO', itemname, boxtype, isCorrect, thisResp, RT, Onset,durStim))
-#                     f.flush()
-#                     remaining_trials = remaining_trials - 1
-                
-                
-#                 go_words = [ x for x  in go_words if x not in rand_items]
-
-#     # Rest screen goes here
-
-#     rest_screen = visual.TextStim(myWin, 
-#                         units='norm',
-#                         pos=(0, 0), text="5 second rest. The experiment will begin shortly",
-#                         font=sans, 
-#                         alignHoriz = 'center',
-#                         color='black')
-#     rest_screen.draw()
-#     myWin.flip() 
-#     core.wait(5)
-
-
-
-
-###LOOP 2. IMAGE###
-# def Block_B(thisrun, myClock, myWin):
-#     global go_img
-    
-#     random.shuffle(go_img)
-#     global nogo_img
-#     random.shuffle(nogo_img)
-#     global go_words
-#     random.shuffle(go_words)
-#     global nogo_words
-#     random.shuffle(nogo_words)
-#     global go_box
-#     global nogo_box
-#     global Part_ID
-#     #List of numbers we can select from to determine number of consecutive go trials before a no go 
-#     consecutive_gotrials = [1,2,3,4,5,6]
-#     #length of jitter options in seconds for item and fixation
-#     jitter_item = [0.75,1,1.25]
-#     jitter_fixation = [0.5,0.75,1]
-#     #create a fixation cross
-#     fixation = visual.TextStim(myWin,text='+',color='black')
-#     #SPLIT THE MINIBLOCKS HERE
-#     if thisrun == 1:
-#         slants = ['e', 'h']
-#     elif thisrun == 2:
-#         slants = ['h', 'e']
-
-#     #Cue block 2
-#     Cue2 = visual.TextStim(myWin,text="PICTURE",
-#                                 units = 'norm', height = 0.3, pos = (0, 0),  rgb=(1,-1,-1))
-#     Cue2.draw()
-#     myWin.flip()
-#     #This will wait for 3 seconds
-#     core.wait(2)
-#     Cue2a = visual.TextStim(myWin,text="Remember: \n\
-#     \nPress the LEFT BUTTON if it's an OBJECT.\n\
-#     \nDON'T PRESS anything if it's an ANIMAL.",
-#     height = 0.1, color='black')
-#     Cue2a.draw()
-#     myWin.flip()
-#     #This will wait for 3 seconds
-#     core.wait(5)
-#     for i in slants:
-#         diff = i
-#         print ('difficulty', diff)
-#         # Number of go trials in the block
-#         remaining_trials = 50
-#         # Keeping a track of how many trials we have completed 
-#         while remaining_trials > 8:
-#             if len(consecutive_gotrials) == 0:
-#                 consecutive_gotrials = [1,2,3,4,5,6]
-#             random_gotrials = np.random.choice(consecutive_gotrials, 1, replace=False)
-#             # As the above line returns a one-value list, we need to select that value so that we have an int to manipulate (this is important for the next line)
-#             number_gotrials = random_gotrials[0]
-#             # select the int number_gotrials from our word list pool - this does not sample without replacement so later we will remove these items from the list to ensure no items are repeated
-#             rand_items = np.random.choice(go_img, number_gotrials,replace=False)
-#             # Then after a random number of go trials we will present a nogo item
-#             nogo_item = np.random.choice(nogo_img, 1, replace=False)
-#             # This should call the Square box, and store it n times where n is the number of go trials this loop
-#             if diff == 'e':
-#                 cond = 'image easy'
-#             elif diff == 'h':
-#                 cond = 'image hard'
-
-#             # Now we can go through the list line by line and call the stimuli in
-
-#         #Start Consecutive Go Trials
-
-#             for i in range(0, len(rand_items)):
-#                     #Decide Box
-#                     cointoss = np.random.choice((1, 2), 1)
-
-#                     # Draw fixation cross
-#                     fixation.draw()
-#                     rand_jitter_fix = random.choice(jitter_fixation)
-#                     myWin.flip()
-#                     core.wait(rand_jitter_fix)
-#                     rt_clock = core.Clock()
-#                     # Prepare each stimuli each iteration
-#                     go_stimulus = visual.ImageStim(myWin, size=0.44, units='norm',
-#                                         pos=(0, 0), image=rand_items[i])
-
-#                     if diff == 'e':
-#                         if cointoss[0] == 1:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.22, 0.5), (0.78, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.12, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                     elif diff == 'h':
-#                         if cointoss[0] == 1:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.31, 0.5), (0.69, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.09, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-
-#                     durStim = random.choice(jitter_item)
-#                     contTrial=True
-#                     event.clearEvents() #start each trial by clearing event buffer to prevent any previous keys interfering with the current trial
-#                     rt_clock.reset()
-#                     Onset = myClock.getTime()
-                    
-#                     while contTrial and rt_clock.getTime() < durStim:
-#                         go_stimulusv.draw()
-#                         go_stimulus.draw()
-#                         myWin.flip()
-#                         thisResp, thisRT = get_response(input_method, resp_device, myClock)
-#                         RT = 0
-#                         corrAns = 'left'
-#                         isCorrect = 'noResponse'
-#                         if thisResp is not None:
-#                             contTrial = False
-#                             RT = rt_clock.getTime()
-#                             isCorrect = int(thisResp == corrAns)
-#                             if isCorrect == 1:
-#                                 isCorrect = True
-#                             else:
-#                                 isCorrect = False 
-#                     while rt_clock.getTime() < durStim:
-#                         go_stimulusv.draw()
-#                         go_stimulus.draw()
-#                         myWin.flip()
-                        
-#                     #Write data into logfile
-#                     boxtype = 'unknown'
-#                     itemid = rand_items[i].split("\\")
-#                     itemname = itemid[-1][:-4]
-#                     if cointoss[0] == 1:
-#                         boxtype = 'square'
-#                     elif cointoss[0] == 2 and diff =='e':
-#                         boxtype = 'easy'
-#                     elif cointoss[0] == 2 and diff == 'h':
-#                         boxtype = 'hard'
-#                     f.write('%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f\n' %(Part_ID,'Block B', cond, 'GO', itemname, boxtype, isCorrect, thisResp, RT, Onset,durStim))
-#                     f.flush()
-#                     remaining_trials = remaining_trials - 1
-
-
-#         #Start No Go Trial
-#             #Decide Box
-#             cointoss = np.random.choice((1, 2), 1)
-
-#             # Draw fixation point
-#             fixation.draw()
-#             rand_jitter_fix = random.choice(jitter_fixation)
-#             myWin.flip()
-#             core.wait(rand_jitter_fix)
-#             rt_clock = core.Clock()
-            
-#             # Prepare and draw the stimulus
-#             for line_nogo in nogo_item:
-#                     nogo_stimulus = visual.ImageStim(myWin, size=0.44, units='norm',
-#                                         pos=(0, 0), image=line_nogo) 
-
-#                     if diff == 'e':
-#                         if cointoss[0] == 1:
-#                             nogo_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             nogo_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.22, 0.5), (0.78, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.12, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                     elif diff == 'h':
-#                         if cointoss[0] == 1:
-#                             nogo_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             nogo_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.31, 0.5), (0.69, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.09, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-
-
-#                     durStim = random.choice(jitter_item)
-#                     contTrial=True
-#                     event.clearEvents() #start each trial by clearing event buffer to prevent any previous keys interfering with the current trial
-#                     rt_clock.reset()
-#                     Onset = myClock.getTime()
-#                     while contTrial and rt_clock.getTime() < durStim:
-#                         nogo_stimulusv.draw()
-#                         nogo_stimulus.draw()
-#                         myWin.flip()
-#                         thisResp, thisRT = get_response(input_method, resp_device, myClock)
-#                         RT = 0
-#                         isCorrect = 'noResponse'
-#                         if thisResp is not None:
-#                             contTrial = False
-#                             isCorrect = False
-#                             RT = rt_clock.getTime()
-#                         else:
-#                             isCorrect = True
-                                                        
-#                     while rt_clock.getTime() < durStim:
-#                         nogo_stimulusv.draw()
-#                         nogo_stimulus.draw()
-#                         myWin.flip()
-
-#                     #Write data into logfile
-#                     boxtype = 'unknown'
-#                     itemid = nogo_item[0].split("\\")
-#                     itemname = itemid[-1][:-4]
-#                     if cointoss[0] == 1:
-#                         boxtype = 'square'
-#                     elif cointoss[0] == 2 and diff =='e':
-#                         boxtype = 'easy'
-#                     elif cointoss[0] == 2 and diff == 'h':
-#                         boxtype = 'hard'
-#                     f.write('%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f\n' %(Part_ID,'Block B', cond, 'NO GO', itemname, boxtype, isCorrect, thisResp, RT, Onset, durStim))
-#                     f.flush()
-#                     remaining_trials = remaining_trials - 1
-
-#             #This removes the items from the list that you have used (true sampling without replacement) 
-#             go_img = [ x for x  in go_img if x not in rand_items]
-#             nogo_img = [ x for x  in nogo_img if x not in nogo_item]
-#             consecutive_gotrials = [ x for x in consecutive_gotrials if x not in random_gotrials]
-
-
-
-#         # If the while statement is no longer true then do the following
-#         else: 
-#             # When there's less than 8 trials, we choose a random number to complete +4
-#             print ('last run with %i remaining trials' %(remaining_trials))
-#             random.shuffle(go_img)
-#             rand_items = np.random.choice(go_img, (remaining_trials + random.randint(1, 3)),replace=False)
-#             if diff == 'e':
-#                 cond = 'image easy'
-#             elif diff == 'h':
-#                 cond = 'image hard'
-
-
-
-#         #Start the last Go trials sequence to reach n 100
-#             for i in range(0, len(rand_items)):
-#                     #Decide Box
-#                     cointoss = np.random.choice((1, 2), 1)
-
-#                     # Draw fixation cross
-#                     fixation.draw()
-#                     rand_jitter_fix = random.choice(jitter_fixation)
-#                     myWin.flip()
-#                     core.wait(rand_jitter_fix)
-                    
-#                     # Prepare and draw each stimuli each iteration
-#                     go_stimulus = visual.ImageStim(myWin, size=0.44, units='norm',
-#                                         pos=(0, 0), image=go_img[i])
-
-#                     if diff == 'e':
-#                         if cointoss[0] == 1:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.22, 0.5), (0.78, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.12, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                     elif diff == 'h':
-#                         if cointoss[0] == 1:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.41, 0.5), (0.59, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.06, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-#                         elif cointoss[0] == 2:
-#                             go_stimulusv = visual.ShapeStim(myWin, units='', lineWidth=4, lineColor='black', lineColorSpace='rgb', fillColor=None, fillColorSpace='rgb', vertices=((-0.31, 0.5), (0.69, 0.5), (0.5, -0.5), (-0.5, -0.5)), \
-#                                                                     closeShape=True, pos=(-0.09, 0), size=1, ori=0.0, opacity=1.0, contrast=1.0, depth=0, interpolate=True, name=None, autoLog=None, autoDraw=False)
-
-
-#                     durStim = random.choice(jitter_item)
-#                     contTrial=True
-#                     event.clearEvents() #start each trial by clearing event buffer to prevent any previous keys interfering with the current trial
-#                     rt_clock.reset()
-#                     Onset = myClock.getTime()
-                    
-#                     while contTrial and rt_clock.getTime() < durStim:
-#                         go_stimulusv.draw()
-#                         go_stimulus.draw()
-#                         myWin.flip()
-#                         thisResp, thisRT = get_response(input_method, resp_device, myClock)
-#                         RT = 0
-#                         corrAns = 'left'
-#                         isCorrect = 'noResponse'
-#                         if thisResp is not None:
-#                             contTrial = False
-#                             RT = rt_clock.getTime()
-#                             isCorrect = int(thisResp == corrAns)
-#                             if isCorrect == 1:
-#                                 isCorrect = True
-#                             else:
-#                                 isCorrect = False 
-#                     while rt_clock.getTime() < durStim:
-#                         go_stimulusv.draw()
-#                         go_stimulus.draw()
-#                         myWin.flip()
-
-#                     #Write data into logfile
-#                     itemid = go_img[i].split("\\")
-#                     itemname = itemid[-1][:-4]
-#                     if cointoss[0] == 1:
-#                         boxtype = 'square'
-#                     elif cointoss[0] == 2 and diff =='e':
-#                         boxtype = 'easy'
-#                     elif cointoss[0] == 2 and diff == 'h':
-#                         boxtype = 'hard'
-#                     f.write('%s,%s,%s,%s,%s,%s,%s,%s,%f,%f,%f\n' %(Part_ID,'Block B', cond, 'GO', itemname, boxtype, isCorrect, thisResp, RT, Onset, durStim))
-#                     f.flush()
-#                     remaining_trials = remaining_trials - 1
-
-#             go_img = [ x for x  in go_img if x not in rand_items]
-
-
-#     # Rest screen goes here
-
-#     rest_screen = visual.TextStim(myWin, 
-#                         units='norm',
-#                         pos=(0, 0), text="5 second rest. The experiment will begin shortly",
-#                         font=sans, 
-#                         alignHoriz = 'center',
-#                         color='black')
-#     rest_screen.draw()
-#     myWin.flip() 
-#     core.wait(5)
+#
 
 
 
 ###BLOCK C. SCRAMBLED
-def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans, numtrials):
+def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans, numtrials, runtime):
     global go_words
     global nogo_words
     global go_box
@@ -1199,7 +563,11 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
         # Now we can go through the list line by line and call the stimuli in
         d = 0
     #Start Consecutive Go Trials
-        while d < numtrials:
+        tasktimer = core.MonotonicClock()
+        print(tasktimer.getTime())
+        while d < numtrials and tasktimer.getTime() <= runtime:
+            
+            
             random_gotrials = np.random.choice(consecutive_gotrials, 1, replace=False)
             # As the above line returns a one-value list, we need to select that value so that we have an int to manipulate (this is important for the next line)
             number_gotrials = random_gotrials[0]
@@ -1228,11 +596,15 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
                     event.clearEvents() #start each trial by clearing event buffer to prevent any previous keys interfering with the current trial
                     rt_clock.reset()
                     Onset = myClock.getTime()
-                    
+                    resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data']= "Stimulus start", myClock.getTime(), "Type: Go"
+                    writer.writerow(resdict)
+                    resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = None, None,None, None
                     while contTrial and rt_clock.getTime() < durStim:
                         go_stimulusv.draw()
                         go_stimulus.draw()
-                        myWin.flip()
+                        
+                        myWin.flip() #IIIII
+                        
                         thisResp, thisRT = get_response(input_method, resp_device, myClock, myClock)
                         RT = 0
                         corrAns = 'left'
@@ -1243,8 +615,14 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
                             isCorrect = int(thisResp == corrAns)
                             if isCorrect == 1:
                                 isCorrect = True
+                                # resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = "Stimulus end", myClock.getTime(), "Type: Go", isCorrect
+                                # writer.writerow(resdict)
+                                # resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = None, None,None, None
                             else:
                                 isCorrect = False 
+                                
+                       
+                            
                     while rt_clock.getTime() < durStim:
                         go_stimulusv.draw()
                         go_stimulus.draw()
@@ -1252,12 +630,15 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
 
 
                     #Write data into logfile
+                    resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = "Stimulus end", myClock.getTime(), "Type: Go", isCorrect
+                    writer.writerow(resdict)
+                    resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = None, None,None, None
                     boxtype = 'square'
                     itemid = gobox_item[i].split("\\")
                     itemname = itemid[-1][:-4]
                     
-                    resdict['Timepoint'], resdict['Time'], resdict['Is_correct'] = 'Go_task_start', myClock.getTime(), isCorrect
-                    writer.writerow(resdict)
+                    #resdict['Timepoint'], resdict['Time'], resdict['Is_correct'] = 'Go_task_start', myClock.getTime(), isCorrect
+                    #writer.writerow(resdict)
                     
                     
                     
@@ -1293,6 +674,9 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
                         event.clearEvents() #start each trial by clearing event buffer to prevent any previous keys interfering with the current trial
                         rt_clock.reset()
                         Onset = myClock.getTime()
+                        resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'] = "Stimulus start", myClock.getTime(), "Type: NoGo"
+                        writer.writerow(resdict)
+                        resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'] = None, None,None
                         while contTrial and rt_clock.getTime() < durStim:
                             nogo_stimulusv.draw()
                             nogo_stimulus.draw()
@@ -1304,8 +688,12 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
                                 contTrial = False
                                 isCorrect = False
                                 RT = rt_clock.getTime()
+                                # resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = "Stimulus end", myClock.getTime(), "Type: NoGo",isCorrect
+                                # writer.writerow(resdict)
+                                # resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = None, None,None, None
                             else:
                                 isCorrect = True
+                                
                                                             
                         while rt_clock.getTime() < durStim:
                             nogo_stimulusv.draw()
@@ -1313,6 +701,9 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
                             myWin.flip()
 
                 #Write data into logfile
+                        resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = "Stimulus end", myClock.getTime(), "Type: NoGo",isCorrect
+                        writer.writerow(resdict)
+                        resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = None, None,None, None
                         if diff == 'e':
                             boxtype = 'easy'
                         elif diff == 'h':
@@ -1320,8 +711,8 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
                         itemid = nogobox_item[0].split("\\")
                         itemname = itemid[-1][:-4]
                         
-                        resdict['Timepoint'], resdict['Time'], resdict['Is_correct'] = 'NoGo_task_start', myClock.getTime(), isCorrect
-                        writer.writerow(resdict)
+                        #resdict['Timepoint'], resdict['Time'], resdict['Is_correct'] = 'NoGo_task_start', myClock.getTime(), isCorrect
+                       # writer.writerow(resdict)
                         
                         remaining_trials = remaining_trials - 1
                         d = d+1
@@ -1399,7 +790,9 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
         # scrambled_img = []
 
     # Rest screen goes here
-
+    # resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = "Stimulus end", myClock.getTime(), "Type: NoGo",isCorrect
+    # writer.writerow(resdict)
+    # resdict['Timepoint'], resdict['Time'], resdict['Auxillary Data'], resdict['Is_correct'] = None, None,None, None
     rest_screen = visual.TextStim(myWin, 
                         units='norm',
                         pos=(0, 0), text="5 second rest. The experiment will begin shortly",
@@ -1410,7 +803,7 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
     myWin.flip() 
     core.wait(5)
 
-def main(logloc, myClock, myWin, writer, resdict, trialnums):
+def main(logloc, myClock, myWin, writer, resdict, trialnums, runtime):
     #instrTxt1, myWin, instrTxt2, readyTxt, sans, resp_device, Part_ID, f, input_method, nogo_words, go_words, scrambled_pic, scrambled_word, fmri_log, finishTxt = runexp(logloc, myWin)
     scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans = HelpWin(myClock, myWin, trialnums)
     resdict['Timepoint'],resdict['Time'] = 'Go/NoGo Initialized',myClock.getTime()
@@ -1430,7 +823,7 @@ def main(logloc, myClock, myWin, writer, resdict, trialnums):
     #Block_B(thisrun)
     #Block_C(thisrun)
     thisrun = 2
-    Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word,scrambled_pic,input_method,resp_device,Part_ID,sans,trialnums)
+    Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word,scrambled_pic,input_method,resp_device,Part_ID,sans,trialnums, runtime)
     #Block_B(thisrun)
     #Block_A(thisrun)
 
@@ -1453,13 +846,13 @@ def main(logloc, myClock, myWin, writer, resdict, trialnums):
     myWin.flip()
     fin_time=myClock.getTime()
     print(fin_time)
-    event.waitKeys()
+    #event.waitKeys()
     
     
 
-def runexp(logfilelocation, time, myWin, writer,resdict, trialnums):
-    resdict['Timepoint'],resdict['Time'] = 'Self/Other START', time.getTime()
+def runexp(logfilelocation, time, myWin, writer,resdict, trialnums, runtime):
+    resdict['Timepoint'],resdict['Time'] = 'gonogo START', time.getTime()
     writer.writerow(resdict)
     
-    main(logfilelocation, time, myWin, writer, resdict, trialnums)
+    main(logfilelocation, time, myWin, writer, resdict, trialnums, runtime)
 
