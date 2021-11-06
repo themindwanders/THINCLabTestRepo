@@ -19,7 +19,7 @@ rem Using call is required here, see: https://stackoverflow.com/questions/246781
 call %CONDAPATH%\Scripts\activate.bat %ENVPATH%
 
 rem Run a python script in that environment
-python TaskFiles\mainscript.py
+python TaskFiles//mainscript.py
 
 rem Deactivate the environment
 call conda deactivate
@@ -31,3 +31,5 @@ rem conda deactivate
 
 rem One could also use the conda run command
 rem conda run -n someenv python script.py
+
+pause

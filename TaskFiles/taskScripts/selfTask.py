@@ -161,9 +161,12 @@ class my_instructions(object):
     '''
     show instruction and wait for trigger
     '''
-    def __init__(self, window, settings, instruction_txt, ready_txt, instruction_size, instruction_font, instruction_color, parseflag):
+    def __init__(self, window, settings, instruction_txt, ready_txt, instruction_size, instruction_font, instruction_color, parseflag,writer,resdict, timer):
         self.window = window
+        self.writer = writer
         self.settings = settings
+        self.resdict = resdict
+        self.timer = timer
         self.env = settings['env']
         self.instruction_txt = load_instruction(instruction_txt)
         self.ready_txt = load_instruction(ready_txt)[0]
@@ -193,8 +196,14 @@ class my_instructions(object):
         self.display.setText(instext)
         self.display.draw()
         self.window.flip()
+        event.clearEvents()
         
-        event.waitKeys(keyList=['return'])
+
+        self.resdict['Timepoint'] = "Self_Task_Start"
+        self.resdict['Time'] = self.timer.getTime()
+        self.resdict['Response_Key'] = event.waitKeys(keyList=['return'])
+        self.writer.writerow(self.resdict)
+        self.resdict['Timepoint'], self.resdict['Time'], self.resdict['Response_Key'] = None, None, None 
 
     def waitTrigger(self, trigger_code):
         # wait for trigger in mri environment
@@ -331,7 +340,7 @@ def get_settings(env, ver):
 
 
 
-def run_experiment(timer, win, writer, resdict,trialnums):
+def run_experiment(timer, win, writer, resdict,trialnums, runtime):
     
     ##########################################
     # collect participant info
@@ -354,13 +363,13 @@ def run_experiment(timer, win, writer, resdict,trialnums):
     #if experiment_info['Subtask'] in ['Go', 'NoGo']:
     trial_parameter['num_stim'] = 1
     trial_parameter['beep_flag'] = 1
-    del settings['rec_keys'][1]
-    del settings['rec_keyans'][1]
+    #del settings['rec_keys'][1]
+    #del settings['rec_keyans'][1]
     settings['rec_keyans'][0] = 'Go'
     Stim_min[0] = 1500
-    Stim_max[0] = 1500
+    Stim_max[0] = 5000
     ISI_min[0] = 500
-    ISI_max[0] = 1500
+    ISI_max[0] = 500
     ISI_step[0] = 500
     ####################
     ### ****end***** ###
@@ -405,11 +414,13 @@ def run_experiment(timer, win, writer, resdict,trialnums):
         window=win, settings=settings,
         instruction_txt=instr_txt, ready_txt=ready_txt, 
         instruction_size=instruction_parameter['inst_size'], instruction_font=instruction_parameter['inst_font'],
-        instruction_color='black', parseflag=myparse)
+        instruction_color='black', parseflag=myparse, writer=writer, resdict=resdict, timer=timer)
 
 #    if experiment_info['Run'] == '1':
     instructions_run.showf()
     win.flip()
+    trialtimer = core.Clock()
+    trialtimer.reset()
 #    else:
 #        pass
 
@@ -525,11 +536,23 @@ def run_experiment(timer, win, writer, resdict,trialnums):
             if Stim_min[stimcount] == 9999:    # not to display yet (if 999), wait read the next stimuli first (need more codings)
                 print('Do nothing now')
             else:
+                
+                if trialtimer.getTime() >= runtime:
+                    print(trialtimer.getTime())
+                    print(runtime)
+                    if stimcount == 0:
+                        return
                 mytime = cur_stim.show(timer)
 
                 # calculate the duration time
                 if Stim_min[stimcount] == Stim_max[stimcount] or Stim_step[stimcount] == 0:
                     myduration=Stim_min[stimcount]
+                    if stimcount == 1:
+                        resdict['Timepoint'] = str("Start_of_" + trial_stim[1])
+                        resdict['Time'] = mytime
+                        writer.writerow(resdict) 
+                        resdict['Timepoint'], resdict['Time'] = None, None
+                    
                 else:
                     myduration=random.randrange(Stim_min[stimcount], Stim_max[stimcount]+1, Stim_step[stimcount])
                 
@@ -538,17 +561,18 @@ def run_experiment(timer, win, writer, resdict,trialnums):
                     trial_response['keystart_time'], trial_response['resp_key'], trial_response['response'], trial_response['keypress_time'], trial_response['key_RT'] = Get_Response(timer, myduration/1000, settings['rec_keys'], settings['rec_keyans'], trial_parameter['beep_flag'])
                     if trial_parameter['resp_stay'] == 0:  # stay until duration
                         win.flip()  # clear the window
-                        core.wait(myduration/1000 - trial_response['key_RT']) # wait for duration
+                        #core.wait(myduration/1000 - trial_response['key_RT']) # wait for duration
                     
                     for i in range(0, len(list(trial_response.keys()))):
                         trial_output[list(trial_response.keys())[i]]=list(trial_response.items())[i][1]
 
                     # write response to data file
                     #write_csv(logloc, trial_output_headers, trial_output)
-                    resdict['Timepoint'] = trial_stim
+                    resdict['Timepoint'] = str("End_of_" + trial_stim[1])
                     resdict['Time'] = mytime
+                    resdict['Response_Key'] = trial_response['resp_key']
                     writer.writerow(resdict) 
-                    resdict['Timepoint'], resdict['Time'] = None, None
+                    resdict['Timepoint'], resdict['Time'], resdict["Response_Key"] = None, None, None
 
                 # else, it is NOT the last stimuli in trial, wait for presentation of the stimuli
                 else:
@@ -663,7 +687,7 @@ def run_experiment(timer, win, writer, resdict,trialnums):
     #core.quit()
 
 
-def runexp(filename, timer, win, writer, resdict,trialnums):
+def runexp(filename, timer, win, writer, resdict,trialnums, runtime):
     global instruction_parameter
     global trial_output
     global ISI_min
@@ -735,7 +759,7 @@ def runexp(filename, timer, win, writer, resdict,trialnums):
 
     ISI_max = dict([
             (0, 500), # before stim1
-            (1, 1500), # before stim2
+            (1, 500), # before stim2
             (2, 0), # before stim3
             (3, 0), # before stim4
             ])
@@ -751,14 +775,14 @@ def runexp(filename, timer, win, writer, resdict,trialnums):
     # not working -- If Stim_min is set to 99999, the current stim is displayed with the upcoming stimuli (meaning 2 stimuli displayed together)
     Stim_min = dict([
             (0, 800), # before stim1
-            (1, 1500), # before stim2
+            (1, 5500), # before stim2
             (2, 0), # before stim3
             (3, 0), # before stim4
             ])
 
     Stim_max = dict([
             (0, 800), # before stim1
-            (1, 1500), # before stim2
+            (1, 5500), # before stim2
             (2, 0), # before stim3
             (3, 0), # before stim4
             ])
@@ -775,7 +799,7 @@ def runexp(filename, timer, win, writer, resdict,trialnums):
     tr = 2
     trigger_code = '5'
     
-    run_experiment(timer, win, writer, resdict,trialnums)
+    run_experiment(timer, win, writer, resdict,trialnums, runtime)
 
 
 ##########################################
