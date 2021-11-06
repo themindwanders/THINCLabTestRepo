@@ -86,9 +86,20 @@ def nback(win, time):
         Experiment.trials = next(trial_generator)
         listof = []
         if not trial_generator.gi_frame.f_locals.get('run') == None:
+            noGoCount = 0
             for test in trial_generator.gi_frame.f_locals.get('run'):
-                if not test['TrialType'] == 'ExpSample':
-                    listof.append(test)
+                if test['TrialType'] == 'ExpSample':
+                    continue
+
+                if test['TrialType'] == 'NoGo':
+                    noGoCount += 1
+                else:
+                    noGoCount = 0
+                
+                if noGoCount > 8:
+                    continue
+
+                listof.append(test)
         Experiment.trials = listof
             #if test
         if experiment_info['Environment'] is 'mri':

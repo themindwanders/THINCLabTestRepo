@@ -52,7 +52,7 @@ def mathTask(time, win):
     expName = 'MathLocaExp'
     stimuli = 'math_stimuli'
     data_folder = 'data' + '_' +  expName
-    instruct_figure = 'math_instruction.png'
+    instruct_figure = 'math_instr(1.2).png'
     # trigger_figure = 'trigger.png'
     # ready_figure = 'ready.png'
 
@@ -90,8 +90,8 @@ def mathTask(time, win):
     # fixa_h     = 200
     instru_pos = (0,0)
     # instru_h =100
-    choice_right_pos =(-0.5,0)
-    choice_left_pos =(0.5,0)
+    choice_right_pos =(-0.1,0)
+    choice_left_pos =(0.1,0)
     # 
     trigger_instru = 'experiment starts soon'
     ready_instru = 'Do not move head'
@@ -120,24 +120,27 @@ def mathTask(time, win):
         expInfo['expname'] =expName
         # Create a string version of the current year/month/day hour/minute
         expInfo['expdate']=datetime.now().strftime('%Y%m%d_%H%M')
-        expInfo['subjID']=''
-        expInfo['subjName']=''
-        expInfo['run']=''
+        expInfo['subjID']=['1','2']
+        # expInfo['subjName']=''
+        # expInfo['run']=''
         
         # Set up our input dialog
         # Use the 'fixed' argument to stop the user changing the 'expname' parameter
         # Use the 'order' argument to set the order in which to display the fields
-        dlg = gui.DlgFromDict(expInfo,title='input data', fixed = ['expname','expdate'],order =['expname','expdate','subjID','subjName','run'])
-        
+        dlg = gui.DlgFromDict(expInfo,title='input data', fixed = ['expname','expdate'],order =['expname','expdate','subjID'])
+        # dlg = gui.DlgFromDict(expInfo,title='input data', fixed = ['expname','expdate'],order =['expname','expdate','subjID','subjName','run'])
+
         if not dlg.OK:
             print ('User cancelled the experiment')
             core.quit()
     
     # creates a file with a name that is absolute path + info collected from GUI
-        filename = data_folder + os.sep + '%s_%s_%s_%s.csv' %(expInfo['subjID'], expInfo['subjName'], expInfo['expdate'],expInfo['run'])
-        filename_fixa = data_folder + os.sep + '%s_%s_%s_%s_fixa.csv' %(expInfo['subjID'], expInfo['subjName'], expInfo['expdate'],expInfo['run'])
+        # filename = data_folder + os.sep + '%s_%s_%s_%s.csv' %(expInfo['subjID'], expInfo['subjName'], expInfo['expdate'],expInfo['run'])
+        # filename_fixa = data_folder + os.sep + '%s_%s_%s_%s_fixa.csv' %(expInfo['subjID'], expInfo['subjName'], expInfo['expdate'],expInfo['run'])
+        filename = data_folder + os.sep + '%s_%s_.csv' %(expInfo['subjID'], expInfo['expdate'])
+        filename_fixa = data_folder + os.sep + '%s_%s_fixa.csv' %(expInfo['subjID'], expInfo['expdate'])
         
-        stimuli_file = stimuli+expInfo['run']+'.csv'
+        stimuli_file = stimuli+expInfo['subjID']+'.csv'
         return expInfo, filename,stimuli_file,filename_fixa
     # to avoid overwriting the data. Check whether the file exists, if not, create a new one and write the header.
     # Otherwise, rename it - repeat_n
@@ -147,10 +150,10 @@ def mathTask(time, win):
         while True:
             if not os.path.isfile(filename):
                 f = open(filename,'w')
-            # f.write(header)
+            # f.write(header)F
                 break
             else:
-                filename = data_folder + os.sep + '%s_%s_%s_repeat_%s.csv' %(expInfo['subjID'], expInfo['subjName'], expInfo['expdate'],str(repeat_n))
+                filename = data_folder + os.sep + '%s_%s_%s_repeat_%s.csv' %(expInfo['subjID'], expInfo['expdate'],str(repeat_n))
                 repeat_n = repeat_n +  1
 
     # Open a csv file, read through from the first row   # correct
@@ -205,14 +208,14 @@ def mathTask(time, win):
         return win
 
     # read the content in the csv or text file
-    def read_cont (filename):
+    def read_cont(filename):
         f = open(filename,'r')
         return f
 
     # prepare the content on the screen
     # removed height from function
     def prep_cont(line, pos):
-        line_text = visual.TextStim(win,line,color = 'black',pos = 0)
+        line_text = visual.TextStim(win, line, color='black', pos=pos, bold=True)
         return line_text
 
     # display the content on the screen

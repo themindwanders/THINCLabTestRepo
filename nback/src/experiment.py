@@ -148,26 +148,25 @@ class responsescreen(object):
         
         # change color of self.line and self.dash base on go trial task
         if 'NoGo'in trial['TrialType']:
-            self.line.fillColor = 'black'
-            self.dash.fillColor = 'black'
+            self.line.lineColor = 'black'
+            self.dash.lineColor = 'black'
 
         elif 'Recog' in trial['TrialType']:
-            self.line.fillColor = self.version['rec_color']
-            self.dash.fillColor = self.version['rec_color']
+            self.line.lineColor = self.version['rec_color']
+            self.dash.lineColor = self.version['rec_color']
             self.keylist = self.version['rec_keys']
             self.keyans = self.version['rec_keyans']
 
         elif 'Back' in trial['TrialType']:
             if 'Zero' in trial['TrialType']:
-                self.line.fillColor =  [0,0,1]#self.version['0_back_color']
-                self.dash.fillColor = [0,0,1]
-                self.line.lineColor = [0,0,1]#self.version['0_back_color']
+                self.line.lineColor = self.version['0_back_color']
+                self.dash.lineColor = self.version['0_back_color']
             elif 'One' in trial['TrialType']:
-                self.line.fillColor = [1,0,0] #self.version['1_back_color']
-                self.dash.fillColor = [1,0,0] #self.version['1_back_color']
+                self.line.lineColor = self.version['1_back_color']
+                self.dash.lineColor = self.version['1_back_color']
             else:
-                self.line.fillColor = self.version['loc_color']
-                self.dash.fillColor = self.version['loc_color']
+                self.line.lineColor = self.version['loc_color']
+                self.dash.lineColor = self.version['loc_color']
 
             self.keylist = self.version['loc_keys']
             self.keyans = self.version['loc_keyans']
@@ -380,12 +379,13 @@ class instructions(object):
 #        self.instruction_txt[2] = self.instruction_txt[2].replace(
 #                '{KEY_LOC_1}', self.settings['loc_keys'][1].upper())
 
-        self.instruction_txt[1] = self.instruction_txt[1].replace(
+        self.instruction_txt[2] = self.instruction_txt[2].replace(
                 '{0_back_color}', self.settings['0_back_color'].upper())
 
-        self.instruction_txt[1] = self.instruction_txt[1].replace(
+        self.instruction_txt[2] = self.instruction_txt[2].replace(
                 '{1_back_color}', self.settings['1_back_color'].upper())
-        return self.instruction_txt
+        
+        return self.instruction_txt[2]
 
     def show(self):
         # get instruction
