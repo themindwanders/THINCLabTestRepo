@@ -50,7 +50,7 @@ def mathTask(time, win):
     # file related
 
     expName = 'MathLocaExp'
-    stimuli = 'math_stimuli'
+    stimuli = 'new_math_stimuli'
     data_folder = 'data' + '_' +  expName
     instruct_figure = 'math_instr(1.2).png'
     # trigger_figure = 'trigger.png'
