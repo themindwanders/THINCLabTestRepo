@@ -297,6 +297,6 @@ def runexp(filename, timer, win, writer, resdict, trialnum, runtime):
             instruction_txt=end_txt, ready_txt=ready_txt, 
             instruction_size=instruction_parameter['inst_size'], instruction_font=instruction_parameter['inst_font'],
             instruction_color=instruction_parameter['inst_color'], parseflag=0)
-    #end_msg.show()
+    
 
 

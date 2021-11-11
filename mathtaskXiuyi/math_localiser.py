@@ -238,7 +238,7 @@ def mathTask(time, win):
         keys = event.waitKeys(keyList =['return','escape'],timeStamped = True)
         if keys[0][0]=='escape':
             shutdown()
-
+    
     def trigger_exp(path,trigger_figure):
 
         

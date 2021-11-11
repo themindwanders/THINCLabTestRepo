@@ -5,7 +5,7 @@ cwd = os.path.dirname(os.path.abspath(__file__))  # Get the current working dire
 print(cwd)
 os.chdir(cwd)
 
-from . import ESQ, fingertappingTask,gonogoTask,memoryTask,otherTask,readingTask,selfTask
+from . import ESQ, fingertappingTask,gonogoTask,memoryTask,otherTask,readingTask,selfTask,zerobackTask,onebackTask
 # import ESQ
 # import fingertappingTask
 # import gonogoTask

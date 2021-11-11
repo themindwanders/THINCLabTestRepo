@@ -92,6 +92,8 @@ INFO = {
                 'Number of Finger Tapping blocks (5 stimuli per block)': '2',
                 'Number of Reading stimuli': '2',
                 'Number of Memory stimuli': '2',
+                'Number of Zero-Back stimuli': '2',
+                'Number of One-Back stimuli': '2',
                 'Block Runtime': 10
                 }
 print(cwd)
@@ -110,8 +112,11 @@ gonogoTask = task(taskScripts.gonogoTask, datafile, datafileBackup, "Go/NoGo Tas
 fingertapTask = task(taskScripts.fingertappingTask, datafile, datafileBackup, "Finger Tapping Task", int(metacoll.INFO['Number of Finger Tapping blocks (5 stimuli per block)']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']))
 readingTask = task(taskScripts.readingTask, datafile, datafileBackup, "Reading Task", int(metacoll.INFO['Number of Reading stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']))
 memTask = task(taskScripts.memoryTask, datafile, datafileBackup,"Memory Task", int(metacoll.INFO['Number of Memory stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']))
-tasks = list([friendTask,youTask,gonogoTask,fingertapTask,readingTask,memTask])
-#tasks = list([readingTask,memTask])
+zerobackTask = task(taskScripts.zerobackTask, datafile, datafileBackup,"Zero-Back Task", int(metacoll.INFO['Number of Zero-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']))
+onebackTask = task(taskScripts.onebackTask, datafile, datafileBackup,"One-Back Task", int(metacoll.INFO['Number of One-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']))
+
+#tasks = list([friendTask,youTask,gonogoTask,fingertapTask,readingTask,memTask])
+tasks = list([onebackTask])
 tbt = taskbattery(tasks, ESQTask, INFO)
 
 

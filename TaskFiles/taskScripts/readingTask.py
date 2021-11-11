@@ -397,25 +397,6 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime):
 
                 # draw clue and filp the window
                 border = visual.Rect(win, width = 500, fillColor = 'white', lineColor = 'black',pos = (0,0))
-                #border.draw()
-                #clue.draw()
-                #timetodraw = fixa1_onset + fixa_list[fixa_num]
-                # while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
-                #     pass
-                #clue_onset = win.flip()
-                #print ('clue_onset', clue_onset)
-
-                # draw task instruction and filp the window
-                #upper_task = task.upper()
-                #task = visual.TextStim(win,text = upper_task,color = win_text_col,pos = clue_pos)
-                #task.draw()
-                #timetodraw = fixa1_onset + fixa_list[fixa_num] + clue_time
-                # while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
-                #     pass
-                #task_onset = win.flip()
-                #print ('task_onset',task_onset)
-
-                # draw stimuli and flip the window
 
                 words_onset = []
 
@@ -476,9 +457,17 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime):
                         word_onset = win.flip()
                         words_onset.append(word_onset)
 
+
+
                 resultdict['Timepoint'], resultdict['Time'] = "Reading trial ended", timer.getTime()
+
                 writer.writerow(resultdict)
+
                 resultdict['Timepoint'], resultdict['Time'] = None,None
+
+
+
+
                 # draw ratings for reading and memory recall trials
                 if trial['task'] != 'xxxxxxxx':
                     continue

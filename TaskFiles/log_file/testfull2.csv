@@ -1,93 +1,18 @@
 METADATA:
-Block Runtime,Experiment Seed,"Number of ""Go/No Go"" stimuli","Number of ""Other"" stimuli","Number of ""Self"" stimuli",Number of Finger Tapping blocks (5 stimuli per block),Number of Memory stimuli,Number of Reading stimuli,Subject,Version
-10,1,2,2,2,2,2,2,2,2
-150.6332102001179
+Block Runtime,Experiment Seed,"Number of ""Go/No Go"" stimuli","Number of ""Other"" stimuli","Number of ""Self"" stimuli",Number of Finger Tapping blocks (5 stimuli per block),Number of Memory stimuli,Number of One-Back stimuli,Number of Reading stimuli,Number of Zero-Back stimuli,Subject,Version
+10,1,2,2,2,2,2,2,2,2,2,2
+2.589479099959135
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data
-EXPERIMENT DATA:,Friend Task
-Start Time,150.63442940008827
-Other_Task_Start,150.78708210005425,,,,Friend Task,1,2,['return'],
-Start_of_excitable,166.02781240013428,,,,Friend Task,1,2,,
-End_of_excitable,166.02781240013428,,,,Friend Task,1,2,None,
-Start_of_cautious,174.1443002000451,,,,Friend Task,1,2,,
-End_of_cautious,174.1443002000451,,,,Friend Task,1,2,right,
+EXPERIMENT DATA:,One-Back Task
+Start Time,2.590958599932492
+0-Back Start,2.5910519999451935,,,,One-Back Task,1,2,,
+NoGoStimulus Start,8.130962600000203,,,,One-Back Task,1,2,,OneBack
+NoGoStimulus End,9.606231200043112,True,,,One-Back Task,1,2,None,OneBack
+NoGoStimulus Start,11.574214399792254,,,,One-Back Task,1,2,,OneBack
+NoGoStimulus End,12.653754999861121,True,,,One-Back Task,1,2,None,OneBack
 EXPERIMENT DATA:,Experience Sampling Questions
-Start Time,174.6315934001468
-ESQ,177.57070180005394,,Focus_start,,Experience Sampling Questions,1,2,,
-ESQ,184.63159919995815,,Focus_response,4.30000000000001,Experience Sampling Questions,1,2,,Marker Started at 8
-ESQ,184.63228390016593,,Future_start,,Experience Sampling Questions,1,2,,
-ESQ,187.54813490016386,,Future_response,8.100000000000007,Experience Sampling Questions,1,2,,Marker Started at 10
-EXPERIMENT DATA:,You Task
-Start Time,187.5880661001429
-Self_Task_Start,187.6977729999926,,,,You Task,1,2,['return'],
-Start_of_malicious,194.6100040001329,,,,You Task,1,2,,
-End_of_malicious,194.6100040001329,,,,You Task,1,2,right,
-Start_of_mean,199.05968790012412,,,,You Task,1,2,,
-End_of_mean,199.05968790012412,,,,You Task,1,2,right,
-EXPERIMENT DATA:,Experience Sampling Questions
-Start Time,200.31245980015956
-ESQ,203.36691189999692,,Focus_start,,Experience Sampling Questions,1,2,,
-ESQ,207.54928190005012,,Focus_response,5.300000000000002,Experience Sampling Questions,1,2,,Marker Started at 2
-ESQ,207.54992739995942,,Future_start,,Experience Sampling Questions,1,2,,
-ESQ,209.73254500003532,,Future_response,8.0,Experience Sampling Questions,1,2,,Marker Started at 8
-EXPERIMENT DATA:,Go/NoGo Task
-Start Time,209.77397590014152
-gonogo START,209.7739961000625,,,,Go/NoGo Task,1,2,,
-Go/NoGo Initialized,221.8764490999747,,,,Go/NoGo Task,1,2,,
-Stimulus start,225.81499290000647,,,,Go/NoGo Task,1,2,,Type: Go
-Stimulus end,226.8157536999788,noResponse,,,Go/NoGo Task,1,2,,Type: Go
-Stimulus start,227.8897730000317,,,,Go/NoGo Task,1,2,,Type: Go
-Stimulus end,228.64892300008796,False,,,Go/NoGo Task,1,2,,Type: Go
-Go/NoGo Finished,228.68345110001974,,,,Go/NoGo Task,1,2,,
-EXPERIMENT DATA:,Experience Sampling Questions
-Start Time,228.7095896000974
-ESQ,232.18306499999017,,Focus_start,,Experience Sampling Questions,1,2,,
-ESQ,236.79805650003254,,Focus_response,6.899999999999996,Experience Sampling Questions,1,2,,Marker Started at 2
-ESQ,236.79871350014582,,Future_start,,Experience Sampling Questions,1,2,,
-ESQ,239.7646000001114,,Future_response,2.2999999999999994,Experience Sampling Questions,1,2,,Marker Started at 3
-EXPERIMENT DATA:,Finger Tapping Task
-Start Time,239.80159260006621
-Finger Tapping Start,243.6277560000308,,,,Finger Tapping Task,1,2,,
-Finger Tapping Block Start,243.6277560000308,,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial Start,243.6277560000308,,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial End,,True,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial Start,243.6277560000308,,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial End,,True,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial Start,243.6277560000308,,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial End,,True,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial Start,243.6277560000308,,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial End,,True,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial Start,243.6277560000308,,,,Finger Tapping Task,1,2,,
-Finger Tapping Trial End,,True,,,Finger Tapping Task,1,2,,
-EXPERIMENT DATA:,Experience Sampling Questions
-Start Time,266.15749340015464
-ESQ,268.8409945999738,,Focus_start,,Experience Sampling Questions,1,2,,
-ESQ,271.9465684001334,,Focus_response,7.199999999999993,Experience Sampling Questions,1,2,,Marker Started at 4
-ESQ,271.94721939996816,,Future_start,,Experience Sampling Questions,1,2,,
-ESQ,275.47938170004636,,Future_response,3.4000000000000057,Experience Sampling Questions,1,2,,Marker Started at 7
-EXPERIMENT DATA:,Reading Task
-Start Time,275.5254323000554
-Reading start,275.53016109997407,,,,Reading Task,1,2,,
-Reading trial start,280.34838060010225,,,,Reading Task,1,2,,"['Emotions', 'are', 'thought', 'to result', 'from', 'evolution', 'because', 'they', 'provided', 'good', 'solutions to', 'the problems', 'that our', 'ancestors', 'faced.']"
-Reading trial ended,293.9391232000198,,,,Reading Task,1,2,,
-EXPERIMENT DATA:,Experience Sampling Questions
-Start Time,295.5428276001476
-ESQ,298.10191510012373,,Focus_start,,Experience Sampling Questions,1,2,,
-ESQ,301.3120067000855,,Focus_response,5.800000000000011,Experience Sampling Questions,1,2,,Marker Started at 9
-ESQ,301.3126662001014,,Future_start,,Experience Sampling Questions,1,2,,
-ESQ,303.8951795999892,,Future_response,7.799999999999994,Experience Sampling Questions,1,2,,Marker Started at 6
-EXPERIMENT DATA:,Memory Task
-Start Time,303.9320893001277
-Memory Task Starting,304.36661819997244,,,,Memory Task,1,2,,
-Memory Prompt Shown,308.5870531001128,,,,Memory Task,1,2,,
-Text Input Updating,308.58713380014524,,,,Memory Task,1,2,,
-Text Input Submitted,317.1294893999584,,,,Memory Task,1,2,,yurt
-Ready Check Started,321.13913960009813,,,,Memory Task,1,2,,
-Ready Check Ended,324.62884070002474,,,,Memory Task,1,2,,
-Blank Memory Recall Period Started,328.62683190009557,,,,Memory Task,1,2,,
-Blank Memory Recall Period Ended,333.6267206999473,,,,Memory Task,1,2,,
-EXPERIMENT DATA:,Experience Sampling Questions
-Start Time,333.6537018001545
-ESQ,335.2370740000624,,Focus_start,,Experience Sampling Questions,1,2,,
-ESQ,338.47511490015313,,Focus_response,7.599999999999991,Experience Sampling Questions,1,2,,Marker Started at 5
-ESQ,338.4757819001097,,Future_start,,Experience Sampling Questions,1,2,,
-ESQ,341.393657800043,,Future_response,3.5000000000000058,Experience Sampling Questions,1,2,,Marker Started at 7
+Start Time,222.8051249999553
+ESQ,223.8191804997623,,Focus_start,,Experience Sampling Questions,1,2,,
+ESQ,771.4492783001624,,Focus_response,10.0,Experience Sampling Questions,1,2,,Marker Started at 10
+ESQ,771.4496618998237,,Future_start,,Experience Sampling Questions,1,2,,
+ESQ,1490.3630114998668,,Future_response,8.0,Experience Sampling Questions,1,2,,Marker Started at 8
