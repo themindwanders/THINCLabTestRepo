@@ -1,7 +1,12 @@
 METADATA:
-Block Runtime,Experiment Seed,"Number of ""Go/No Go"" stimuli","Number of ""Other"" stimuli","Number of ""Self"" stimuli",Number of Finger Tapping blocks (5 stimuli per block),Number of Memory stimuli,Number of Reading stimuli,Subject,Version
-10,1,2,2,2,2,2,2,2,2
-1.8094770000316203
+Block Runtime,Experiment Seed,"Number of ""Go/No Go"" stimuli","Number of ""Other"" stimuli","Number of ""Self"" stimuli",Number of Finger Tapping blocks (5 stimuli per block),Number of Memory stimuli,Number of One-Back stimuli,Number of Reading stimuli,Number of Zero-Back stimuli,Subject
+10,1,2,2,2,2,2,2,2,2,2
+2.135691500000121
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data
-EXPERIMENT DATA:,Friend Task
-Start Time,1.8102676998823881
+EXPERIMENT DATA:,Zero-Back Task
+Start Time,2.1360168999999587
+0-Back Start,2.136031600000024,,,,Zero-Back Task,1,2,,
+NoGoStimulus Start,6.685617099999945,,,,Zero-Back Task,1,2,,ZeroBack
+NoGoStimulus End,7.785899800000152,True,,,Zero-Back Task,1,2,None,ZeroBack
+NoGoStimulus Start,10.244130000000041,,,,Zero-Back Task,1,2,,ZeroBack
+NoGoStimulus End,10.820629300000292,True,,,Zero-Back Task,1,2,None,ZeroBack
