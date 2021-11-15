@@ -137,7 +137,7 @@ onebackTask = task(taskScripts.onebackTask, datafile, datafileBackup,"One-Back T
 
 # Example of task battery using 0-back and 1-back tasks:
 
-tasks = list([zerobackTask,onebackTask])
+tasks = list([memTask])
 tbt = taskbattery(tasks, ESQTask, INFO)
 if __name__ == "__main__":
        tbt.run_battery()

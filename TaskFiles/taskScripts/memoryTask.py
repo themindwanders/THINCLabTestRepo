@@ -88,7 +88,9 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime):
         languageStyle='LTR',
         depth=0.0);
     key_resp_2 = keyboard.Keyboard()
-
+    with open(os.getcwd() + '/resources/Memory_Task/instructions.txt') as f:
+            lines = f.read()
+    text_2.setText(lines)
     # Initialize components for Routine "trial"
     trialClock = core.Clock()
     memoryPrompt = visual.TextStim(win=win, name='memoryPrompt',

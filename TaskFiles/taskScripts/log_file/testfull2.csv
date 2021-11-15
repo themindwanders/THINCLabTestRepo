@@ -1,12 +1,12 @@
 METADATA:
 Block Runtime,Experiment Seed,"Number of ""Go/No Go"" stimuli","Number of ""Other"" stimuli","Number of ""Self"" stimuli",Number of Finger Tapping blocks (5 stimuli per block),Number of Memory stimuli,Number of One-Back stimuli,Number of Reading stimuli,Number of Zero-Back stimuli,Subject
 10,1,2,2,2,2,2,2,2,2,2
-2.135691500000121
+1.7933022000070196
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data
-EXPERIMENT DATA:,Zero-Back Task
-Start Time,2.1360168999999587
-0-Back Start,2.136031600000024,,,,Zero-Back Task,1,2,,
-NoGoStimulus Start,6.685617099999945,,,,Zero-Back Task,1,2,,ZeroBack
-NoGoStimulus End,7.785899800000152,True,,,Zero-Back Task,1,2,None,ZeroBack
-NoGoStimulus Start,10.244130000000041,,,,Zero-Back Task,1,2,,ZeroBack
-NoGoStimulus End,10.820629300000292,True,,,Zero-Back Task,1,2,None,ZeroBack
+EXPERIMENT DATA:,Memory Task
+Start Time,1.7936297999985982
+Memory Task Starting,2.407049500005087,,,,Memory Task,1,2,,
+Memory Prompt Shown,3.5463094000006095,,,,Memory Task,1,2,,
+Text Input Updating,3.5463564000092447,,,,Memory Task,1,2,,
+Text Input Submitted,3.8478572000021813,,,,Memory Task,1,2,,"Type response here
+"

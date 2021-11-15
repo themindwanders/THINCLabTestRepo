@@ -349,6 +349,9 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime):
 
         print ('run_onset',run_onset)
         insts = visual.TextStim(win,text="Instructions go here",color = win_text_col)
+        with open(os.getcwd() + '/taskScripts/resources/Reading_Task/instructions.txt') as f:
+            lines = f.read()
+        insts.setText(lines)
         insts.draw()
         win.flip()
         event.waitKeys(keyList=['return'], timeStamped=True)
