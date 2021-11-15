@@ -1,6 +1,0 @@
-For this task, a series of words and pictures framed by a black box will appear in the centre of the screen. 
-Your job is to press the left button every time a stimulus appears, except when that stimulus is an animal. Then, don't press anything. 
-You will be given around 1 second to respond to each stimulus, after which time, another one will appear. 
-Sometimes, instead of words or pictures, you will see a scrambled image framed by a box. In that case, your job is to press the left button 
-on the keyboard every time a stimulus appear that is more slanted than the one that is normally presented.
-(press the left button to continue)

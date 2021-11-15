@@ -1,1 +1,0 @@
-The program is now ready and will be triggered automatically by the scanner. Press 't' to proceed manually (e.g. for demo purposes).
