@@ -102,7 +102,7 @@ INFO = {
 
 
 # Main and backup data file
-datafile = str(os.getcwd() + '/log_file/testfull2.csv')
+datafile = str(os.path.dirname(os.path.realpath(__file__)) + '/log_file/testfull2.csv')
 datafileBackup = 'log_file/testfullbackup.csv'
 
 # Run the GUI and save output to logfile
@@ -137,7 +137,7 @@ onebackTask = task(taskScripts.onebackTask, datafile, datafileBackup,"One-Back T
 
 # Example of task battery using 0-back and 1-back tasks:
 
-tasks = list([memTask])
+tasks = list([friendTask,memTask, youTask,gonogoTask,fingertapTask,readingTask,zerobackTask,onebackTask])
 tbt = taskbattery(tasks, ESQTask, INFO)
 if __name__ == "__main__":
        tbt.run_battery()

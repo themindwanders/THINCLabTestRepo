@@ -148,7 +148,7 @@ def load_instruction(PATH):
     return a list
     '''
 
-    PATH = (os.getcwd() + "/taskScripts/resources/Self_Task/Self_instr.txt")
+    PATH = ("./resources/Self_Task/Self_instr.txt")
     with codecs.open(PATH, 'r', encoding='utf8') as f:
         input_data = f.read()
 
@@ -185,7 +185,7 @@ class my_instructions(object):
         return self.instruction_txt
 
     def showf(self):
-        with open(os.getcwd() + '/taskScripts/resources/Self_Task/Self_instr.txt') as f:
+        with open("./resources/Self_Task/Self_instr.txt") as f:
             lines = f.read()
         instext = lines
 
@@ -223,7 +223,7 @@ def load_trials(infile, numoftrials):
     load each row as a dictionary with the headers as the keys
     save the headers in its original order for data saving
     '''
-    infile = (os.getcwd() + "/taskScripts/resources/Self_Task/Self_Stimuli.csv")
+    infile = ("./resources/Self_Task/Self_Stimuli.csv")
     with codecs.open(infile, 'r', encoding='utf8') as f:
         reader = csv.DictReader(f)
         trials = []

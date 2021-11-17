@@ -1,0 +1,56 @@
+50.7287 	WARNING 	RatingScale unnamed RatingScale: len(labels) not equal to len(tickMarks)
+56.7926 	EXP 	window1: recordFrameIntervals = False
+56.8609 	EXP 	window1: recordFrameIntervals = True
+56.9379 	EXP 	window1: recordFrameIntervals = False
+57.2740 	EXP 	Created text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_2', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Insert text here', units='norm', win=Window(...), wrapWidth=1)
+57.2839 	EXP 	Created memoryPrompt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='memoryPrompt', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+57.3029 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+57.3175 	EXP 	Created text_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_3', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+57.3209 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+57.3270 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='You may now stop.', units='norm', win=Window(...), wrapWidth=1)
+57.3287 	DATA 	Keypress: right
+57.3323 	EXP 	text_2: text = 'Memory Task Instructions\n'
+57.3323 	EXP 	textbox: autoLog = True
+57.3323 	EXP 	text_2: autoDraw = True
+57.3704 	DATA 	Keypress: left
+57.7339 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+57.7344 	EXP 	New trial (rep=0, index=0): None
+57.7460 	DATA 	Keypress: return
+57.7575 	EXP 	text_2: autoDraw = False
+57.7575 	EXP 	memoryPrompt: text = 'Prompt One'
+57.7575 	EXP 	memoryPrompt: autoDraw = True
+57.7575 	EXP 	textbox: autoDraw = True
+58.1639 	DATA 	Keypress: return
+58.1862 	EXP 	memoryPrompt: autoDraw = False
+58.1862 	EXP 	textbox: autoDraw = False
+58.1862 	EXP 	text: autoDraw = True
+61.3561 	DATA 	Keypress: left
+61.6552 	DATA 	Keypress: return
+62.1618 	DATA 	Keypress: right
+62.2006 	EXP 	text: autoDraw = False
+62.2006 	EXP 	text: autoDraw = False
+62.2006 	EXP 	text_3: text = 'Press return when you are ready to remember:\n\nType response her\n\n\ne'
+62.2006 	EXP 	text_3: autoDraw = True
+62.3487 	DATA 	Keypress: left
+62.6218 	DATA 	Keypress: return
+62.6313 	EXP 	text_3: autoDraw = False
+62.6313 	EXP 	text: autoDraw = True
+63.6268 	DATA 	Keypress: return
+63.9187 	DATA 	Keypress: return
+64.1968 	DATA 	Keypress: return
+64.5239 	DATA 	Keypress: return
+64.8699 	DATA 	Keypress: return
+65.9184 	DATA 	Keypress: return
+66.5990 	DATA 	Keypress: left
+66.6325 	EXP 	text: autoDraw = False
+66.6325 	EXP 	text: autoDraw = False
+66.6325 	EXP 	text_4: autoDraw = True
+66.7659 	DATA 	Keypress: right
+67.1202 	DATA 	Keypress: return
+68.0506 	DATA 	Keypress: return
+68.7733 	DATA 	Keypress: return
+69.8280 	DATA 	Keypress: return
+70.2308 	DATA 	Keypress: return
+70.7731 	DATA 	Keypress: return
+71.6325 	EXP 	text_4: autoDraw = False
+71.6325 	EXP 	text_4: autoDraw = False
