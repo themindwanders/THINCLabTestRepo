@@ -273,7 +273,7 @@ def get_response(input_method, resp_device, timeStamped, myClock):
 #     trig_collector = None
 
 
-def HelpWin(myClock, myWin, trialnums):
+def HelpWin(myClock, myWin, trialnums,dfile):
     global trig_collector
     
     if sys.platform == 'linux2':
@@ -376,9 +376,9 @@ def HelpWin(myClock, myWin, trialnums):
     finishTxt = visual.TextStim(myWin, text = 'End of Experiment!', color='black')
 
     ######### Set up constant variables outside of loop ############
-
+    dataFile = open(dfile, 'r')
     # read in csv file with conditions on 
-    dataFile = open('resources/GoNoGo_Task/gonogo_stimuli.csv', 'r')
+    #dataFile = open('resources/GoNoGo_Task/gonogo_stimuli.csv', 'r')
     reader = csv.reader(dataFile, delimiter = ',')
 
     #read in first line of the csv file and assign this to the variable header
@@ -399,32 +399,21 @@ def HelpWin(myClock, myWin, trialnums):
     scrambled_word = []
     scrambled_pic = []
     for enum, line in enumerate(lines): # read in row by row from csv file 
+        if line == '\n':
+            continue
         if enum < trialnums:
             data = line.strip().split(',')
-            if data[0] != '':
-                item1 = data[0] # filename of go word i.e., a string of words denoting my stimulus trials - in the first column of my csv file
-                go_words.append(item1)
-            if data[1] != '':
-                item2 = data[1] # filename of nogo word
-                nogo_words.append(item2)
-            Block = data[2]
-            Condition = data[3]
-            if data[4] != '':
-                item3 = (data[4])
+            
+            Block = data[0]
+            Condition = data[1]
+            if data[2] != '':
+                item3 = (data[2])
                 go_box.append(item3)
                 nogo_box.append(item3)
-            if data[5] != '':
-                item4 = (data[5])
-                go_img.append(str(os.getcwd())+'/resources/GoNoGo_Task/'+item4)
-            if data[6] != '':
-                item5 = (str(os.getcwd())+'/resources/GoNoGo_Task/'+data[6])
-                nogo_img.append(item5)
-            if data[7] != '':
-                item6 = (str(os.getcwd())+'/resources/GoNoGo_Task/'+data[7])
+            if data[3] != '':
+                item6 = (str(os.getcwd())+'/resources/GoNoGo_Task/'+data[3])
                 scrambled_word.append(item6)
-            if data[8] != '':
-                item7 = (str(os.getcwd())+'/resources/GoNoGo_Task/'+data[8])
-                scrambled_pic.append(item7)
+            
 
 
     #List of numbers we can select from to determine number of consecutive go trials before a no go 
@@ -806,9 +795,9 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
     #myWin.flip() 
     #core.wait(5)
 
-def main(logloc, myClock, myWin, writer, resdict, trialnums, runtime):
+def main(logloc, myClock, myWin, writer, resdict, trialnums, runtime,dfile):
     #instrTxt1, myWin, instrTxt2, readyTxt, sans, resp_device, Part_ID, f, input_method, nogo_words, go_words, scrambled_pic, scrambled_word, fmri_log, finishTxt = runexp(logloc, myWin)
-    scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans = HelpWin(myClock, myWin, trialnums)
+    scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans = HelpWin(myClock, myWin, trialnums,dfile)
     resdict['Timepoint'],resdict['Time'] = 'Go/NoGo Initialized',myClock.getTime()
     writer.writerow(resdict)
     
@@ -853,9 +842,9 @@ def main(logloc, myClock, myWin, writer, resdict, trialnums, runtime):
     
     
 
-def runexp(logfilelocation, time, myWin, writer,resdict, trialnums, runtime):
+def runexp(logfilelocation, time, myWin, writer,resdict, trialnums, runtime,dfile):
     resdict['Timepoint'],resdict['Time'] = 'gonogo START', time.getTime()
     writer.writerow(resdict)
     
-    main(logfilelocation, time, myWin, writer, resdict, trialnums, runtime)
+    main(logfilelocation, time, myWin, writer, resdict, trialnums, runtime,dfile)
 

@@ -30,7 +30,7 @@ from psychopy.hardware import keyboard
 
 
 
-def runexp(filename, timer, win, writer, resultdict,numtrial, runtime):
+def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
     # Ensure that relative paths start from the same directory as this script
     _thisDir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(_thisDir)

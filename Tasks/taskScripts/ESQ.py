@@ -167,7 +167,7 @@ def get_settings(env, ver):
 
     return settings
 
-def runexp(filename, timer, win, writer, resdict, trialnum, runtime):
+def runexp(filename, timer, win, writer, resdict, trialnum, runtime,dfile):
     print(os.path.dirname(os.path.abspath(__file__)))
     instr_path = './taskScripts/resources/ESQ/'  # path for instructions
     instr_name = '_instr.txt' # filename (preceded by subtask name) for instructions

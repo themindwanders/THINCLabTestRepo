@@ -1894,7 +1894,7 @@ def get_stim_screen(trial, switch_screen, stimulus_screen):
         return stimulus_screen
 
 
-def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime):
+def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime,dfile):
     '''run.py
     build the main program here
     '''

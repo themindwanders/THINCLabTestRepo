@@ -685,7 +685,7 @@ def run_experiment(timer, win, writer, resdict,trialnums, runtime):
     #core.quit()
 
 
-def runexp(filename, timer, win, writer, resdict,trialnums, runtime):
+def runexp(filename, timer, win, writer, resdict,trialnums, runtime,dfile):
     global instruction_parameter
     global trial_output
     global ISI_min
