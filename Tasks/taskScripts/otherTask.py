@@ -215,13 +215,13 @@ class my_instructions(object):
         else: # not supported
             raise Exception('Unknown environment setting')
 
-def load_trials(infile, numoftrials):
+def load_trials(infile, numoftrials, dfile):
     '''
     load each row as a dictionary with the headers as the keys
     save the headers in its original order for data saving
     '''
     print(os.getcwd())
-    infile = "./resources/Other_Task/Other_Stimuli.csv"
+    infile = dfile
     with codecs.open(infile, 'r', encoding='utf8') as f:
         reader = csv.DictReader(f)
         trials = []
@@ -236,14 +236,14 @@ def load_trials(infile, numoftrials):
     return trials, fieldnames
 
 
-def get_trial_generator(subtask, version, run_no, numoftrials):
+def get_trial_generator(subtask, version, run_no, numoftrials, dfile):
 #def get_trial_generator(subtask, version):
     '''
     get the list of parameters (stimuli) from the .csv 
     '''
     
     trial_path = trial_setup_path + subtask + '_' + version + str(run_no) + '.csv'   
-    trialpool, trialhead = load_trials(trial_path, numoftrials)
+    trialpool, trialhead = load_trials(trial_path, numoftrials, dfile)
     
 #    if ESQuestion == 'ES':
 #        question2, _ = load_conditions_dict(random_ESQ_name)       
@@ -338,7 +338,7 @@ def get_settings(env, ver):
 
 
 
-def run_experiment(timer, win, writer, resdict,trialnums, runtime):
+def run_experiment(timer, win, writer, resdict,trialnums, runtime, dfile):
     
     ##########################################
     # collect participant info
@@ -374,7 +374,7 @@ def run_experiment(timer, win, writer, resdict,trialnums, runtime):
     ####################
     
     # set up the trial conditions
-    trials, headers=get_trial_generator("You", 'A', 1, trialnums)
+    trials, headers=get_trial_generator("You", 'A', 1, trialnums, dfile)
     # setup the trial header, used for logging info
     temp = list(trials[1].items())
     mycount = 0
@@ -797,7 +797,7 @@ def runexp(filename, timer, win, writer, resdict,trialnums, runtime,dfile):
     tr = 2
     trigger_code = '5'
     
-    run_experiment(timer, win, writer, resdict,trialnums, runtime)
+    run_experiment(timer, win, writer, resdict,trialnums, runtime, dfile)
 
 
 

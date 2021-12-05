@@ -1894,7 +1894,7 @@ def get_stim_screen(trial, switch_screen, stimulus_screen):
         return stimulus_screen
 
 
-def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime,dfile):
+def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime, dfile):
     '''run.py
     build the main program here
     '''
@@ -1988,7 +1988,15 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime,dfile):
                     continue
 
                 listof.append(test)
-        Experiment.trials = listof
+        import random
+        block_a = random.sample(listof, len(listof)/2)
+        for val in block_a:
+                        listof[:] = [x for x in listof if x != val]
+        block_b = listof
+        if dfile == 'A':
+            Experiment.trials = block_a
+        if dfile == 'B':
+            Experiment.trials = block_b
             #if test
         if experiment_info['Environment'] is 'mri':
             # wait trigger
