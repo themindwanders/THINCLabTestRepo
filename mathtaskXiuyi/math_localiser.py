@@ -43,8 +43,9 @@ import sys, os, errno # to get file system encoding (used in setDir())
 import numpy as np
 import random
 from collections import OrderedDict
+import math_instructions as instr
 
-def mathTask(time, win):
+def mathTask(time, win, writer, resultdict):
     ### Initialize variables
 
     # file related
@@ -95,7 +96,14 @@ def mathTask(time, win):
     # 
     trigger_instru = 'experiment starts soon'
     ready_instru = 'Do not move head'
+    instr_txt = 'math_instr(1.3).txt'
     ### define functions
+
+    #write to resultdict
+    def resultdictWriter(timepoint, iscorrect=None):
+        resultdict['Timepoint'], resultdict['Time'], resultdict['Is_correct'] = timepoint, time.getTime(), iscorrect
+        writer.writerow(resultdict)
+        resultdict['Timepoint'], resultdict['Time'] = None,None
 
     # get the current directory of this script - correct
     def get_pwd():
@@ -226,18 +234,19 @@ def mathTask(time, win):
         if keys[0][0]=='escape':
             shutdown()
     # display instruction figure on the screen
-    def instruct(path,instruct_figure):
-        """
-        path is where the instruct figure stored
-        instruct_figure is the name of instruct_figure
-        """
-        imstim = visual.ImageStim(win,image = os.path.join(path,instruct_figure),pos = instru_pos)
-        imstim.draw()
-        event.clearEvents()
-        instru_onset = win.flip()
-        keys = event.waitKeys(keyList =['return','escape'],timeStamped = True)
-        if keys[0][0]=='escape':
-            shutdown()
+    # def instruct(path,instruct_figure):
+    #     """
+    #     path is where the instruct figure stored
+    #     instruct_figure is the name of instruct_figure
+    #     """
+    #     imstim = visual.ImageStim(win,image = os.path.join(path,instruct_figure),pos = instru_pos)
+    #     imstim.draw()
+    #     event.clearEvents()
+    #     instru_onset = win.flip()
+    #     keys = event.waitKeys(keyList =['return','escape'],timeStamped = True)
+    #     if keys[0][0]=='escape':
+    #         shutdown()
+    instructions = instr.instructions(window=win, instruction_txt=instr_txt)
     
     def trigger_exp(path,trigger_figure):
 
@@ -300,6 +309,7 @@ def mathTask(time, win):
     # draw the first long fixation and flip the window 
 
         fixa.draw()
+        resultdictWriter('fixation cross')
         timetodraw = core.monotonicClock.getTime()
     #        
         while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
@@ -326,6 +336,7 @@ def mathTask(time, win):
 
             # display expression - the start of a new trial
             expression.draw()
+            resultdictWriter('Math Trial Start')
             ideal_trial_onset = float( pretrialFixDur) +float(run_onset) + float( trial['expr_onset'])
             timetodraw = ideal_trial_onset
             while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
@@ -336,13 +347,14 @@ def mathTask(time, win):
             # display choice and ask subjects to press the button 1 or 2
             choice.draw()
             choice_right.draw()
+            resultdictWriter('Choice presented')
             timetodraw = trial_onset + expr_time
             while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
                     pass
             event.clearEvents()
             choice_onset = win.flip()
             keys = event.waitKeys(maxWait = timelimit_deci, keyList =['1','2','3','4','escape'],timeStamped = True)
-            
+            resultdictWriter('Choice made')
 
             # If subjects do not press the key within maxwait time, RT is the timilimit and key is none and it is false
             if keys is None:
@@ -363,6 +375,8 @@ def mathTask(time, win):
                     trial['correct'] = correct
                     trial['KeyPress'] = keypress
 
+                    resultdictWriter('Math Trial End', correct)
+
         
             trial['i_trial_onset'] = float( pretrialFixDur) + float( trial['expr_onset'])
             trial['trial_onset']   = trial_onset - run_onset
@@ -370,6 +384,8 @@ def mathTask(time, win):
             trial['RT'] = RT
             trial['correct'] = correct
             trial['KeyPress'] = keypress
+
+            resultdictWriter('Math Trial End', correct)
             
             blank.draw()
             timetodraw = trial_onset + expr_time + choi_time       
@@ -434,7 +450,10 @@ def mathTask(time, win):
 
 
     # show the instruction
-    instruct(curr_dic,instruct_figure)
+    # instruct(curr_dic,instruct_figure)
+    instructions.show()
+    resultdictWriter('Math Task Start')
+
             
     ### use 
     # Trigger the scanner
@@ -449,6 +468,7 @@ def mathTask(time, win):
 
     ## end of the experiment
     end_exp()
+    resultdictWriter('Math Task End')
     # Lucilla would like to discard some volumes at the beginning of the scanning - Xiuyi.
     # That's why she asked her experiment to wait for 4s to start. - Xiuyi
     # Not useful for the behaviour experiment
@@ -465,4 +485,4 @@ def mathTask(time, win):
         
     # Experiment()  
 time = core.Clock
-mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet')) 
+mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None) 
