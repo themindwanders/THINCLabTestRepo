@@ -370,7 +370,7 @@ def mathTask(time, win, writer, resultdict, data):
     # draw the first long fixation and flip the window 
 
         fixa.draw()
-        # resultdictWriter('fixation cross')
+        resultdictWriter('fixation cross')
         timetodraw = core.monotonicClock.getTime()
     #        
         while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
@@ -394,7 +394,7 @@ def mathTask(time, win, writer, resultdict, data):
 
             # display expression - the start of a new trial
             expression.draw()
-            # resultdictWriter('Math Trial Start')
+            resultdictWriter('Math Trial Start')
             ideal_trial_onset = float( pretrialFixDur) +float(run_onset) + float( trial['expr_onset'])
             timetodraw = ideal_trial_onset
             while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
@@ -405,14 +405,14 @@ def mathTask(time, win, writer, resultdict, data):
             # display choice and ask subjects to press the button 1 or 2
             choice.draw()
             choice_right.draw()
-            # resultdictWriter('Choice presented')
+            resultdictWriter('Choice presented')
             timetodraw = trial_onset + expr_time
             while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
                     pass
             event.clearEvents()
             choice_onset = win.flip()
             keys = event.waitKeys(maxWait = timelimit_deci, keyList =['1','2','3','4','escape'],timeStamped = True)
-            # resultdictWriter('Choice made')
+            resultdictWriter('Choice made')
 
             # If subjects do not press the key within maxwait time, RT is the timilimit and key is none and it is false
             if keys is None:
@@ -433,7 +433,7 @@ def mathTask(time, win, writer, resultdict, data):
                     trial['correct'] = correct
                     trial['KeyPress'] = keypress
                     print(correct)
-                    # resultdictWriter('Math Trial End', correct)
+                    resultdictWriter('Math Trial End', correct)
 
         
             trial['i_trial_onset'] = float( pretrialFixDur) + float( trial['expr_onset'])
@@ -443,7 +443,7 @@ def mathTask(time, win, writer, resultdict, data):
             trial['correct'] = correct
             trial['KeyPress'] = keypress
 
-            # resultdictWriter('Math Trial End', correct)
+            resultdictWriter('Math Trial End', correct)
             
             blank.draw()
             timetodraw = trial_onset + expr_time + choi_time       
@@ -510,7 +510,7 @@ def mathTask(time, win, writer, resultdict, data):
     # show the instruction
     # instruct(curr_dic,instruct_figure)
     instructions.show()
-    # resultdictWriter('Math Task Start')
+    resultdictWriter('Math Task Start')
 
             
     ### use 
@@ -526,7 +526,7 @@ def mathTask(time, win, writer, resultdict, data):
 
     ## end of the experiment
     end_exp()
-    # resultdictWriter('Math Task End')
+    resultdictWriter('Math Task End')
     # Lucilla would like to discard some volumes at the beginning of the scanning - Xiuyi.
     # That's why she asked her experiment to wait for 4s to start. - Xiuyi
     # Not useful for the behaviour experiment
