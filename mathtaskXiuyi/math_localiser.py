@@ -46,20 +46,44 @@ from collections import OrderedDict
 import math_instructions as instr
 import pandas as pd
 
+#Randomly samples a set of 16 trials to create 4 blocks
 def block_generator(difficulty=1, block_num=4):
     path = 'new_math_stimuli' + str(difficulty) + '.csv'
     stimFile = pd.read_csv(path)
     stimFile = stimFile.sample(frac=1)
+
+    headers = stimFile.columns.values
     
+    block_data = []
     data = []
 
-    for i in range(block_num):
-        data.append(stimFile.values.tolist()[(i * 4):(i * 4 + 4)])
+    for block in range(block_num):
+        item = {}
+
+        for trial in range(4):
+            row = block * 4 + trial
+
+            for col in range(len(headers)):
+                item[headers[col]] = stimFile.iat[row, col]
+            
+            block_data.append(item)
+        
+        data.append(block_data)
+        block_data = []
 
     return data
 
+#Takes a list of blocks and returns a list of trials in the now counterbalanced order
+def block_remover(blockSet):
+    result = []
 
-def mathTask(time, win, writer, resultdict, difficulty):
+    for block in blockSet:
+        for trial in block:
+            result.append(trial)
+
+    return result
+
+def mathTask(time, win, writer, resultdict, data):
     ### Initialize variables
 
     # file related
@@ -162,7 +186,7 @@ def mathTask(time, win, writer, resultdict, difficulty):
         filename = data_folder + os.sep + '%s_%s_.csv' %(expInfo['subjID'], expInfo['expdate'])
         filename_fixa = data_folder + os.sep + '%s_%s_fixa.csv' %(expInfo['subjID'], expInfo['expdate'])
         
-        # stimuli_file = stimuli+expInfo['subjID']+'.csv'
+        stimuli_file = data
         return expInfo, filename,stimuli_file,filename_fixa
     # to avoid overwriting the data. Check whether the file exists, if not, create a new one and write the header.
     # Otherwise, rename it - repeat_n
@@ -179,30 +203,30 @@ def mathTask(time, win, writer, resultdict, difficulty):
                 repeat_n = repeat_n +  1
 
     # Open a csv file, read through from the first row   # correct
-    def load_conditions_dict(conditionfile):
+    # def load_conditions_dict(conditionfile):
 
-    #load each row as a dictionary with the headers as the keys
-    #save the headers in its original order for data saving
+    # #load each row as a dictionary with the headers as the keys
+    # #save the headers in its original order for data saving
 
-    # csv.DictReader(f,fieldnames = None): create an object that operates like a regular reader 
-    # but maps the information in each row to an OrderedDict whose keys
-    # are given by the optional fieldnames parameter.
+    # # csv.DictReader(f,fieldnames = None): create an object that operates like a regular reader 
+    # # but maps the information in each row to an OrderedDict whose keys
+    # # are given by the optional fieldnames parameter.
 
-        with open(conditionfile) as csvfile:
-            reader = csv.DictReader(csvfile)
-            trials = []
+    #     with open(conditionfile) as csvfile:
+    #         reader = csv.DictReader(csvfile)
+    #         trials = []
 
-            for row in reader:
-                trials.append(row)
+    #         for row in reader:
+    #             trials.append(row)
         
-        # save field names as a list in order
-            fieldnames = reader.fieldnames  # filenames is the first row, which used as keys of trials
+    #     # save field names as a list in order
+    #         fieldnames = reader.fieldnames  # filenames is the first row, which used as keys of trials
 
-        return trials, fieldnames   # trial is a list, each element is a key-value pair. Key is the 
-                                    # header of that column and value is the corresponding value
+    #     return trials, fieldnames   # trial is a list, each element is a key-value pair. Key is the 
+    #                                 # header of that column and value is the corresponding value
 
-    # Create the log file to store the data of the experiment 
-    # create the header
+    # # Create the log file to store the data of the experiment 
+    # # create the header
 
                 
     def write_header(filename, header):
@@ -293,9 +317,11 @@ def mathTask(time, win, writer, resultdict, difficulty):
     def run_stimuli(stimuli_file):
         # read the stimuli  # re-define, not use numbers, but use keywords
             
-        all_trials, headers = load_conditions_dict(conditionfile=stimuli_file)
+        # all_trials, headers = load_conditions_dict(conditionfile=stimuli_file)
+        all_trials = stimuli_file
+        print(all_trials[0])
+        headers = list(stimuli_file[0].keys())
         headers += ['i_trial_onset','trial_onset','choice_onset','blank_r_onset', 'RT', 'correct','KeyPress']   
-
         # open the result file to write the header
         
         write_header(filename,headers)
@@ -323,7 +349,7 @@ def mathTask(time, win, writer, resultdict, difficulty):
     # draw the first long fixation and flip the window 
 
         fixa.draw()
-        resultdictWriter('fixation cross')
+        # resultdictWriter('fixation cross')
         timetodraw = core.monotonicClock.getTime()
     #        
         while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
@@ -340,37 +366,32 @@ def mathTask(time, win, writer, resultdict, difficulty):
         count = 1 # initiaze count
         
         for trial in all_trials:
-
-
-            
             #''' trial is a ordered dictionary. The key is the first raw of the stimuli csv file'''
             expression = prep_cont(trial['expression'],word_pos)
-            choice     = prep_cont(trial['choice'][0:4],choice_left_pos)
+            choice = prep_cont(trial['choice'][0:4],choice_left_pos)
             choice_right = prep_cont(trial['choice'][len(trial['choice'])-4::],choice_right_pos)
-
-
 
             # display expression - the start of a new trial
             expression.draw()
-            resultdictWriter('Math Trial Start')
+            # resultdictWriter('Math Trial Start')
             ideal_trial_onset = float( pretrialFixDur) +float(run_onset) + float( trial['expr_onset'])
             timetodraw = ideal_trial_onset
-            while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
-                pass
+            # while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
+            #     print(core.monotonicClock.getTime(), (timetodraw - (1/120.0)))
             trial_onset = win.flip()  # when expression is displayed, this is the trial onset
             
             
             # display choice and ask subjects to press the button 1 or 2
             choice.draw()
             choice_right.draw()
-            resultdictWriter('Choice presented')
+            # resultdictWriter('Choice presented')
             timetodraw = trial_onset + expr_time
             while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
                     pass
             event.clearEvents()
             choice_onset = win.flip()
             keys = event.waitKeys(maxWait = timelimit_deci, keyList =['1','2','3','4','escape'],timeStamped = True)
-            resultdictWriter('Choice made')
+            # resultdictWriter('Choice made')
 
             # If subjects do not press the key within maxwait time, RT is the timilimit and key is none and it is false
             if keys is None:
@@ -391,7 +412,7 @@ def mathTask(time, win, writer, resultdict, difficulty):
                     trial['correct'] = correct
                     trial['KeyPress'] = keypress
 
-                    resultdictWriter('Math Trial End', correct)
+                    # resultdictWriter('Math Trial End', correct)
 
         
             trial['i_trial_onset'] = float( pretrialFixDur) + float( trial['expr_onset'])
@@ -401,7 +422,7 @@ def mathTask(time, win, writer, resultdict, difficulty):
             trial['correct'] = correct
             trial['KeyPress'] = keypress
 
-            resultdictWriter('Math Trial End', correct)
+            # resultdictWriter('Math Trial End', correct)
             
             blank.draw()
             timetodraw = trial_onset + expr_time + choi_time       
@@ -462,13 +483,13 @@ def mathTask(time, win, writer, resultdict, difficulty):
 
     # generate the jitter list for the fixation and probe
     # know the number of trials
-    trials, fieldnames = load_conditions_dict(stimuli_file)
+    # trials, fieldnames = load_conditions_dict(stimuli_file)
 
 
     # show the instruction
     # instruct(curr_dic,instruct_figure)
     instructions.show()
-    resultdictWriter('Math Task Start')
+    # resultdictWriter('Math Task Start')
 
             
     ### use 
@@ -484,7 +505,7 @@ def mathTask(time, win, writer, resultdict, difficulty):
 
     ## end of the experiment
     end_exp()
-    resultdictWriter('Math Task End')
+    # resultdictWriter('Math Task End')
     # Lucilla would like to discard some volumes at the beginning of the scanning - Xiuyi.
     # That's why she asked her experiment to wait for 4s to start. - Xiuyi
     # Not useful for the behaviour experiment
@@ -501,5 +522,12 @@ def mathTask(time, win, writer, resultdict, difficulty):
         
     # Experiment()  
 
-#  time = core.Clock
-# mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None) 
+#Creating a set of 8 blocks, 4 easy and 4 hard.
+data = block_generator()
+data2 = block_generator(2)
+data.append(data2)
+random.shuffle(data)
+data = block_remover(data)
+
+time = core.Clock
+mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None, data=data) 
