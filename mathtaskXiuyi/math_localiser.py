@@ -43,6 +43,7 @@ import sys, os, errno # to get file system encoding (used in setDir())
 import numpy as np
 import random
 from collections import OrderedDict
+import math_instructions as instr
 
 def mathTask(time, win):
     ### Initialize variables
@@ -95,6 +96,7 @@ def mathTask(time, win):
     # 
     trigger_instru = 'experiment starts soon'
     ready_instru = 'Do not move head'
+    instr_txt = 'math_instr(1.3).txt'
     ### define functions
 
     # get the current directory of this script - correct
@@ -226,18 +228,19 @@ def mathTask(time, win):
         if keys[0][0]=='escape':
             shutdown()
     # display instruction figure on the screen
-    def instruct(path,instruct_figure):
-        """
-        path is where the instruct figure stored
-        instruct_figure is the name of instruct_figure
-        """
-        imstim = visual.ImageStim(win,image = os.path.join(path,instruct_figure),pos = instru_pos)
-        imstim.draw()
-        event.clearEvents()
-        instru_onset = win.flip()
-        keys = event.waitKeys(keyList =['return','escape'],timeStamped = True)
-        if keys[0][0]=='escape':
-            shutdown()
+    # def instruct(path,instruct_figure):
+    #     """
+    #     path is where the instruct figure stored
+    #     instruct_figure is the name of instruct_figure
+    #     """
+    #     imstim = visual.ImageStim(win,image = os.path.join(path,instruct_figure),pos = instru_pos)
+    #     imstim.draw()
+    #     event.clearEvents()
+    #     instru_onset = win.flip()
+    #     keys = event.waitKeys(keyList =['return','escape'],timeStamped = True)
+    #     if keys[0][0]=='escape':
+    #         shutdown()
+    instructions = instr.instructions(window=win, instruction_txt=instr_txt)
     
     def trigger_exp(path,trigger_figure):
 
@@ -434,7 +437,9 @@ def mathTask(time, win):
 
 
     # show the instruction
-    instruct(curr_dic,instruct_figure)
+    # instruct(curr_dic,instruct_figure)
+    instructions.show()
+
             
     ### use 
     # Trigger the scanner

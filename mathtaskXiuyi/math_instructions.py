@@ -51,4 +51,4 @@ class instructions(object):
             self.display.setText(cur)
             self.display.draw()
             self.window.flip()
-            event.waitKeys(keyList=['return', '1'])
+            event.waitKeys(keyList=['return'])

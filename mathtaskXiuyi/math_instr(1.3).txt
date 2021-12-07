@@ -6,7 +6,7 @@ next to each other representing choices for possible answers.
 Press the button (left/right) corresponding to the correct answer of
 each expression. Try to respond as quickly as possible.
 
-'1' = LEFT      2' = RIGHT
+'1' = LEFT      '2' = RIGHT
 
-Press "enter" to continue.
+Press "Enter" to continue.
 
