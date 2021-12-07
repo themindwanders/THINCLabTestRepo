@@ -161,7 +161,7 @@ def mathTask(time, win, writer, resultdict):
             # f.write(header)F
                 break
             else:
-                filename = data_folder + os.sep + '%s_%s_%s_repeat_%s.csv' %(expInfo['subjID'], expInfo['expdate'],str(repeat_n))
+                filename = data_folder + os.sep + '%s_%s_repeat_%s.csv' %(expInfo['subjID'], expInfo['expdate'],str(repeat_n))
                 repeat_n = repeat_n +  1
 
     # Open a csv file, read through from the first row   # correct
