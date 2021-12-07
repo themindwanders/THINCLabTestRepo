@@ -44,14 +44,28 @@ import numpy as np
 import random
 from collections import OrderedDict
 import math_instructions as instr
+import pandas as pd
 
-def mathTask(time, win, writer, resultdict):
+def block_generator(difficulty=1, block_num=4):
+    path = 'new_math_stimuli' + str(difficulty) + '.csv'
+    stimFile = pd.read_csv(path)
+    stimFile = stimFile.sample(frac=1)
+    
+    data = []
+
+    for i in range(block_num):
+        data.append(stimFile.values.tolist()[(i * 4):(i * 4 + 4)])
+
+    return data
+
+
+def mathTask(time, win, writer, resultdict, difficulty):
     ### Initialize variables
 
     # file related
 
     expName = 'MathLocaExp'
-    stimuli = 'new_math_stimuli'
+    # stimuli = 'new_math_stimuli'
     data_folder = 'data' + '_' +  expName
     instruct_figure = 'math_instr(1.2).png'
     # trigger_figure = 'trigger.png'
@@ -148,7 +162,7 @@ def mathTask(time, win, writer, resultdict):
         filename = data_folder + os.sep + '%s_%s_.csv' %(expInfo['subjID'], expInfo['expdate'])
         filename_fixa = data_folder + os.sep + '%s_%s_fixa.csv' %(expInfo['subjID'], expInfo['expdate'])
         
-        stimuli_file = stimuli+expInfo['subjID']+'.csv'
+        # stimuli_file = stimuli+expInfo['subjID']+'.csv'
         return expInfo, filename,stimuli_file,filename_fixa
     # to avoid overwriting the data. Check whether the file exists, if not, create a new one and write the header.
     # Otherwise, rename it - repeat_n
@@ -325,7 +339,9 @@ def mathTask(time, win, writer, resultdict):
         
         count = 1 # initiaze count
         
-        for trial in all_trials: 
+        for trial in all_trials:
+
+
             
             #''' trial is a ordered dictionary. The key is the first raw of the stimuli csv file'''
             expression = prep_cont(trial['expression'],word_pos)
@@ -484,5 +500,6 @@ def mathTask(time, win, writer, resultdict):
     #    
         
     # Experiment()  
-time = core.Clock
-mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None) 
+
+#  time = core.Clock
+# mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None) 
