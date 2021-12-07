@@ -58,9 +58,8 @@ def block_generator(difficulty=1, block_num=4):
     data = []
 
     for block in range(block_num):
-        item = {}
-
         for trial in range(4):
+            item = {}
             row = block * 4 + trial
 
             for col in range(len(headers)):
@@ -77,11 +76,36 @@ def block_generator(difficulty=1, block_num=4):
 def block_remover(blockSet):
     result = []
 
+    i = 0
+
     for block in blockSet:
         for trial in block:
+            trial['expr_onset'] = i * 3
+            i += 1
+
             result.append(trial)
 
     return result
+
+def new_csv_creator(dictList):
+    newData = {}
+    
+    for d in dictList:
+        print(d)
+        keys = list(d.keys())
+
+        for key in keys:
+            value = d[key]
+
+            if key in newData:
+                newData[key].append(value)
+            else:
+                newData[key] = [value]
+
+    df = pd.DataFrame(newData)
+    csvName = "math_blocks/mathBlock.csv"
+    df.to_csv(csvName)
+    return csvName
 
 def mathTask(time, win, writer, resultdict, data):
     ### Initialize variables
@@ -203,30 +227,30 @@ def mathTask(time, win, writer, resultdict, data):
                 repeat_n = repeat_n +  1
 
     # Open a csv file, read through from the first row   # correct
-    # def load_conditions_dict(conditionfile):
+    def load_conditions_dict(conditionfile):
 
-    # #load each row as a dictionary with the headers as the keys
-    # #save the headers in its original order for data saving
+    #load each row as a dictionary with the headers as the keys
+    #save the headers in its original order for data saving
 
-    # # csv.DictReader(f,fieldnames = None): create an object that operates like a regular reader 
-    # # but maps the information in each row to an OrderedDict whose keys
-    # # are given by the optional fieldnames parameter.
+    # csv.DictReader(f,fieldnames = None): create an object that operates like a regular reader 
+    # but maps the information in each row to an OrderedDict whose keys
+    # are given by the optional fieldnames parameter.
 
-    #     with open(conditionfile) as csvfile:
-    #         reader = csv.DictReader(csvfile)
-    #         trials = []
+        with open(conditionfile) as csvfile:
+            reader = csv.DictReader(csvfile)
+            trials = []
 
-    #         for row in reader:
-    #             trials.append(row)
+            for row in reader:
+                trials.append(row)
         
-    #     # save field names as a list in order
-    #         fieldnames = reader.fieldnames  # filenames is the first row, which used as keys of trials
+        # save field names as a list in order
+            fieldnames = reader.fieldnames  # filenames is the first row, which used as keys of trials
 
-    #     return trials, fieldnames   # trial is a list, each element is a key-value pair. Key is the 
-    #                                 # header of that column and value is the corresponding value
+        return trials, fieldnames   # trial is a list, each element is a key-value pair. Key is the 
+                                    # header of that column and value is the corresponding value
 
-    # # Create the log file to store the data of the experiment 
-    # # create the header
+    # Create the log file to store the data of the experiment 
+    # create the header
 
                 
     def write_header(filename, header):
@@ -317,10 +341,7 @@ def mathTask(time, win, writer, resultdict, data):
     def run_stimuli(stimuli_file):
         # read the stimuli  # re-define, not use numbers, but use keywords
             
-        # all_trials, headers = load_conditions_dict(conditionfile=stimuli_file)
-        all_trials = stimuli_file
-        print(all_trials[0])
-        headers = list(stimuli_file[0].keys())
+        all_trials, headers = load_conditions_dict(conditionfile=stimuli_file)
         headers += ['i_trial_onset','trial_onset','choice_onset','blank_r_onset', 'RT', 'correct','KeyPress']   
         # open the result file to write the header
         
@@ -359,25 +380,25 @@ def mathTask(time, win, writer, resultdict, data):
         
         print ('----run_onset is : ---',run_onset)
         
-    #    timetodraw = run_onset + pretrialFixDur
-    #    while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
-    #        pass
+        timetodraw = run_onset + pretrialFixDur
+        while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
+            pass
         
         count = 1 # initiaze count
         
         for trial in all_trials:
             #''' trial is a ordered dictionary. The key is the first raw of the stimuli csv file'''
             expression = prep_cont(trial['expression'],word_pos)
-            choice = prep_cont(trial['choice'][0:4],choice_left_pos)
-            choice_right = prep_cont(trial['choice'][len(trial['choice'])-4::],choice_right_pos)
+            choice = prep_cont(trial['choice'][0:4],choice_right_pos)
+            choice_right = prep_cont(trial['choice'][len(trial['choice'])-4::],choice_left_pos)
 
             # display expression - the start of a new trial
             expression.draw()
             # resultdictWriter('Math Trial Start')
             ideal_trial_onset = float( pretrialFixDur) +float(run_onset) + float( trial['expr_onset'])
             timetodraw = ideal_trial_onset
-            # while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
-            #     print(core.monotonicClock.getTime(), (timetodraw - (1/120.0)))
+            while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
+                pass
             trial_onset = win.flip()  # when expression is displayed, this is the trial onset
             
             
@@ -411,7 +432,7 @@ def mathTask(time, win, writer, resultdict, data):
                     trial['RT']=RT
                     trial['correct'] = correct
                     trial['KeyPress'] = keypress
-
+                    print(correct)
                     # resultdictWriter('Math Trial End', correct)
 
         
@@ -483,7 +504,7 @@ def mathTask(time, win, writer, resultdict, data):
 
     # generate the jitter list for the fixation and probe
     # know the number of trials
-    # trials, fieldnames = load_conditions_dict(stimuli_file)
+    trials, fieldnames = load_conditions_dict(stimuli_file)
 
 
     # show the instruction
@@ -525,9 +546,13 @@ def mathTask(time, win, writer, resultdict, data):
 #Creating a set of 8 blocks, 4 easy and 4 hard.
 data = block_generator()
 data2 = block_generator(2)
-data.append(data2)
+
+for d in data2:
+    data.append(d)
+
 random.shuffle(data)
 data = block_remover(data)
+data = new_csv_creator(data)
 
 time = core.Clock
 mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None, data=data) 
