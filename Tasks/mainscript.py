@@ -95,8 +95,9 @@ class task(taskbattery,metadatacollection):
                 b = self.l
                 for val in self.ver_a:
                         b[:] = [x for x in b if x != val]
-                self.ver_b = b.insert(0,self.headers)
-                self.ver_a = self.ver_a.insert(0, self.headers)
+                b.insert(0,*[self.headers])
+                self.ver_b = b
+                self.ver_a.insert(0, self.headers)
                 lis = [self.ver_a,self.ver_b]
                 for enum, thing in enumerate(lis):
                         print(os.getcwd())
