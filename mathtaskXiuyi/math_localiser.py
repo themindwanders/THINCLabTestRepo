@@ -552,9 +552,9 @@ data2 = block_generator(2)
 for d in data2:
     data.append(d)
 
-# random.shuffle(data)
-# data = block_remover(data)
-# data = new_csv_creator(data)
+random.shuffle(data)
+data = block_remover(data)
+data = new_csv_creator(data)
 
-# time = core.Clock
-# mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None, data=data) 
+time = core.Clock
+mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None, data=data) 
