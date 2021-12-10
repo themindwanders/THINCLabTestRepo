@@ -47,7 +47,7 @@ import math_instructions as instr
 import pandas as pd
 
 #Randomly samples a set of 16 trials to create 4 blocks
-def block_generator(difficulty=1, block_num=4):
+def block_generator(difficulty=1, block_num=4, trial_num=8):
     path = 'new_math_stimuli' + str(difficulty) + '.csv'
     stimFile = pd.read_csv(path)
     stimFile = stimFile.sample(frac=1)
@@ -58,9 +58,9 @@ def block_generator(difficulty=1, block_num=4):
     data = []
 
     for block in range(block_num):
-        for trial in range(4):
+        for trial in range(trial_num):
             item = {}
-            row = block * 4 + trial
+            row = block * trial_num + trial
 
             for col in range(len(headers)):
                 item[headers[col]] = stimFile.iat[row, col]
@@ -545,14 +545,16 @@ def mathTask(time, win, writer, resultdict, data):
 
 #Creating a set of 8 blocks, 4 easy and 4 hard.
 data = block_generator()
+print(len(data[0]))
+print(data)
 data2 = block_generator(2)
 
 for d in data2:
     data.append(d)
 
-random.shuffle(data)
-data = block_remover(data)
-data = new_csv_creator(data)
+# random.shuffle(data)
+# data = block_remover(data)
+# data = new_csv_creator(data)
 
-time = core.Clock
-mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None, data=data) 
+# time = core.Clock
+# mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None, data=data) 
