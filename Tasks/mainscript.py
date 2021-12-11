@@ -76,7 +76,7 @@ class task(taskbattery,metadatacollection):
                 self.ver = ver
                 self.dfile = dfile
         def initvers(self):
-                f = open(self.dfile, 'r')
+                f = open(os.path.join("C://Users//Ian//Documents//GitHub//THINCLabTestRepo//Tasks//taskScripts", self.dfile), 'r')
                 d_reader = csv.DictReader(f)
 
                 #get fieldnames from DictReader object and store in list
@@ -176,8 +176,8 @@ gonogoTask = task(taskScripts.gonogoTask, datafile, datafileBackup, "GoNoGo Task
 fingertapTask = task(taskScripts.fingertappingTask, datafile, datafileBackup, "Finger Tapping Task", int(metacoll.INFO['Number of Finger Tapping blocks (5 stimuli per block)']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources/GoNoGo_Task/gonogo_stimuli.csv', 1)
 readingTask = task(taskScripts.readingTask, datafile, datafileBackup, "Reading Task", int(metacoll.INFO['Number of Reading stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),"resources/Reading_Task/sem_stim_run.csv", 1)
 memTask = task(taskScripts.memoryTask, datafile, datafileBackup,"Memory Task", int(metacoll.INFO['Number of Memory stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources/Memory_Task/Memory_prompts.csv', 1)
-zerobackTask = task(taskScripts.zerobackTask, datafile, datafileBackup,"Zero-Back Task", int(metacoll.INFO['Number of Zero-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'A', 1)
-onebackTask = task(taskScripts.onebackTask, datafile, datafileBackup,"One-Back Task", int(metacoll.INFO['Number of One-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'A', 1)
+zerobackTask = task(taskScripts.zerobackTask, datafile, datafileBackup,"Zero-Back Task", int(metacoll.INFO['Number of Zero-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//ZeroBack_Task//ConditionsSpecifications_ES_zeroback.csv', 1)
+onebackTask = task(taskScripts.onebackTask, datafile, datafileBackup,"One-Back Task", int(metacoll.INFO['Number of One-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//ZeroBack_Task//ConditionsSpecifications_ES_oneback.csv', 1)
 #Block 2
 
 friendTask2 = task(taskScripts.otherTask, datafile, datafileBackup, "Friend Task", int(metacoll.INFO['Number of "Other" stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources/Other_Task/Other_Stimuli.csv', 2)
@@ -186,11 +186,11 @@ gonogoTask2 = task(taskScripts.gonogoTask, datafile, datafileBackup, "GoNoGo Tas
 fingertapTask2 = task(taskScripts.fingertappingTask, datafile, datafileBackup, "Finger Tapping Task", int(metacoll.INFO['Number of Finger Tapping blocks (5 stimuli per block)']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources/GoNoGo_Task/gonogo_stimuli.csv', 2)
 readingTask2 = task(taskScripts.readingTask, datafile, datafileBackup, "Reading Task", int(metacoll.INFO['Number of Reading stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),"resources/Reading_Task/sem_stim_run.csv", 2)
 memTask2 = task(taskScripts.memoryTask, datafile, datafileBackup,"Memory Task", int(metacoll.INFO['Number of Memory stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources/Memory_Task/Memory_prompts.csv', 2)
-zerobackTask2 = task(taskScripts.zerobackTask, datafile, datafileBackup,"Zero-Back Task", int(metacoll.INFO['Number of Zero-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'B', 2)
-onebackTask2 = task(taskScripts.onebackTask, datafile, datafileBackup,"One-Back Task", int(metacoll.INFO['Number of One-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'B', 2)
+zerobackTask2 = task(taskScripts.zerobackTask, datafile, datafileBackup,"Zero-Back Task", int(metacoll.INFO['Number of Zero-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//ZeroBack_Task//ConditionsSpecifications_ES_zeroback.csv', 2)
+onebackTask2 = task(taskScripts.onebackTask, datafile, datafileBackup,"One-Back Task", int(metacoll.INFO['Number of One-Back stimuli']), metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//ZeroBack_Task//ConditionsSpecifications_ES_oneback.csv', 2)
 # Example of defining a full battery:
-tasks = list([friendTask,youTask,gonogoTask,fingertapTask,readingTask,memTask])
-
+#tasks = list([friendTask2,youTask2,gonogoTask2,fingertapTask2,readingTask2,memTask])
+tasks = list([zerobackTask2,onebackTask2])
 # Example of defining a one-task battery (for testing):
 # tasks = list([onebackTask])
 

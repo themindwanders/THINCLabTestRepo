@@ -1,0 +1,5 @@
+﻿trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,text_2.started,text_2.stopped,key_resp_2.keys,key_resp_2.rt,key_resp_2.started,key_resp_2.stopped,memoryPrompt.started,memoryPrompt.stopped,textbox.text,textbox.started,textbox.stopped,key_resp.keys,key_resp.rt,key_resp.started,key_resp.stopped,text.started,text.stopped,text_3.started,text_3.stopped,key_resp_3.keys,key_resp_3.rt,key_resp_3.started,key_resp_3.stopped,text_4.started,text_4.stopped,participant,session,date,expName,psychopyVersion,frameRate,
+,,,,9160.82692739999,None,return,0.5919792000058806,9160.82692739999,None,,,,,,,,,,,,,,,,,,,,,001,2021_Dec_08_2233,exp,2021.2.3,142.65233486007625,
+0,0,0,0,,,,,,,9161.453526600002,None,"Type response here
+
+",9161.453526600002,None,return,1.4434157000068808,9161.453526600002,None,9167.584199499994,None,9166.926257499988,None,return,0.6415544999908889,9166.926257499988,None,9171.584082000001,None,,001,2021_Dec_08_2233,exp,2021.2.3,142.65233486007625,
