@@ -8,14 +8,14 @@ import sys
 import random
 from psychopy import core, event, logging, visual, data
 import time
-import numpy as np
-import winsound
-import re
 import codecs
 import csv
+import re
+import numpy as np
+import winsound
 
 #from src.library import *
-
+#instr_txt = './instructions/exp_instr.txt'  # instruction: start of experiment
 instr_path = './instructions/'  # path for instructions
 instr_name = '_instr.txt' # filename (preceded by subtask name) for instructions
 begin_name = 'begin_instr.txt' # beginning text, if no instruction is needed for second run
@@ -147,7 +147,8 @@ def load_instruction(PATH):
     load and then parse instrucition
     return a list
     '''
-    PATH = (".//resources//Other_Task//Other_instr.txt")
+
+    PATH = ("./resources/Self_Task/Self_instr.txt")
     with codecs.open(PATH, 'r', encoding='utf8') as f:
         input_data = f.read()
 
@@ -167,8 +168,8 @@ class my_instructions(object):
         self.resdict = resdict
         self.timer = timer
         self.env = settings['env']
-        self.instruction_txt = load_instruction(instruction_txt)
-        self.ready_txt = load_instruction(ready_txt)[0]
+        #self.instruction_txt = load_instruction(instruction_txt)
+        #self.ready_txt = load_instruction(ready_txt)[0]
         self.display = visual.TextStim(
                 window, text='default text', font=instruction_font,
                 name='instruction', color='black')#,
@@ -184,23 +185,29 @@ class my_instructions(object):
         return self.instruction_txt
 
     def showf(self):
-        with open(".//resources//Other_Task//Other_instr.txt") as f:
-            lines = f.read()
-        instext = lines
+        with open(os.path.join(os.getcwd(),"taskScripts/resources/Other_Task/Other_instr1.txt")) as f:
+            lines1 = f.read()
+        with open(os.path.join(os.getcwd(),"taskScripts/resources/Other_Task/Other_instr2.txt")) as f:
+            lines2 = f.read()
+        with open(os.path.join(os.getcwd(),"taskScripts/resources/Other_Task/Other_instr3.txt")) as f:
+            lines3 = f.read()
+        
+        for i, cur in enumerate([lines1,lines2,lines3]):
+            self.display.setText(cur)
+            self.display.draw()
+            self.window.flip()
+            event.waitKeys(keyList=['return'])
 
         
         # substitue keys in the instruction text before displaying the instruction        
-        if self.parseflag == 1:
-            self.parse_inst()
-        self.display.setText(instext)
-        self.display.draw()
-        self.window.flip()
-        self.resdict['Timepoint'] = "Other_Task_Start"
+   
+        
+
+        self.resdict['Timepoint'] = "Self_Task_Start"
         self.resdict['Time'] = self.timer.getTime()
-        self.resdict['Response_Key'] = event.waitKeys(keyList=['return'])
+        
         self.writer.writerow(self.resdict)
         self.resdict['Timepoint'], self.resdict['Time'], self.resdict['Response_Key'] = None, None, None 
-        event.waitKeys(keyList=['return'])
 
     def waitTrigger(self, trigger_code):
         # wait for trigger in mri environment
@@ -215,20 +222,19 @@ class my_instructions(object):
         else: # not supported
             raise Exception('Unknown environment setting')
 
-def load_trials(infile, numoftrials, dfile):
+def load_trials(infile):
     '''
     load each row as a dictionary with the headers as the keys
     save the headers in its original order for data saving
     '''
     print(os.getcwd())
-    infile = dfile
+    
     with codecs.open(infile, 'r', encoding='utf8') as f:
         reader = csv.DictReader(f)
         trials = []
 
         for enum, row in enumerate(reader):
-            if enum < numoftrials:
-                trials.append(row)
+            trials.append(row)
 
         # save field names as a list in order
         fieldnames = reader.fieldnames
@@ -236,14 +242,14 @@ def load_trials(infile, numoftrials, dfile):
     return trials, fieldnames
 
 
-def get_trial_generator(subtask, version, run_no, numoftrials, dfile):
+def get_trial_generator(subtask, version, run_no):
 #def get_trial_generator(subtask, version):
     '''
     get the list of parameters (stimuli) from the .csv 
     '''
     
     trial_path = trial_setup_path + subtask + '_' + version + str(run_no) + '.csv'   
-    trialpool, trialhead = load_trials(trial_path, numoftrials, dfile)
+    trialpool, trialhead = load_trials(trial_path)
     
 #    if ESQuestion == 'ES':
 #        question2, _ = load_conditions_dict(random_ESQ_name)       
@@ -338,7 +344,7 @@ def get_settings(env, ver):
 
 
 
-def run_experiment(timer, win, writer, resdict,trialnums, runtime, dfile):
+def run_experiment(timer, win, writer, resdict, runtime, dfiles):
     
     ##########################################
     # collect participant info
@@ -374,7 +380,8 @@ def run_experiment(timer, win, writer, resdict,trialnums, runtime, dfile):
     ####################
     
     # set up the trial conditions
-    trials, headers=get_trial_generator("You", 'A', 1, trialnums, dfile)
+    #trials, headers=get_trial_generator("You", 'A', 1)
+    trials, headers = load_trials(dfiles)
     # setup the trial header, used for logging info
     temp = list(trials[1].items())
     mycount = 0
@@ -402,7 +409,7 @@ def run_experiment(timer, win, writer, resdict,trialnums, runtime, dfile):
     # display instruction for first run
     myparse=0
     #if experiment_info['Run'] == '1':
-    instr_txt = instr_path + 'You' + instr_name
+    instr_txt = instr_path + 'Friend' + instr_name
     myparse=1
     # skip instruction in other runs (just press return)
     #else:
@@ -685,7 +692,8 @@ def run_experiment(timer, win, writer, resdict,trialnums, runtime, dfile):
     #core.quit()
 
 
-def runexp(filename, timer, win, writer, resdict,trialnums, runtime,dfile):
+def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed):
+    random.seed(a=seed)
     global instruction_parameter
     global trial_output
     global ISI_min
@@ -797,8 +805,7 @@ def runexp(filename, timer, win, writer, resdict,trialnums, runtime,dfile):
     tr = 2
     trigger_code = '5'
     
-    run_experiment(timer, win, writer, resdict,trialnums, runtime, dfile)
-
+    run_experiment(timer, win, writer, resdict, runtime,dfile)
 
 
 ##########################################

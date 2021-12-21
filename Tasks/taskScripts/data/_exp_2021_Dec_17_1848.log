@@ -1,0 +1,51 @@
+64.8328 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+64.8781 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+64.9098 	WARNING 	Monitor specification not found. Creating a temporary one...
+69.1249 	EXP 	window1: recordFrameIntervals = False
+69.3273 	EXP 	window1: recordFrameIntervals = True
+69.4932 	WARNING 	t of last frame was 70.52ms (=1/14)
+69.6194 	WARNING 	t of last frame was 79.93ms (=1/12)
+69.7405 	WARNING 	t of last frame was 67.82ms (=1/14)
+69.8634 	WARNING 	t of last frame was 17.05ms (=1/58)
+69.9867 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+70.8561 	DATA 	Mouse: Left button down, pos=(351,438)
+70.9810 	DATA 	Mouse:  Left button up, pos=(361,429)
+71.3269 	WARNING 	Couldn't measure a consistent frame rate.
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+71.8317 	EXP 	Created memoryPrompt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='memoryPrompt', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+71.9161 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+71.9655 	EXP 	Created text_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_3', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+71.9728 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+71.9891 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='You may now stop.', units='norm', win=Window(...), wrapWidth=1)
+72.0047 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='You may now stop.', units='norm', win=Window(...), wrapWidth=1)
+72.1079 	EXP 	textbox: autoLog = True
+72.1079 	EXP 	text_4: text = 'Think of a person who you consider is your best friend. '
+74.3634 	DATA 	Keypress: return
+74.4296 	EXP 	text_4: text = 'In this task you will need to decide whether a set of words applies to your best friend. '
+76.0023 	DATA 	Keypress: return
+76.1087 	EXP 	text_4: text = 'You will be shown a word at the centre of the screen and you will be asked to decide if you think the word it applies to your best friend.\n You will respond by using the left or right arrow key. \nPress the Left arrow key if the word describes your best friend or Right if it does not. \nYou should try to be as quick and accurate as possible.\nPress <Enter> to start ...'
+77.6857 	DATA 	Keypress: return
+77.6903 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+77.6909 	EXP 	New trial (rep=0, index=0): None
+77.8146 	EXP 	memoryPrompt: text = 'Prompt One'
+77.8146 	EXP 	memoryPrompt: autoDraw = True
+77.8146 	EXP 	textbox: autoDraw = True
+81.3501 	DATA 	Keypress: return
+81.3708 	EXP 	memoryPrompt: autoDraw = False
+81.3708 	EXP 	textbox: autoDraw = False
+81.3708 	EXP 	text: autoDraw = True
+85.8092 	DATA 	Mouse: Left button down, pos=(317,471)
+85.8673 	DATA 	Mouse:  Left button up, pos=(317,471)
+86.4460 	EXP 	text: autoDraw = False
+86.4460 	EXP 	text: autoDraw = False
+86.4460 	EXP 	text_3: text = 'Press return when you are ready to remember:\n\nType response here\n'
+86.4460 	EXP 	text_3: autoDraw = True
+112.8874 	EXP 	text_3: autoDraw = False
+112.8874 	EXP 	text: autoDraw = True
+117.9180 	EXP 	text: autoDraw = False
+117.9180 	EXP 	text: autoDraw = False
+117.9180 	EXP 	text_4: autoDraw = True
+122.9713 	EXP 	text_4: autoDraw = False
+122.9713 	EXP 	text_4: autoDraw = False

@@ -102,7 +102,9 @@ exp_questions_path = './stimuli/ES_questions.csv'
 trialspec_col = 'trial_type'
 
 # task instruction
-instr_txt = os.path.dirname(os.path.abspath(__file__)) + "//resources//ZeroBack_Task//exp_instr_es.txt" 
+instr_txt1 = os.path.dirname(os.path.abspath(__file__)) + "//resources//ZeroBack_Task//exp_instr_es1.txt"
+instr_txt2 = os.path.dirname(os.path.abspath(__file__)) + "//resources//ZeroBack_Task//exp_instr_es2.txt" 
+instr_txt3 = os.path.dirname(os.path.abspath(__file__)) + "//resources//ZeroBack_Task//exp_instr_es3.txt"  
 
 # wait trigger screen
 ready_txt = os.path.dirname(os.path.abspath(__file__)) +  "//resources//ZeroBack_Task//wait_trigger.txt" 
@@ -1800,27 +1802,21 @@ class instructions1(object):
 #        self.instruction_txt[2] = self.instruction_txt[2].replace(
 #                '{KEY_LOC_1}', self.settings['loc_keys'][1].upper())
 
-        self.instruction_txt[2] = self.instruction_txt[2].replace(
-                '{0_back_color}', self.settings['0_back_color'].upper())
+        
 
-        self.instruction_txt[2] = self.instruction_txt[2].replace(
-                '{1_back_color}', self.settings['1_back_color'].upper())
+        
         
         return self.instruction_txt[2]
 
     def show(self):
         # get instruction
-        self.parse_inst()
+        
         for i, cur in enumerate(self.instruction_txt):
             self.display.setText(cur)
             self.display.draw()
             self.window.flip()
-            if i==0:
-                core.wait(uniform(1.3,1.75))
-            elif self.env == 'mri':
-                event.waitKeys(keyList=['left','right'])
-            else:
-                event.waitKeys(keyList=['return', '1'])
+            event.waitKeys(keyList=['return'])
+                
 
     def waitTrigger(self, trigger_code):
         # wait for trigger in mri environment
@@ -1894,7 +1890,9 @@ def get_stim_screen(trial, switch_screen, stimulus_screen):
         return stimulus_screen
 
 
-def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime, dfile):
+def runexp(logfile, expClock, win, writer, resultdict, runtime, dfile,seed):
+    import random
+    random.seed(a=seed)
     '''run.py
     build the main program here
     '''
@@ -1949,13 +1947,24 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime, dfile)
     #            window=Experiment.window,
     #            settings=settings, skip=skip_instruction)
 
-        instructions = instructions1(
+        instructions01 = instructions1(
             window=Experiment.window, settings=settings,
-            instruction_txt=instr_txt, ready_txt=ready_txt)
+            instruction_txt=instr_txt1, ready_txt=ready_txt)
+        instructions02 = instructions1(
+            window=Experiment.window, settings=settings,
+            instruction_txt=instr_txt2, ready_txt=ready_txt)
+        instructions03 = instructions1(
+            window=Experiment.window, settings=settings,
+            instruction_txt=instr_txt3, ready_txt=ready_txt)
 
         # skip instruction except run 1
         if experiment_info['Run'] == '1':
-            instructions.show()
+            instructions01.show()
+            #event.waitKeys(keyList=['return'])
+            instructions02.show()
+            #event.waitKeys('return')
+            instructions03.show()
+            #event.waitKeys('return')
         else:
             pass
 
@@ -2015,61 +2024,60 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime, dfile)
         trialclock = core.Clock()
 
         for enum, trial in enumerate(Experiment.trials):
-            if enum < numtrial:
-                if trialclock.getTime() < runtime:
-                    # parse tuples to proper file names
-                    trial = parse_stimulus_name(trial)
-                    # prepare fixation cross and stimulus display
-                    fixation.set_trial(trial)
-                    fix_t = fixation.show(timer)
-                    print(trial['TrialType'])
+            if trialclock.getTime() < runtime:
+                # parse tuples to proper file names
+                trial = parse_stimulus_name(trial)
+                # prepare fixation cross and stimulus display
+                fixation.set_trial(trial)
+                fix_t = fixation.show(timer)
+                print(trial['TrialType'])
 
-                    if trial['TrialType'] == 'ExpSample':
-                        pass
-                          
+                if trial['TrialType'] == 'ExpSample':
+                    pass
+                        
+                else:
+                    # show stimulus screen and catch response
+                    stim = get_stim_screen(trial, switch, stimulus)
+                    resultdict['Timepoint'], resultdict['Time'], resultdict['Auxillary Data'] = trial['TrialType'] + "Stimulus Start", expClock.getTime(), trial['Condition']
+                    writer.writerow(resultdict)
+                    resultdict['Timepoint'], resultdict['Time'], resultdict['Auxillary Data'] = None,None, None
+                    stim_t, KeyResp, Resp, KeyPressTime, respRT, correct = stim.show(timer)
+                    iscorrect = []
+                    if trial['Ans'] == KeyResp:
+                        iscorrect = True
+                    if trial['Ans'] == 'NA' and KeyResp == 'None':
+                        iscorrect = True
                     else:
-                        # show stimulus screen and catch response
-                        stim = get_stim_screen(trial, switch, stimulus)
-                        resultdict['Timepoint'], resultdict['Time'], resultdict['Auxillary Data'] = trial['TrialType'] + "Stimulus Start", expClock.getTime(), trial['Condition']
-                        writer.writerow(resultdict)
-                        resultdict['Timepoint'], resultdict['Time'], resultdict['Auxillary Data'] = None,None, None
-                        stim_t, KeyResp, Resp, KeyPressTime, respRT, correct = stim.show(timer)
-                        iscorrect = []
-                        if trial['Ans'] == KeyResp:
-                            iscorrect = True
-                        if trial['Ans'] == 'NA' and KeyResp == 'None':
-                            iscorrect = True
-                        else:
-                            iscorrect = False
-                        resultdict['Timepoint'], resultdict['Time'], resultdict['Response_Key'], resultdict['Auxillary Data'], resultdict['Is_correct'] = trial['TrialType'] + "Stimulus End", expClock.getTime(), KeyResp, trial['Condition'], iscorrect
-                        writer.writerow(resultdict)
-                        resultdict['Timepoint'], resultdict['Time'], resultdict['Response_Key'], resultdict['Auxillary Data'], resultdict['Is_correct'] = None,None,None,None,None
-                        
+                        iscorrect = False
+                    resultdict['Timepoint'], resultdict['Time'], resultdict['Response_Key'], resultdict['Auxillary Data'], resultdict['Is_correct'] = trial['TrialType'] + "Stimulus End", expClock.getTime(), KeyResp, trial['Condition'], iscorrect
+                    writer.writerow(resultdict)
+                    resultdict['Timepoint'], resultdict['Time'], resultdict['Response_Key'], resultdict['Auxillary Data'], resultdict['Is_correct'] = None,None,None,None,None
+                    
 
-                    # post response fixation
-                    if respRT and trial['stim_duration'] - respRT > 0:
-                        fixation.duration = trial['stim_duration'] - respRT
-                        
-                        _ = fixation.show(timer)
-                        
+                # post response fixation
+                if respRT and trial['stim_duration'] - respRT > 0:
+                    fixation.duration = trial['stim_duration'] - respRT
+                    
+                    _ = fixation.show(timer)
+                    
 
-                    # dump information to trial
-                    trial['fixStart'] = fix_t
-                    trial['stimStart'] = stim_t
-                    trial['keyResp'] = KeyResp
-                    trial['resp'] = Resp
-                    trial['respCORR'] = correct
-                    trial['respRT'] = respRT
-                    trial['IDNO'] = experiment_info['Subject']
-                    trial['Run'] = experiment_info['Run']
+                # dump information to trial
+                trial['fixStart'] = fix_t
+                trial['stimStart'] = stim_t
+                trial['keyResp'] = KeyResp
+                trial['resp'] = Resp
+                trial['respCORR'] = correct
+                trial['respRT'] = respRT
+                trial['IDNO'] = experiment_info['Subject']
+                trial['Run'] = experiment_info['Run']
 
-                    # write to csv
-                    write_csv(experiment_info['DataFile'], headers, trial)
+                # write to csv
+                write_csv(experiment_info['DataFile'], headers, trial)
 
-                    # clear answers
-                    KeyResp = None
-                    correct = None
-                    respRT = None
+                # clear answers
+                KeyResp = None
+                correct = None
+                respRT = None
 
         # ending message
         end_msg.draw()

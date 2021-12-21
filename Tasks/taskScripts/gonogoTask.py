@@ -273,7 +273,7 @@ def get_response(input_method, resp_device, timeStamped, myClock):
 #     trig_collector = None
 
 
-def HelpWin(myClock, myWin, trialnums,dfile):
+def HelpWin(myClock, myWin,dfile):
     global trig_collector
     
     if sys.platform == 'linux2':
@@ -357,6 +357,8 @@ def HelpWin(myClock, myWin, trialnums,dfile):
         lines1 = f.read()
     with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//GoNoGo_Task//GoNoGo_instr_2.txt") as f:
         lines2 = f.read()
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//GoNoGo_Task//GoNoGo_instr_3.txt") as f:
+        lines3 = f.read()
     instrTxt1 = visual.TextStim(myWin,text=lines1, height = 0.05, color='black')
     # For this task, a series of words and pictures framed by a black box will appear in the centre of the screen. \
     # Your job is to press the left button every time a stimulus appears, except when that stimulus is an animal. Then, don't press anything. \n\
@@ -366,6 +368,7 @@ def HelpWin(myClock, myWin, trialnums,dfile):
     # \n(press the left button to continue)
     #set up instructions and clock (so you can time stamp duration or trials, RT etc..)
     instrTxt2 = visual.TextStim(myWin,text=lines2, height = 0.05, color='black')
+    instrTxt3 = visual.TextStim(myWin,text=lines3, height = 0.05, color='black')
     # Before each part of the task begins, you will be informed what type of stimuli you will have to attend to by a cue in red (WORD, PICTURE or BOX).\n\
     # \nPlease give equal importance to SPEED and ACCURACY when completing this task. We would like you to respond as FAST as possible while maintaining a high \
     # level of ACCURACY.\n\
@@ -401,18 +404,16 @@ def HelpWin(myClock, myWin, trialnums,dfile):
     for enum, line in enumerate(lines): # read in row by row from csv file 
         if line == '\n':
             continue
-        if enum < trialnums:
-            data = line.strip().split(',')
-            
-            Block = data[0]
-            Condition = data[1]
-            if data[2] != '':
-                item3 = (data[2])
-                go_box.append(item3)
-                nogo_box.append(item3)
-            if data[3] != '':
-                item6 = (str(os.getcwd())+'/resources/GoNoGo_Task/'+data[3])
-                scrambled_word.append(item6)
+        data = line.strip().split(',')
+        Block = data[0]
+        Condition = data[1]
+        if data[2] != '':
+            item3 = (data[2])
+            go_box.append(item3)
+            nogo_box.append(item3)
+        if data[3] != '':
+            item6 = (str(os.getcwd())+'/resources/GoNoGo_Task/'+data[3])
+            scrambled_word.append(item6)
             
 
 
@@ -445,11 +446,14 @@ def HelpWin(myClock, myWin, trialnums,dfile):
     # Presents a ready screen and waits for participant to press enter
     instrTxt1.draw()
     myWin.flip()
-    event.waitKeys(keyList=['space','return'])
+    event.waitKeys(keyList=['return'])
     #present instructions screen
     instrTxt2.draw()
     myWin.flip()
-    event.waitKeys(keyList=['space','return'])
+    event.waitKeys(keyList=['return'])
+    instrTxt3.draw()
+    myWin.flip()
+    event.waitKeys(keyList=['return'])
     myWin.flip()
 
     # Start being ready to get triggers
@@ -480,7 +484,7 @@ def HelpWin(myClock, myWin, trialnums,dfile):
 
 
 ###BLOCK C. SCRAMBLED
-def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans, numtrials, runtime):
+def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans, runtime):
     global go_words
     global nogo_words
     global go_box
@@ -502,20 +506,12 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
         slants = ['h']
 
     #Cue block 3
-    Cue3 = visual.TextStim(myWin,text="BOX",
-                                units = 'norm', height = 0.3, pos = (0, 0), color='black')
-    Cue3.draw()
-    myWin.flip()
+    
     #This will wait for 3 seconds
-    core.wait(2)
-    Cue3a = visual.TextStim(myWin,text="Remember: \n\
-    \nPress the LEFT BUTTON if the BOX ISN'T VERY SLANTED.\n\
-    \nDON'T PRESS anything if THE BOX IS MORE SLANTED.",
-    height = 0.1, color='black')
-    Cue3a.draw()
-    myWin.flip()
+    
+    
     #This will wait for 3 seconds
-    core.wait(1)
+    
 
     for i in slants:
         diff = i
@@ -557,7 +553,7 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
     #Start Consecutive Go Trials
         tasktimer = core.MonotonicClock()
         print(tasktimer.getTime())
-        while d < numtrials and tasktimer.getTime() <= runtime:
+        while tasktimer.getTime() <= runtime:
             
             
             random_gotrials = np.random.choice(consecutive_gotrials, 1, replace=False)
@@ -637,9 +633,8 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
                     remaining_trials = remaining_trials - 1
                     numoftrials = numoftrials -1
                     
-                    numtrials = numtrials - 1
-                    if d == numtrials:
-                        break
+                    
+                    
                     continue
                         
             #Start No Go Trial
@@ -795,9 +790,9 @@ def Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word, scrambled_
     #myWin.flip() 
     #core.wait(5)
 
-def main(logloc, myClock, myWin, writer, resdict, trialnums, runtime,dfile):
+def main(logloc, myClock, myWin, writer, resdict, runtime,dfile):
     #instrTxt1, myWin, instrTxt2, readyTxt, sans, resp_device, Part_ID, f, input_method, nogo_words, go_words, scrambled_pic, scrambled_word, fmri_log, finishTxt = runexp(logloc, myWin)
-    scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans = HelpWin(myClock, myWin, trialnums,dfile)
+    scrambled_word, scrambled_pic, input_method, resp_device, Part_ID, sans = HelpWin(myClock, myWin,dfile)
     resdict['Timepoint'],resdict['Time'] = 'Go/NoGo Initialized',myClock.getTime()
     writer.writerow(resdict)
     
@@ -815,7 +810,7 @@ def main(logloc, myClock, myWin, writer, resdict, trialnums, runtime,dfile):
     #Block_B(thisrun)
     #Block_C(thisrun)
     thisrun = 2
-    Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word,scrambled_pic,input_method,resp_device,Part_ID,sans,trialnums, runtime)
+    Block_C(thisrun, myClock, myWin, writer, resdict, scrambled_word,scrambled_pic,input_method,resp_device,Part_ID,sans, runtime)
     #Block_B(thisrun)
     #Block_A(thisrun)
 
@@ -842,9 +837,10 @@ def main(logloc, myClock, myWin, writer, resdict, trialnums, runtime,dfile):
     
     
 
-def runexp(logfilelocation, time, myWin, writer,resdict, trialnums, runtime,dfile):
+def runexp(logfilelocation, time, myWin, writer,resdict, runtime,dfile,seed):
+    random.seed(a=seed)
     resdict['Timepoint'],resdict['Time'] = 'gonogo START', time.getTime()
     writer.writerow(resdict)
     
-    main(logfilelocation, time, myWin, writer, resdict, trialnums, runtime,dfile)
+    main(logfilelocation, time, myWin, writer, resdict, runtime,dfile)
 

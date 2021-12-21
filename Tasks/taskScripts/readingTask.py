@@ -35,7 +35,8 @@ from psychopy.hardware import keyboard
 
 # Experiment constants
 
-def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime,dfile):
+def runexp(logfile, expClock, win, writer, resultdict, runtime,dfile,seed):
+    random.seed(a=seed)
     # Experiment constants
     instruct_file = 'semantic_relation_instru.csv' 
     rest_file = 'semantic_relation_judgement_rest.csv'
@@ -148,7 +149,7 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime,dfile):
 
     # creates a file with a name that is absolute path + info collected from GUI
         filename = data_folder + os.sep + '%s_%s_%s_%s.csv' %(expInfo['subjID'], expInfo['subjName'], expInfo['expdate'], expInfo['run'])
-        stimuli_file = stimuli_name +expInfo['run']+'.csv'
+        stimuli_file = dfile
         fixa_file = fixa_name + expInfo['run']+'.csv'
         return expInfo, filename,stimuli_file,fixa_file
     # to avoid overwrite the data. Check whether the file exists, if not, create a new one and write the header.
@@ -346,19 +347,28 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime,dfile):
         #ready()
         #core.wait(9)  # 3 TRs
         run_onset = win.flip() 
-
+        text_inst = visual.TextStim(win=win, name='text_4',
+            text='You may now stop.',
+            font='Open Sans',
+            pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
+            color='black', colorSpace='rgb', opacity=None, 
+            languageStyle='LTR',
+            depth=0.0);
         print ('run_onset',run_onset)
-        insts = visual.TextStim(win,text="Instructions go here",color = win_text_col)
-        with open(os.getcwd() + '/taskScripts/resources/Reading_Task/instructions.txt') as f:
-            lines = f.read()
-        insts.setText(lines)
-        insts.draw()
-        win.flip()
-        event.waitKeys(keyList=['return'], timeStamped=True)
+        with open(os.path.join(os.getcwd(),"taskScripts/resources/Reading_Task/instructions.txt")) as f:
+            lines1 = f.read()
+        
+        
+        for i, cur in enumerate([lines1]):
+            text_inst.setText(cur)
+            text_inst.draw()
+            win.flip()
+            event.waitKeys(keyList=['return'])
+
         trialtimer = core.MonotonicClock()
         
         for enum, trial in enumerate(all_trials):
-            if enum < numtrial and trialtimer.getTime() < runtime:       
+            if trialtimer.getTime() < runtime:       
                 
                 #''' trial is a ordered dictionary. The key is the first raw of the stimuli csv file'''
 

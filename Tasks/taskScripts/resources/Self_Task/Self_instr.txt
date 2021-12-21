@@ -1,9 +1,0 @@
-
-The prompt will prompt you to decide whether the upcoming word describes you.
-
-You are required to respond with the left or right arrow key, according to the prompt: press Left if the word describes you or Right if it does not.
-
-You should try to be as quick and accurate as possible.
-
-
-Press <Return> to start ...

@@ -34,6 +34,7 @@ Block1 = 5H, 5E, 5E, 5H
 """
 
 from psychopy import visual, core, monitors, event, sound, gui, logging
+import psychopy
 from datetime import datetime
 from random import shuffle
 import os
@@ -48,8 +49,8 @@ import pandas as pd
 
 #Randomly samples a set of 16 trials to create 4 blocks
 def block_generator(difficulty=1, block_num=4, trial_num=8):
-    path = 'new_math_stimuli' + str(difficulty) + '.csv'
-    stimFile = pd.read_csv(path)
+    path = 'mathtaskXiuyi/new_math_stimuli' + str(difficulty) + '.csv'
+    stimFile = pd.read_csv(os.path.join(os.getcwd(), path))
     stimFile = stimFile.sample(frac=1)
 
     headers = stimFile.columns.values
@@ -103,11 +104,11 @@ def new_csv_creator(dictList):
                 newData[key] = [value]
 
     df = pd.DataFrame(newData)
-    csvName = "math_blocks/mathBlock.csv"
-    df.to_csv(csvName)
+    csvName = "mathtaskXiuyi/math_blocks/mathBlock.csv"
+    df.to_csv(os.path.join(os.getcwd(), csvName))
     return csvName
 
-def mathTask(time, win, writer, resultdict, data):
+def runexp(timer, win, writer, resultdict, data):
     ### Initialize variables
 
     # file related
@@ -162,8 +163,8 @@ def mathTask(time, win, writer, resultdict, data):
     ### define functions
 
     #write to resultdict
-    def resultdictWriter(timepoint, iscorrect=None):
-        resultdict['Timepoint'], resultdict['Time'], resultdict['Is_correct'] = timepoint, time.getTime(), iscorrect
+    def resultdictWriter(timepoint,timer,writer, iscorrect=None):
+        resultdict['Timepoint'], resultdict['Time'], resultdict['Is_correct'] = timepoint, timer.getTime(), iscorrect
         writer.writerow(resultdict)
         resultdict['Timepoint'], resultdict['Time'] = None,None
 
@@ -236,7 +237,7 @@ def mathTask(time, win, writer, resultdict, data):
     # but maps the information in each row to an OrderedDict whose keys
     # are given by the optional fieldnames parameter.
 
-        with open(conditionfile) as csvfile:
+        with open(os.path.join(os.getcwd(), conditionfile)) as csvfile:
             reader = csv.DictReader(csvfile)
             trials = []
 
@@ -370,7 +371,7 @@ def mathTask(time, win, writer, resultdict, data):
     # draw the first long fixation and flip the window 
 
         fixa.draw()
-        resultdictWriter('fixation cross')
+        resultdictWriter('fixation cross', timer,writer)
         timetodraw = core.monotonicClock.getTime()
     #        
         while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
@@ -394,7 +395,7 @@ def mathTask(time, win, writer, resultdict, data):
 
             # display expression - the start of a new trial
             expression.draw()
-            resultdictWriter('Math Trial Start')
+            resultdictWriter('Math Trial Start',timer,writer)
             ideal_trial_onset = float( pretrialFixDur) +float(run_onset) + float( trial['expr_onset'])
             timetodraw = ideal_trial_onset
             while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
@@ -405,14 +406,14 @@ def mathTask(time, win, writer, resultdict, data):
             # display choice and ask subjects to press the button 1 or 2
             choice.draw()
             choice_right.draw()
-            resultdictWriter('Choice presented')
+            resultdictWriter('Choice presented',timer,writer)
             timetodraw = trial_onset + expr_time
             while core.monotonicClock.getTime() < (timetodraw - (1/120.0)):
                     pass
             event.clearEvents()
             choice_onset = win.flip()
             keys = event.waitKeys(maxWait = timelimit_deci, keyList =['1','2','3','4','escape'],timeStamped = True)
-            resultdictWriter('Choice made')
+            resultdictWriter('Choice made',timer,writer)
 
             # If subjects do not press the key within maxwait time, RT is the timilimit and key is none and it is false
             if keys is None:
@@ -433,7 +434,7 @@ def mathTask(time, win, writer, resultdict, data):
                     trial['correct'] = correct
                     trial['KeyPress'] = keypress
                     print(correct)
-                    resultdictWriter('Math Trial End', correct)
+                    resultdictWriter('Math Trial End',timer,writer, correct)
 
         
             trial['i_trial_onset'] = float( pretrialFixDur) + float( trial['expr_onset'])
@@ -443,7 +444,7 @@ def mathTask(time, win, writer, resultdict, data):
             trial['correct'] = correct
             trial['KeyPress'] = keypress
 
-            resultdictWriter('Math Trial End', correct)
+            resultdictWriter('Math Trial End',timer,writer, correct)
             
             blank.draw()
             timetodraw = trial_onset + expr_time + choi_time       
@@ -504,13 +505,13 @@ def mathTask(time, win, writer, resultdict, data):
 
     # generate the jitter list for the fixation and probe
     # know the number of trials
-    trials, fieldnames = load_conditions_dict(stimuli_file)
+    #trials, fieldnames = load_conditions_dict(stimuli_file)
 
 
     # show the instruction
     # instruct(curr_dic,instruct_figure)
     instructions.show()
-    resultdictWriter('Math Task Start')
+    resultdictWriter('Math Task Start',timer,writer)
 
             
     ### use 
@@ -526,7 +527,7 @@ def mathTask(time, win, writer, resultdict, data):
 
     ## end of the experiment
     end_exp()
-    resultdictWriter('Math Task End')
+    resultdictWriter('Math Task End',timer,writer)
     # Lucilla would like to discard some volumes at the beginning of the scanning - Xiuyi.
     # That's why she asked her experiment to wait for 4s to start. - Xiuyi
     # Not useful for the behaviour experiment
@@ -555,6 +556,6 @@ for d in data2:
 random.shuffle(data)
 data = block_remover(data)
 data = new_csv_creator(data)
-
-time = core.Clock
-mathTask(time, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=None, data=data) 
+resultdict = {'Timepoint': None, 'Time': None, 'Is_correct': None, 'Experience Sampling Question': None, 'Experience Sampling Response':None, 'Task' : None, 'Task Iteration': None, 'Participant ID': None,'Response_Key':None, 'Auxillary Data': None}
+timer = core.Clock()
+runexp(timer, visual.Window(size=(1280, 800),color='white', winType='pyglet'), writer=None, resultdict=resultdict, data=data) 
