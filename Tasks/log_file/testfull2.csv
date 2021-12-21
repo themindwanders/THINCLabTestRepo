@@ -1,5 +1,16 @@
 METADATA:
 Block Runtime,Experiment Seed,Subject
 10,1,2
-587.1687050000182
+5.924622399965301
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data
+EXPERIMENT DATA:,Memory Task
+Start Time,5.936764499987476
+Memory Task Starting,7.078545500000473,,,,Memory Task,1,1,,
+Memory Prompt Shown,9.627276999992318,,,,Memory Task,1,1,,
+Text Input Updating,9.627409699955024,,,,Memory Task,1,1,,
+Text Input Submitted,10.011145399999805,,,,Memory Task,1,1,,"Type response here
+"
+Ready Check Started,14.03192349994788,,,,Memory Task,1,1,,
+Ready Check Ended,14.51867839996703,,,,Memory Task,1,1,,
+Blank Memory Recall Period Started,24.533358999993652,,,,Memory Task,1,1,,
+Blank Memory Recall Period Ended,25.54645329999039,,,,Memory Task,1,1,,
