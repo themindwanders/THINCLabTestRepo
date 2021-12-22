@@ -203,7 +203,7 @@ fulltasklist = [
         friendTask2,youTask2,gonogoTask2,fingertapTask2,readingTask2,memTask2,zerobackTask2,onebackTask2,easymathTask2,hardmathTask2]
 
 random.shuffle(fulltasklist)
-tasks = [memTask]
+tasks = fulltasklist
 
 
 
