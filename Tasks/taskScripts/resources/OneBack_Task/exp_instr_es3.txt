@@ -1,0 +1,4 @@
+To summarize, your job is to remember the location of the shapes before the question marks appear, otherwise, 
+you will not be able to respond accurately. 
+If you believe the shape in the centre is the same shape on the left from the last trial, press “1”. 
+If you believe the shape in the centre is the same shape on the right from the last trial, press “2”. 

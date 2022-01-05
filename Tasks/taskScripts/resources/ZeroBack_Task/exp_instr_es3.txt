@@ -1,0 +1,3 @@
+Again, the task will present shapes on either side of the centre of the screen. 
+The shapes in the centre will be in red. 
+If the shape on the left matches the one in the centre, press “1”, and if the shape on the right matches the one in the centre, press “2”. 

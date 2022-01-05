@@ -30,7 +30,9 @@ from psychopy.hardware import keyboard
 
 
 
-def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
+def runexp(filename, timer, win, writer, resultdict, runtime,dfile,seed):
+    import random
+    random.seed(a=seed)
     # Ensure that relative paths start from the same directory as this script
     _thisDir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(_thisDir)
@@ -80,17 +82,9 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
 
     # Initialize components for Routine "Intructions"
     IntructionsClock = core.Clock()
-    text_2 = visual.TextStim(win=win, name='text_2',
-        text='Insert text here',
-        font='Open Sans',
-        pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
-        color='black', colorSpace='rgb', opacity=None, 
-        languageStyle='LTR',
-        depth=0.0);
+    
     key_resp_2 = keyboard.Keyboard()
-    with open(os.getcwd() + '/resources/Memory_Task/instructions.txt') as f:
-            lines = f.read()
-    text_2.setText(lines)
+    
     # Initialize components for Routine "trial"
     trialClock = core.Clock()
     memoryPrompt = visual.TextStim(win=win, name='memoryPrompt',
@@ -162,6 +156,13 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
         color='black', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
+    text_inst = visual.TextStim(win=win, name='text_4',
+        text='You may now stop.',
+        font='Open Sans',
+        pos=(0, 0), height=0.1, wrapWidth=None, ori=0.0, 
+        color='black', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=0.0);
 
     # Create some handy timers
      # to track the time since experiment started
@@ -177,93 +178,19 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
     key_resp_2.rt = []
     _key_resp_2_allKeys = []
     # keep track of which components have finished
-    IntructionsComponents = [text_2, key_resp_2]
-    for thisComponent in IntructionsComponents:
-        thisComponent.tStart = None
-        thisComponent.tStop = None
-        thisComponent.tStartRefresh = None
-        thisComponent.tStopRefresh = None
-        if hasattr(thisComponent, 'status'):
-            thisComponent.status = NOT_STARTED
-    # reset timers
-    t = 0
-    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-    IntructionsClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
-    frameN = -1
-
-    # -------Run Routine "Intructions"-------
-    while continueRoutine:
-        # get current time
-        t = IntructionsClock.getTime()
-        tThisFlip = win.getFutureFlipTime(clock=IntructionsClock)
-        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
+    with open(os.path.join(os.getcwd(),"resources/Memory_Task/instructions1.txt")) as f:
+        lines1 = f.read()
+    with open(os.path.join(os.getcwd(),"resources/Memory_Task/instructions2.txt")) as f:
+        lines2 = f.read()
+    with open(os.path.join(os.getcwd(),"resources/Memory_Task/instructions3.txt")) as f:
+        lines3 = f.read()
         
-        # *text_2* updates
-        if text_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            text_2.frameNStart = frameN  # exact frame index
-            text_2.tStart = t  # local t and not account for scr refresh
-            text_2.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(text_2, 'tStartRefresh')  # time at next scr refresh
-            text_2.setAutoDraw(True)
-        
-        # *key_resp_2* updates
-        waitOnFlip = False
-        if key_resp_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            key_resp_2.frameNStart = frameN  # exact frame index
-            key_resp_2.tStart = t  # local t and not account for scr refresh
-            key_resp_2.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(key_resp_2, 'tStartRefresh')  # time at next scr refresh
-            key_resp_2.status = STARTED
-            # keyboard checking is just starting
-            waitOnFlip = True
-            win.callOnFlip(key_resp_2.clock.reset)  # t=0 on next screen flip
-            win.callOnFlip(key_resp_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
-        if key_resp_2.status == STARTED and not waitOnFlip:
-            theseKeys = key_resp_2.getKeys(keyList=['return'], waitRelease=False)
-            _key_resp_2_allKeys.extend(theseKeys)
-            if len(_key_resp_2_allKeys):
-                key_resp_2.keys = _key_resp_2_allKeys[-1].name  # just the last key pressed
-                key_resp_2.rt = _key_resp_2_allKeys[-1].rt
-                # a response ends the routine
-                continueRoutine = False
-        
-        # check for quit (typically the Esc key)
-        
-        
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in IntructionsComponents:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
-        
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        for i, cur in enumerate([lines1,lines2,lines3]):
+            text_inst.setText(cur)
+            text_inst.draw()
             win.flip()
+            event.waitKeys(keyList=['return'])
 
-    # -------Ending Routine "Intructions"-------
-    for thisComponent in IntructionsComponents:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    thisExp.addData('text_2.started', text_2.tStartRefresh)
-    thisExp.addData('text_2.stopped', text_2.tStopRefresh)
-    # check responses
-    if key_resp_2.keys in ['', [], None]:  # No response was made
-        key_resp_2.keys = None
-    thisExp.addData('key_resp_2.keys',key_resp_2.keys)
-    if key_resp_2.keys != None:  # we had a response
-        thisExp.addData('key_resp_2.rt', key_resp_2.rt)
-    thisExp.addData('key_resp_2.started', key_resp_2.tStartRefresh)
-    thisExp.addData('key_resp_2.stopped', key_resp_2.tStopRefresh)
-    thisExp.nextEntry()
-    # the Routine "Intructions" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
 
     # set up handler to look after randomisation of conditions etc
     trials = data.TrialHandler(nReps=1, method='random', 
@@ -308,10 +235,11 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
         a = 0
         stimlist = []
         print(os.getcwd())
-        with open(os.getcwd()+"//resources//Memory_Task//Memory_prompts.csv", newline='') as csvfile:
+        with open(dfile, newline='') as csvfile:
             spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
             for row in spamreader:
-                stimlist.append(row[0].strip())
+                if row != []:
+                    stimlist.append(row[0].strip())
         # -------Run Routine "trial"-------
         while continueRoutine:
             # get current time
@@ -594,7 +522,7 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
         _timeToFirstFrame = win.getFutureFlipTime(clock="now")
         blankClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
         frameN = -1
-        
+        curtim = core.Clock()
         # -------Run Routine "blank"-------
         while continueRoutine:
             # get current time
@@ -614,7 +542,8 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
                 text.setAutoDraw(True)
             if text.status == STARTED:
                 # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > text.tStartRefresh + timera-frameTolerance:
+                
+                if curtim.getTime() > runtime:
                     # keep track of stop time/frame for later
                     text.tStop = t  # not accounting for scr refresh
                     text.frameNStop = frameN  # exact frame index
@@ -648,7 +577,7 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
         
         # ------Prepare to start Routine "end"-------
         continueRoutine = True
-        routineTimer.add(45.000000)
+        routineTimer.add(1)
         # update component parameters for each repeat
         # keep track of which components have finished
         endComponents = [text_4]

@@ -1,0 +1,4 @@
+When this happens you will be asked to decide which of the shapes is the same as the one in the centre. 
+If the shape on the left matches the one in the centre, press the key “1”.
+If the shape on the right matches the one in the centre, press the key “2”. 
+You only need to make a response on the trials whether shapes are presented in red.

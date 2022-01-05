@@ -33,7 +33,9 @@ from psychopy.hardware import keyboard
 
 # Ensure that relative paths start from the same directory as this script
 
-def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
+def runexp(filename, timer, win, writer, resultdict, runtime,dfile,seed):
+    import random
+    random.seed(a=seed)
     win.flip()
     # Ensure that relative paths start from the same directory as this script
     _thisDir = os.path.dirname(os.path.abspath(__file__))
@@ -90,10 +92,28 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
 
     # Initialize components for Routine "Trigger"
     TriggerClock = core.Clock()
-    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//Fingertapping_Task//Fingertapping_instr.txt") as f:
-        lines = f.read()
-    text = visual.TextStim(win=win, name='text',
-        text=lines,
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//Fingertapping_Task//Fingertapping_instr1.txt") as f:
+        lines1 = f.read()
+    text1 = visual.TextStim(win=win, name='text',
+        text=lines1,
+        font='Arial',
+        units='norm', anchorHoriz='center', anchorVert='center', wrapWidth=2, ori=0, 
+        color='black', colorSpace='rgb', opacity=1, 
+        languageStyle='LTR',
+        depth=0.0)
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//Fingertapping_Task//Fingertapping_instr2.txt") as f:
+        lines2 = f.read()
+    text2 = visual.TextStim(win=win, name='text',
+        text=lines2,
+        font='Arial',
+        units='norm', anchorHoriz='center', anchorVert='center', wrapWidth=2, ori=0, 
+        color='black', colorSpace='rgb', opacity=1, 
+        languageStyle='LTR',
+        depth=0.0)
+    with open(os.path.dirname(os.path.abspath(__file__)) + "//resources//Fingertapping_Task//Fingertapping_instr3.txt") as f:
+        lines3 = f.read()
+    text3 = visual.TextStim(win=win, name='text',
+        text=lines3,
         font='Arial',
         units='norm', anchorHoriz='center', anchorVert='center', wrapWidth=2, ori=0, 
         color='black', colorSpace='rgb', opacity=1, 
@@ -158,7 +178,7 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
     gotValidClick = False  # until a click is received
     mouse.mouseClock.reset()
     # keep track of which components have finished
-    TriggerComponents = [text, key_resp_2, mouse]
+    TriggerComponents = [text1, key_resp_2, mouse]
     for thisComponent in TriggerComponents:
         thisComponent.tStart = None
         thisComponent.tStop = None
@@ -171,91 +191,108 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
     _timeToFirstFrame = win.getFutureFlipTime(clock="now")
     TriggerClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
     frameN = -1
-
+    import time
+    #win.flip()
+    win.flip()
+    text1.draw(win)
+    win.flip()
+    time.sleep(1)
+    event.waitKeys(keyList=['return'])
+    win.flip()
+    text2.draw(win)
+    win.flip()
+    time.sleep(1)
+    event.waitKeys(keyList=['return'])
+    win.flip()
+    text3.draw(win)
+    win.flip()
+    time.sleep(1)
+    event.waitKeys(keyList=['return'])
+    
     # -------Run Routine "Trigger"-------
-    while continueRoutine:
-        # get current time
-        t = TriggerClock.getTime()
-        tThisFlip = win.getFutureFlipTime(clock=TriggerClock)
-        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
+    # while continueRoutine:
+    #     # get current time
+    #     t = TriggerClock.getTime()
+    #     tThisFlip = win.getFutureFlipTime(clock=TriggerClock)
+    #     tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+    #     frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    #     # update/draw components on each frame
 
-        # *text* updates
-        if text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            text.frameNStart = frameN  # exact frame index
-            text.tStart = t  # local t and not account for scr refresh
-            text.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(text, 'tStartRefresh')  # time at next scr refresh
-            text.setAutoDraw(True)
+    #     # *text* updates
+    #     # if text1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+    #     #     # keep track of start time/frame for later
+    #     #     text1.frameNStart = frameN  # exact frame index
+    #     #     text1.tStart = t  # local t and not account for scr refresh
+    #     #     text1.tStartRefresh = tThisFlipGlobal  # on global time
+    #     #     win.timeOnFlip(text1, 'tStartRefresh')  # time at next scr refresh
+    #     #     text1.setAutoDraw(True)
 
-        # *key_resp_2* updates
-        waitOnFlip = False
+    #     # *key_resp_2* updates
+    #     waitOnFlip = False
         
-        if key_resp_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            key_resp_2.frameNStart = frameN  # exact frame index
-            key_resp_2.tStart = t  # local t and not account for scr refresh
-            key_resp_2.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(key_resp_2, 'tStartRefresh')  # time at next scr refresh
-            key_resp_2.status = STARTED
-            # keyboard checking is just starting
-            waitOnFlip = True
-            win.callOnFlip(key_resp_2.clock.reset)  # t=0 on next screen flip
-            win.callOnFlip(key_resp_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
-        if key_resp_2.status == STARTED and not waitOnFlip:
-            theseKeys = key_resp_2.getKeys(keyList=['return'], waitRelease=False)
-            _key_resp_2_allKeys.extend(theseKeys)
-            if len(_key_resp_2_allKeys):
-                key_resp_2.keys = _key_resp_2_allKeys[-1].name  # just the last key pressed
-                key_resp_2.rt = _key_resp_2_allKeys[-1].rt
-                # a response ends the routine
-                continueRoutine = False
-        # *mouse* updates
-        if mouse.status == NOT_STARTED and t >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            mouse.frameNStart = frameN  # exact frame index
-            mouse.tStart = t  # local t and not account for scr refresh
-            mouse.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(mouse, 'tStartRefresh')  # time at next scr refresh
-            mouse.status = STARTED
-            prevButtonState = mouse.getPressed()  # if button is down already this ISN'T a new click
-        if mouse.status == STARTED:  # only update if started and not finished!
-            buttons = mouse.getPressed()
-            if buttons != prevButtonState:  # button state changed?
-                prevButtonState = buttons
-                if sum(buttons) > 0:  # state changed to a new click
-                    # abort routine on response
-                    continueRoutine = False
+    #     if key_resp_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+    #         # keep track of start time/frame for later
+    #         key_resp_2.frameNStart = frameN  # exact frame index
+    #         key_resp_2.tStart = t  # local t and not account for scr refresh
+    #         key_resp_2.tStartRefresh = tThisFlipGlobal  # on global time
+    #         win.timeOnFlip(key_resp_2, 'tStartRefresh')  # time at next scr refresh
+    #         key_resp_2.status = STARTED
+    #         # keyboard checking is just starting
+    #         waitOnFlip = True
+    #         win.callOnFlip(key_resp_2.clock.reset)  # t=0 on next screen flip
+    #         win.callOnFlip(key_resp_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
+    #     if key_resp_2.status == STARTED and not waitOnFlip:
+    #         theseKeys = key_resp_2.getKeys(keyList=['return'], waitRelease=False)
+    #         _key_resp_2_allKeys.extend(theseKeys)
+    #         if len(_key_resp_2_allKeys):
+    #             key_resp_2.keys = _key_resp_2_allKeys[-1].name  # just the last key pressed
+    #             key_resp_2.rt = _key_resp_2_allKeys[-1].rt
+    #             # a response ends the routine
+    #             continueRoutine = False
+    #     # *mouse* updates
+    #     if mouse.status == NOT_STARTED and t >= 0.0-frameTolerance:
+    #         # keep track of start time/frame for later
+    #         mouse.frameNStart = frameN  # exact frame index
+    #         mouse.tStart = t  # local t and not account for scr refresh
+    #         mouse.tStartRefresh = tThisFlipGlobal  # on global time
+    #         win.timeOnFlip(mouse, 'tStartRefresh')  # time at next scr refresh
+    #         mouse.status = STARTED
+    #         prevButtonState = mouse.getPressed()  # if button is down already this ISN'T a new click
+    #     if mouse.status == STARTED:  # only update if started and not finished!
+    #         buttons = mouse.getPressed()
+    #         if buttons != prevButtonState:  # button state changed?
+    #             prevButtonState = buttons
+    #             if sum(buttons) > 0:  # state changed to a new click
+    #                 # abort routine on response
+    #                 continueRoutine = False
+        
+    #     # check for quit (typically the Esc key)
+    #     #if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+    #         #core.quit()
 
-        # check for quit (typically the Esc key)
-        #if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
-            #core.quit()
+    #     # check if all components have finished
+    #     if not continueRoutine:  # a component has requested a forced-end of Routine
+    #         break
+    #     continueRoutine = False  # will revert to True if at least one component still running
+    #     for thisComponent in TriggerComponents:
+    #         if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+    #             continueRoutine = True
+    #             break  # at least one component has not yet finished
 
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in TriggerComponents:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
+    #     # refresh the screen
+    #     if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+    #         win.flip()
+    #         event.waitKeys(keyList=['return'])
 
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-            event.waitKeys(keyList=['return'])
-
-    # -------Ending Routine "Trigger"-------
-    for thisComponent in TriggerComponents:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    resultdict['Timepoint'], resultdict['Time'] = 'Finger Tapping Start', text.tStartRefresh
+    # # -------Ending Routine "Trigger"-------
+    # for thisComponent in TriggerComponents:
+    #     if hasattr(thisComponent, "setAutoDraw"):
+    #         thisComponent.setAutoDraw(False)
+    resultdict['Timepoint'], resultdict['Time'] = 'Finger Tapping Start', text1.tStartRefresh
     writer.writerow(resultdict)
     resultdict['Timepoint'], resultdict['Time'] = None,None
-    thisExp.addData('text.started', text.tStartRefresh)
-    thisExp.addData('text.stopped', text.tStopRefresh)
+    thisExp.addData('text.started', text1.tStartRefresh)
+    thisExp.addData('text.stopped', text1.tStopRefresh)
     # check responses
     if key_resp_2.keys in ['', [], None]:  # No response was made
         key_resp_2.keys = None
@@ -280,7 +317,7 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
     routineTimer.reset()
 
     # set up handler to look after randomisation of conditions etc
-    trials = data.TrialHandler(nReps=numtrial, method='random', 
+    trials = data.TrialHandler(nReps=100, method='random', 
         extraInfo=expInfo, originPath=-1,
         trialList=[None],
         seed=None, name='trials')
@@ -293,7 +330,7 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
     trialtimer = core.MonotonicClock()
     for thisTrial in trials:
         if trialtimer.getTime() <= runtime:
-            resultdict['Timepoint'], resultdict['Time'] = 'Finger Tapping Block Start', text.tStartRefresh
+            resultdict['Timepoint'], resultdict['Time'] = 'Finger Tapping Block Start', text1.tStartRefresh
             writer.writerow(resultdict)
             resultdict['Timepoint'], resultdict['Time'] = None,None
             currentLoop = trials
@@ -452,7 +489,7 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
                         waitOnFlip = True
                         win.callOnFlip(key_resp.clock.reset)  # t=0 on next screen flip
                         win.callOnFlip(key_resp.clearEvents, eventType='keyboard')
-                        resultdict['Timepoint'], resultdict['Time'] = 'Finger Tapping Trial Start', text.tStartRefresh
+                        resultdict['Timepoint'], resultdict['Time'] = 'Finger Tapping Trial Start', text1.tStartRefresh
                         writer.writerow(resultdict)
                         resultdict['Timepoint'], resultdict['Time'] = None,None  # clear events on next screen flip
                     if key_resp.status == STARTED:
@@ -507,7 +544,7 @@ def runexp(filename, timer, win, writer, resultdict,numtrial, runtime,dfile):
                 trials_2.addData('key_resp.started', key_resp.tStartRefresh)
                 trials_2.addData('key_resp.stopped', key_resp.tStopRefresh)
                 
-                resultdict['Timepoint'], resultdict['Time'], resultdict['Is_correct'] = 'Finger Tapping Trial End', text.tStopRefresh, iscorrect
+                resultdict['Timepoint'], resultdict['Time'], resultdict['Is_correct'] = 'Finger Tapping Trial End', text1.tStopRefresh, iscorrect
                 writer.writerow(resultdict)
                 resultdict['Timepoint'], resultdict['Time'], resultdict['Is_correct'] = None,None,None
                 

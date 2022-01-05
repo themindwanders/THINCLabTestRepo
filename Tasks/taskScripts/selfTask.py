@@ -168,8 +168,8 @@ class my_instructions(object):
         self.resdict = resdict
         self.timer = timer
         self.env = settings['env']
-        self.instruction_txt = load_instruction(instruction_txt)
-        self.ready_txt = load_instruction(ready_txt)[0]
+        #self.instruction_txt = load_instruction(instruction_txt)
+        #self.ready_txt = load_instruction(ready_txt)[0]
         self.display = visual.TextStim(
                 window, text='default text', font=instruction_font,
                 name='instruction', color='black')#,
@@ -185,23 +185,25 @@ class my_instructions(object):
         return self.instruction_txt
 
     def showf(self):
-        with open("./resources/Self_Task/Self_instr.txt") as f:
-            lines = f.read()
-        instext = lines
+        with open(os.path.join(os.getcwd(),"taskScripts/resources/Self_Task/Self_instr1.txt")) as f:
+            lines1 = f.read()
+        with open(os.path.join(os.getcwd(),"taskScripts/resources/Self_Task/Self_instr2.txt")) as f:
+            lines2 = f.read()
+        
+        for i, cur in enumerate([lines1,lines2]):
+            self.display.setText(cur)
+            self.display.draw()
+            self.window.flip()
+            event.waitKeys(keyList=['return'])
 
         
         # substitue keys in the instruction text before displaying the instruction        
-        if self.parseflag == 1:
-            self.parse_inst()
-        self.display.setText(instext)
-        self.display.draw()
-        self.window.flip()
-        event.clearEvents()
+   
         
 
         self.resdict['Timepoint'] = "Self_Task_Start"
         self.resdict['Time'] = self.timer.getTime()
-        self.resdict['Response_Key'] = event.waitKeys(keyList=['return'])
+        
         self.writer.writerow(self.resdict)
         self.resdict['Timepoint'], self.resdict['Time'], self.resdict['Response_Key'] = None, None, None 
 
@@ -218,19 +220,19 @@ class my_instructions(object):
         else: # not supported
             raise Exception('Unknown environment setting')
 
-def load_trials(infile, numoftrials):
+def load_trials(infile):
     '''
     load each row as a dictionary with the headers as the keys
     save the headers in its original order for data saving
     '''
-    infile = ("./resources/Self_Task/Self_Stimuli.csv")
+    print(os.getcwd())
+    
     with codecs.open(infile, 'r', encoding='utf8') as f:
         reader = csv.DictReader(f)
         trials = []
 
         for enum, row in enumerate(reader):
-            if enum < numoftrials:
-                trials.append(row)
+            trials.append(row)
 
         # save field names as a list in order
         fieldnames = reader.fieldnames
@@ -238,14 +240,14 @@ def load_trials(infile, numoftrials):
     return trials, fieldnames
 
 
-def get_trial_generator(subtask, version, run_no, numoftrials):
+def get_trial_generator(subtask, version, run_no):
 #def get_trial_generator(subtask, version):
     '''
     get the list of parameters (stimuli) from the .csv 
     '''
     
     trial_path = trial_setup_path + subtask + '_' + version + str(run_no) + '.csv'   
-    trialpool, trialhead = load_trials(trial_path, numoftrials)
+    trialpool, trialhead = load_trials(trial_path)
     
 #    if ESQuestion == 'ES':
 #        question2, _ = load_conditions_dict(random_ESQ_name)       
@@ -340,7 +342,7 @@ def get_settings(env, ver):
 
 
 
-def run_experiment(timer, win, writer, resdict,trialnums, runtime):
+def run_experiment(timer, win, writer, resdict, runtime, dfiles):
     
     ##########################################
     # collect participant info
@@ -376,7 +378,8 @@ def run_experiment(timer, win, writer, resdict,trialnums, runtime):
     ####################
     
     # set up the trial conditions
-    trials, headers=get_trial_generator("You", 'A', 1, trialnums)
+    #trials, headers=get_trial_generator("You", 'A', 1)
+    trials, headers = load_trials(dfiles)
     # setup the trial header, used for logging info
     temp = list(trials[1].items())
     mycount = 0
@@ -687,7 +690,8 @@ def run_experiment(timer, win, writer, resdict,trialnums, runtime):
     #core.quit()
 
 
-def runexp(filename, timer, win, writer, resdict,trialnums, runtime,dfile):
+def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed):
+    random.seed(a=seed)
     global instruction_parameter
     global trial_output
     global ISI_min
@@ -799,7 +803,7 @@ def runexp(filename, timer, win, writer, resdict,trialnums, runtime,dfile):
     tr = 2
     trigger_code = '5'
     
-    run_experiment(timer, win, writer, resdict,trialnums, runtime)
+    run_experiment(timer, win, writer, resdict, runtime,dfile)
 
 
 ##########################################

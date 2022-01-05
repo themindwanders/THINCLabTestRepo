@@ -1,0 +1,42 @@
+71.3607 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+71.8629 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+71.8924 	WARNING 	Monitor specification not found. Creating a temporary one...
+195.6168 	EXP 	window1: recordFrameIntervals = False
+195.7749 	EXP 	window1: recordFrameIntervals = True
+195.9203 	EXP 	window1: recordFrameIntervals = False
+196.4282 	EXP 	Created memoryPrompt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='memoryPrompt', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+196.5248 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+196.5747 	EXP 	Created text_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_3', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+196.5811 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+196.5955 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='You may now stop.', units='norm', win=Window(...), wrapWidth=1)
+196.6066 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='You may now stop.', units='norm', win=Window(...), wrapWidth=1)
+196.6672 	EXP 	textbox: autoLog = True
+196.6672 	EXP 	text_4: text = 'In this task, you will be asked to imagine an event that has either already happened or may happen in the future. '
+197.7932 	DATA 	Keypress: return
+197.8678 	EXP 	text_4: text = 'On each trial, you will be asked to first decide about a specific event, \nand after that you will be asked to try to imagine that event in as much detail as possible. \nOnce you have an event in mind, type a codeword into a box that you will be able to remember. \nAfter this you will be asked to imagine those events as best you can. '
+197.9666 	DATA 	Keypress: return
+198.0125 	EXP 	text_4: text = 'To summarize, think of a past or upcoming event. Then, create a codeword and enter it into a box. \nWhen the codeword appears, try to remember the details of the event as best as you can.'
+198.1473 	DATA 	Keypress: return
+198.1535 	EXP 	Created sequence: random, trialTypes=1, nReps=1, seed=None
+198.1540 	EXP 	New trial (rep=0, index=0): None
+198.2025 	EXP 	memoryPrompt: text = 'Prompt One'
+198.2025 	EXP 	memoryPrompt: autoDraw = True
+198.2025 	EXP 	textbox: autoDraw = True
+198.3271 	DATA 	Keypress: return
+198.3332 	EXP 	memoryPrompt: autoDraw = False
+198.3332 	EXP 	textbox: autoDraw = False
+198.3332 	EXP 	text: autoDraw = True
+198.5094 	DATA 	Keypress: return
+202.3624 	EXP 	text: autoDraw = False
+202.3624 	EXP 	text: autoDraw = False
+202.3624 	EXP 	text_3: text = 'Press return when you are ready to remember:\n\nType response here\n\n'
+202.3624 	EXP 	text_3: autoDraw = True
+202.8202 	DATA 	Mouse: Left button down, pos=(703,361)
+202.8995 	DATA 	Mouse:  Left button up, pos=(703,361)
+203.3281 	DATA 	Keypress: return
+203.3366 	EXP 	text_3: autoDraw = False
+203.3366 	EXP 	text: autoDraw = True
+207.3368 	EXP 	text: autoDraw = False
+207.3368 	EXP 	text: autoDraw = False
+207.3368 	EXP 	text_4: autoDraw = True
+208.3506 	EXP 	text_4: autoDraw = False

@@ -1,0 +1,390 @@
+68.5303 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+68.5886 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+68.6434 	WARNING 	Monitor specification not found. Creating a temporary one...
+129.4608 	EXP 	window1: mouseVisible = False
+129.5690 	EXP 	Created instruction = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font=list(...), fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='instruction', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='default text', units='norm', win=Window(...), wrapWidth=1100)
+129.6169 	EXP 	instruction: size = 0.8
+129.6169 	EXP 	instruction: text = 'Advance to instructions...\r\n'
+131.4205 	EXP 	instruction: text = '\r\nWelcome to our experiment.\r\n\r\nIn it you will be asked to attend to pairs of different shapes \r\ndivided by a vertical line in the middle of the screen.\r\n\r\nYou will only be required to keep your eyes in the \r\ncentre of the screen and attend to the shapes most of the time.\r\n\r\nWhen a reaction is required, the vertical line will change colour.\r\n\r\n\r\nPress "1" to continue reading.\r\n'
+156.7664 	DATA 	Keypress: lalt
+2317.1166 	DATA 	Mouse: Left button down, pos=(694,200)
+2317.1784 	DATA 	Mouse:  Left button up, pos=(694,200)
+2317.7195 	DATA 	Keypress: return
+2317.7814 	EXP 	instruction: text = '\r\nThe condition will switch between blocks.\r\nThe two types of conditions are 0-back and 1-back.\r\n\r\nIf the line is BLUE, the trial is a 0-back block.\r\nIf the line is RED, the trial is a 1-back block.\r\n\r\n\r\nPress "1" to continue reading.\r\n'
+2317.9483 	DATA 	Keypress: return
+2318.0457 	EXP 	instruction: text = '\r\nWhen an event occurs in a 0-back block, \r\nthe screen displays a pair of shapes and a smaller target item in the middle.\r\nYou answer according to the CURRENT screen.\r\n\r\nWhen an event occurs in a 1-back block, \r\nthe screen displays a pair of "?" and a smaller target item in the middle.\r\nYou answer according to the PREVIOUS screen.\r\n\r\nYou are using key "1" and "2" to indicate LEFT or RIGHT.\r\nYou should try to be as quick and accurate as possible.\r\n\r\n\r\nPress "1" to continue reading.\r\n'
+2318.1445 	DATA 	Keypress: return
+2318.2459 	EXP 	instruction: text = '\r\nWe are interested in the thoughts that you experienced \r\nduring the rest period. A list of descriptions and a rating scale \r\nwill be presented on the screen. Please use the four buttons to indicate how \r\nmuch each description reflects your experience.\r\n\r\nPress "1" to move the tick mark towards 1, indicates "not at all".\r\nPress "2" to move the tick mark towards 10, indicates "completely".\r\nPress "4" to confirm the rating.\r\n\r\nPlease note that there are no right or wrong answers.\r\nAnswer the questions as fast as possible.\r\n\r\n\r\nPress "1" to start the task.\r\n'
+2318.3793 	DATA 	Keypress: return
+2318.3917 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font=list(...), fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1100)
+2318.4021 	EXP 	Created verticle line = Line(__class__=<class 'psychopy.visual.line.Line'>, autoDraw=False, autoLog=True, closeShape=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=None, depth=0, fillColor=array([0, 0, 0]), fillColorSpace='rgb', fillRGB=array([0, 0, 0]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=3, name='verticle line', opacity=0.5, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), units='norm', vertices=array([[ 0.  ,  0.75],
+       [ 0.  , -0.75]]), win=Window(...), windingRule=None)
+2318.4068 	EXP 	Created dash line = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineRGB=array([0, 0, 0]), lineWidth=1.5, name='dash line', opacity=0.5, ori=0.0, pos=array([0. , 2.5]), size=array([1., 1.]), units='norm', vertices=ndarray(...), win=Window(...), windingRule=None)
+2318.4236 	EXP 	Created stimPic-left = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, image=None, interpolate=False, mask=None, maskParams=None, name='stimPic-left', opacity=1, ori=0.0, pos=array([-0.5,  0. ]), size=array([0.5 , 0.75]), texRes=128, units='norm', win=Window(...))
+2318.4267 	EXP 	Created stimPic-right = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, image=None, interpolate=False, mask=None, maskParams=None, name='stimPic-right', opacity=1, ori=0.0, pos=array([0.5, 0. ]), size=array([0.5 , 0.75]), texRes=128, units='norm', win=Window(...))
+2318.4310 	EXP 	Created stimPic-middle = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, image=None, interpolate=False, mask=None, maskParams=None, name='stimPic-middle', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.25, 0.4 ]), texRes=128, units='norm', win=Window(...))
+2318.4412 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.5,  0. ]), rgb=UNKNOWN, text='?', units='norm', win=Window(...), wrapWidth=500)
+2318.4480 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0.5, 0. ]), rgb=UNKNOWN, text='?', units='norm', win=Window(...), wrapWidth=500)
+2318.4554 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='?', units='norm', win=Window(...), wrapWidth=200)
+2318.4702 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font=list(...), fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Switch', units='norm', win=Window(...), wrapWidth=1100)
+2318.5048 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1100)
+2319.8755 	DATA 	Keypress: return
+2320.1527 	EXP 	stimPic-left: image = 'c:\\Users\\gooda\\Documents\\GitHub\\THINCLabTestRepo\\Tasks\\taskScripts//resources//ZeroBack_Task//stimuli//circle.png'
+2320.1527 	EXP 	stimPic-right: image = 'c:\\Users\\gooda\\Documents\\GitHub\\THINCLabTestRepo\\Tasks\\taskScripts//resources//ZeroBack_Task//stimuli//triangle.png'
+2323.2401 	EXP 	stimPic-left: image = 'c:\\Users\\gooda\\Documents\\GitHub\\THINCLabTestRepo\\Tasks\\taskScripts//resources//ZeroBack_Task//stimuli//square.png'
+2323.2401 	EXP 	stimPic-right: image = 'c:\\Users\\gooda\\Documents\\GitHub\\THINCLabTestRepo\\Tasks\\taskScripts//resources//ZeroBack_Task//stimuli//circle.png'
+2342.3147 	DATA 	Mouse: Left button down, pos=(788,162)
+2342.3620 	DATA 	Mouse:  Left button up, pos=(785,174)
+2343.2683 	DATA 	Keypress: return
+2343.3118 	EXP 	Created instruction = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='instruction', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='default text', units='norm', win=Window(...), wrapWidth=1)
+2343.3716 	EXP 	instruction: text = 'Please answer the questions honestly.\n\nA list of descriptions and a rating scale ranging from 1 to 10 will be presented on the screen.\n\nPlease use the left and right arrow keys to select your answer, and the enter button to confirm.'
+2343.5395 	DATA 	Keypress: return
+2343.6008 	EXP 	Imported c:\Users\gooda\Documents\GitHub\THINCLabTestRepo\Tasks\taskScripts//resources//ESQ//ESQ_Questions.csv as conditions, 14 conditions, 4 params
+2343.6018 	EXP 	Created sequence: sequential, trialTypes=14, nReps=1, seed=None
+2343.8306 	WARNING 	RatingScale unnamed RatingScale: len(labels) not equal to len(tickMarks)
+2343.8312 	EXP 	window1: mouseVisible = True
+2343.9018 	EXP 	Created unnamed RatingScale = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=False, colorSpace='rgb', depth=0, disappear=False, flipVert=False, high=10, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='black', low=1, marker=ShapeStim(...), markerColor='black', markerExpansion=UNKNOWN, markerStart=4.5, maxTime=0.0, minTime=0.4, mouseOnly=False, name='unnamed RatingScale', noMouse=False, pos=[0.0, -0.4], precision=10, respKeys=[], rightKeys=['right'], scale=False, self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.6, skipKeys=['tab'], stretch=1.0, textColor='black', textFont='Helvetica Bold', textSize=0.12, tickHeight=1.0, tickMarks=9.0, win=Window(...))
+2343.9091 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='top', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+2343.9123 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.5, -0.5]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+2343.9153 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.5, -0.5]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+2343.9159 	EXP 	New trial (rep=0, index=0): OrderedDict([('Questions', 'My thoughts were focused on an external task or activity:'), ('Label', 'Focus'), ('Scale_low', 'Not at all'), ('Scale_high', 'Completely')])
+2343.9824 	DATA 	Keypress: return
+2343.9934 	EXP 	unnamed RatingScale: flipVert = False
+2343.9934 	EXP 	unnamed RatingScale: autoLog = True
+2343.9934 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2343.9934 	EXP 	unnamed TextStim: text = 'Completely'
+2343.9934 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.0211 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.0211 	EXP 	unnamed TextStim: text = 'Completely'
+2344.0211 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.0393 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.0393 	EXP 	unnamed TextStim: text = 'Completely'
+2344.0393 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.0561 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.0561 	EXP 	unnamed TextStim: text = 'Completely'
+2344.0561 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.0925 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.0925 	EXP 	unnamed TextStim: text = 'Completely'
+2344.0925 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.1209 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.1209 	EXP 	unnamed TextStim: text = 'Completely'
+2344.1209 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.1393 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.1393 	EXP 	unnamed TextStim: text = 'Completely'
+2344.1393 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.1714 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.1714 	EXP 	unnamed TextStim: text = 'Completely'
+2344.1714 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.1901 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.1901 	EXP 	unnamed TextStim: text = 'Completely'
+2344.1901 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.2213 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.2213 	EXP 	unnamed TextStim: text = 'Completely'
+2344.2213 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.2397 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.2397 	EXP 	unnamed TextStim: text = 'Completely'
+2344.2397 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.2715 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.2715 	EXP 	unnamed TextStim: text = 'Completely'
+2344.2715 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.3048 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.3048 	EXP 	unnamed TextStim: text = 'Completely'
+2344.3048 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.3236 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.3236 	EXP 	unnamed TextStim: text = 'Completely'
+2344.3236 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.3550 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.3550 	EXP 	unnamed TextStim: text = 'Completely'
+2344.3550 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.3880 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.3880 	EXP 	unnamed TextStim: text = 'Completely'
+2344.3880 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.4066 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.4066 	EXP 	unnamed TextStim: text = 'Completely'
+2344.4066 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.4381 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.4381 	EXP 	unnamed TextStim: text = 'Completely'
+2344.4381 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.4568 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.4568 	EXP 	unnamed TextStim: text = 'Completely'
+2344.4568 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.4739 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.4739 	EXP 	unnamed TextStim: text = 'Completely'
+2344.4739 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.5050 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.5050 	EXP 	unnamed TextStim: text = 'Completely'
+2344.5050 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.5233 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.5233 	EXP 	unnamed TextStim: text = 'Completely'
+2344.5233 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.5552 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.5552 	EXP 	unnamed TextStim: text = 'Completely'
+2344.5552 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.5739 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.5739 	EXP 	unnamed TextStim: text = 'Completely'
+2344.5739 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.6050 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.6050 	EXP 	unnamed TextStim: text = 'Completely'
+2344.6050 	EXP 	unnamed TextStim: text = 'Not at all'
+2344.6271 	DATA 	Keypress: return
+2344.6273 	DATA 	RatingScale unnamed RatingScale: (key response) rating=7.0
+2344.6274 	DATA 	RatingScale unnamed RatingScale: rating RT=0.665
+2344.6274 	DATA 	RatingScale unnamed RatingScale: history=[(6, 0.0), (7.0, 0.664)]
+2344.6382 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2344.6382 	EXP 	unnamed TextStim: text = 'Completely'
+2344.6382 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.6388 	EXP 	New trial (rep=0, index=1): OrderedDict([('Questions', 'My thoughts involved future events:'), ('Label', 'Future'), ('Scale_low', 'Not at all'), ('Scale_high', 'Completely')])
+2345.6739 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.6739 	EXP 	unnamed TextStim: text = 'Completely'
+2345.6739 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.7060 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.7060 	EXP 	unnamed TextStim: text = 'Completely'
+2345.7060 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.7245 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.7245 	EXP 	unnamed TextStim: text = 'Completely'
+2345.7245 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.7561 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.7561 	EXP 	unnamed TextStim: text = 'Completely'
+2345.7561 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.7744 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.7744 	EXP 	unnamed TextStim: text = 'Completely'
+2345.7744 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.7913 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.7913 	EXP 	unnamed TextStim: text = 'Completely'
+2345.7913 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.8226 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.8226 	EXP 	unnamed TextStim: text = 'Completely'
+2345.8226 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.8561 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.8561 	EXP 	unnamed TextStim: text = 'Completely'
+2345.8561 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.8897 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.8897 	EXP 	unnamed TextStim: text = 'Completely'
+2345.8897 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.9253 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.9253 	EXP 	unnamed TextStim: text = 'Completely'
+2345.9253 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.9623 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.9623 	EXP 	unnamed TextStim: text = 'Completely'
+2345.9623 	EXP 	unnamed TextStim: text = 'Not at all'
+2345.9899 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2345.9899 	EXP 	unnamed TextStim: text = 'Completely'
+2345.9899 	EXP 	unnamed TextStim: text = 'Not at all'
+2346.0084 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2346.0084 	EXP 	unnamed TextStim: text = 'Completely'
+2346.0084 	EXP 	unnamed TextStim: text = 'Not at all'
+2346.0398 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2346.0398 	EXP 	unnamed TextStim: text = 'Completely'
+2346.0398 	EXP 	unnamed TextStim: text = 'Not at all'
+2346.0573 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2346.0573 	EXP 	unnamed TextStim: text = 'Completely'
+2346.0573 	EXP 	unnamed TextStim: text = 'Not at all'
+2346.0894 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2346.0894 	EXP 	unnamed TextStim: text = 'Completely'
+2346.0894 	EXP 	unnamed TextStim: text = 'Not at all'
+2346.1231 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2346.1231 	EXP 	unnamed TextStim: text = 'Completely'
+2346.1231 	EXP 	unnamed TextStim: text = 'Not at all'
+2346.1561 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2346.1561 	EXP 	unnamed TextStim: text = 'Completely'
+2346.1561 	EXP 	unnamed TextStim: text = 'Not at all'
+2346.1746 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2346.1746 	EXP 	unnamed TextStim: text = 'Completely'
+2346.1746 	EXP 	unnamed TextStim: text = 'Not at all'
+2346.1889 	DATA 	Keypress: return
+2346.1891 	DATA 	RatingScale unnamed RatingScale: (key response) rating=9.0
+2346.2081 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2346.2081 	EXP 	unnamed TextStim: text = 'Completely'
+2346.2081 	EXP 	unnamed TextStim: text = 'Not at all'
+2347.2238 	EXP 	Created instruction = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='instruction', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='default text', units='norm', win=Window(...), wrapWidth=1)
+2347.2317 	EXP 	window1: mouseVisible = False
+2347.2497 	EXP 	Created instruction = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font=list(...), fontFiles=[], height=0.08, italic=False, languageStyle='LTR', name='instruction', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='default text', units='norm', win=Window(...), wrapWidth=1100)
+2347.2745 	EXP 	instruction: size = 0.8
+2347.2745 	EXP 	instruction: text = 'Advance to instructions...\r\n'
+2348.6996 	DATA 	Keypress: return
+2348.9763 	EXP 	instruction: text = '\r\nWelcome to our experiment.\r\n\r\nIn it you will be asked to attend to pairs of different shapes \r\ndivided by a vertical line in the middle of the screen.\r\n\r\nYou will only be required to keep your eyes in the \r\ncentre of the screen and attend to the shapes most of the time.\r\n\r\nWhen a reaction is required, the vertical line will change colour.\r\n\r\n\r\nPress "1" to continue reading.\r\n'
+2349.4380 	DATA 	Keypress: rshift
+2349.6835 	DATA 	Keypress: return
+2349.7441 	EXP 	instruction: text = '\r\nThe condition will switch between blocks.\r\nThe two types of conditions are 0-back and 1-back.\r\n\r\nIf the line is BLUE, the trial is a 0-back block.\r\nIf the line is RED, the trial is a 1-back block.\r\n\r\n\r\nPress "1" to continue reading.\r\n'
+2349.9544 	DATA 	Keypress: return
+2350.0435 	EXP 	instruction: text = '\r\nWhen an event occurs in a 0-back block, \r\nthe screen displays a pair of shapes and a smaller target item in the middle.\r\nYou answer according to the CURRENT screen.\r\n\r\nWhen an event occurs in a 1-back block, \r\nthe screen displays a pair of "?" and a smaller target item in the middle.\r\nYou answer according to the PREVIOUS screen.\r\n\r\nYou are using key "1" and "2" to indicate LEFT or RIGHT.\r\nYou should try to be as quick and accurate as possible.\r\n\r\n\r\nPress "1" to continue reading.\r\n'
+2355.7474 	DATA 	Keypress: return
+2355.8329 	EXP 	instruction: text = '\r\nWe are interested in the thoughts that you experienced \r\nduring the rest period. A list of descriptions and a rating scale \r\nwill be presented on the screen. Please use the four buttons to indicate how \r\nmuch each description reflects your experience.\r\n\r\nPress "1" to move the tick mark towards 1, indicates "not at all".\r\nPress "2" to move the tick mark towards 10, indicates "completely".\r\nPress "4" to confirm the rating.\r\n\r\nPlease note that there are no right or wrong answers.\r\nAnswer the questions as fast as possible.\r\n\r\n\r\nPress "1" to start the task.\r\n'
+2356.5044 	DATA 	Keypress: return
+2356.5159 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font=list(...), fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1100)
+2356.5225 	EXP 	Created verticle line = Line(__class__=<class 'psychopy.visual.line.Line'>, autoDraw=False, autoLog=True, closeShape=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=None, depth=0, fillColor=array([0, 0, 0]), fillColorSpace='rgb', fillRGB=array([0, 0, 0]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=3, name='verticle line', opacity=0.5, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), units='norm', vertices=array([[ 0.  ,  0.75],
+       [ 0.  , -0.75]]), win=Window(...), windingRule=None)
+2356.5270 	EXP 	Created dash line = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=0, fillColor=array([-1, -1, -1]), fillColorSpace='rgb', fillRGB=array([-1, -1, -1]), interpolate=True, lineColor=array([0., 0., 0.]), lineColorSpace='rgb', lineRGB=array([0, 0, 0]), lineWidth=1.5, name='dash line', opacity=0.5, ori=0.0, pos=array([0. , 2.5]), size=array([1., 1.]), units='norm', vertices=ndarray(...), win=Window(...), windingRule=None)
+2356.5308 	EXP 	Created stimPic-left = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, image=None, interpolate=False, mask=None, maskParams=None, name='stimPic-left', opacity=1, ori=0.0, pos=array([-0.5,  0. ]), size=array([0.5 , 0.75]), texRes=128, units='norm', win=Window(...))
+2356.5356 	EXP 	Created stimPic-right = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, image=None, interpolate=False, mask=None, maskParams=None, name='stimPic-right', opacity=1, ori=0.0, pos=array([0.5, 0. ]), size=array([0.5 , 0.75]), texRes=128, units='norm', win=Window(...))
+2356.5384 	EXP 	Created stimPic-middle = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, image=None, interpolate=False, mask=None, maskParams=None, name='stimPic-middle', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.25, 0.4 ]), texRes=128, units='norm', win=Window(...))
+2356.5465 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.5,  0. ]), rgb=UNKNOWN, text='?', units='norm', win=Window(...), wrapWidth=500)
+2356.5548 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0.5, 0. ]), rgb=UNKNOWN, text='?', units='norm', win=Window(...), wrapWidth=500)
+2356.5615 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='?', units='norm', win=Window(...), wrapWidth=200)
+2356.5733 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font=list(...), fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Switch', units='norm', win=Window(...), wrapWidth=1100)
+2356.6001 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1100)
+2358.2743 	EXP 	stimPic-left: image = 'c:\\Users\\gooda\\Documents\\GitHub\\THINCLabTestRepo\\Tasks\\taskScripts//resources//ZeroBack_Task//stimuli//circle.png'
+2358.2743 	EXP 	stimPic-right: image = 'c:\\Users\\gooda\\Documents\\GitHub\\THINCLabTestRepo\\Tasks\\taskScripts//resources//ZeroBack_Task//stimuli//triangle.png'
+2358.8610 	DATA 	Keypress: return
+2361.2952 	EXP 	stimPic-left: image = 'c:\\Users\\gooda\\Documents\\GitHub\\THINCLabTestRepo\\Tasks\\taskScripts//resources//ZeroBack_Task//stimuli//triangle.png'
+2361.2952 	EXP 	stimPic-right: image = 'c:\\Users\\gooda\\Documents\\GitHub\\THINCLabTestRepo\\Tasks\\taskScripts//resources//ZeroBack_Task//stimuli//circle.png'
+2361.3126 	DATA 	Keypress: return
+2361.7934 	DATA 	Keypress: return
+2362.6101 	DATA 	Keypress: return
+2363.7062 	DATA 	Keypress: return
+2363.7447 	EXP 	Created instruction = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='instruction', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='default text', units='norm', win=Window(...), wrapWidth=1)
+2363.8077 	EXP 	instruction: text = 'Please answer the questions honestly.\n\nA list of descriptions and a rating scale ranging from 1 to 10 will be presented on the screen.\n\nPlease use the left and right arrow keys to select your answer, and the enter button to confirm.'
+2364.2433 	DATA 	Keypress: return
+2364.2701 	EXP 	Imported c:\Users\gooda\Documents\GitHub\THINCLabTestRepo\Tasks\taskScripts//resources//ESQ//ESQ_Questions.csv as conditions, 14 conditions, 4 params
+2364.2706 	EXP 	Created sequence: sequential, trialTypes=14, nReps=1, seed=None
+2364.2814 	WARNING 	RatingScale unnamed RatingScale: len(labels) not equal to len(tickMarks)
+2364.2820 	EXP 	window1: mouseVisible = True
+2364.3442 	EXP 	Created unnamed RatingScale = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=False, colorSpace='rgb', depth=0, disappear=False, flipVert=False, high=10, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='black', low=1, marker=ShapeStim(...), markerColor='black', markerExpansion=UNKNOWN, markerStart=4.5, maxTime=0.0, minTime=0.4, mouseOnly=False, name='unnamed RatingScale', noMouse=False, pos=[0.0, -0.4], precision=10, respKeys=[], rightKeys=['right'], scale=False, self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.6, skipKeys=['tab'], stretch=1.0, textColor='black', textFont='Helvetica Bold', textSize=0.12, tickHeight=1.0, tickMarks=9.0, win=Window(...))
+2364.3480 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='top', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+2364.3510 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.5, -0.5]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+2364.3540 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-0.5, -0.5]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+2364.3543 	EXP 	New trial (rep=0, index=0): OrderedDict([('Questions', 'My thoughts were focused on an external task or activity:'), ('Label', 'Focus'), ('Scale_low', 'Not at all'), ('Scale_high', 'Completely')])
+2364.4244 	EXP 	unnamed RatingScale: flipVert = False
+2364.4244 	EXP 	unnamed RatingScale: autoLog = True
+2364.4244 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.4244 	EXP 	unnamed TextStim: text = 'Completely'
+2364.4244 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.4579 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.4579 	EXP 	unnamed TextStim: text = 'Completely'
+2364.4579 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.4768 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.4768 	EXP 	unnamed TextStim: text = 'Completely'
+2364.4768 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.5081 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.5081 	EXP 	unnamed TextStim: text = 'Completely'
+2364.5081 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.5270 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.5270 	EXP 	unnamed TextStim: text = 'Completely'
+2364.5270 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.5578 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.5578 	EXP 	unnamed TextStim: text = 'Completely'
+2364.5578 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.5766 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.5766 	EXP 	unnamed TextStim: text = 'Completely'
+2364.5766 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.6081 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.6081 	EXP 	unnamed TextStim: text = 'Completely'
+2364.6081 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.6269 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.6269 	EXP 	unnamed TextStim: text = 'Completely'
+2364.6269 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.6400 	DATA 	Keypress: return
+2364.6581 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.6581 	EXP 	unnamed TextStim: text = 'Completely'
+2364.6581 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.6762 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.6762 	EXP 	unnamed TextStim: text = 'Completely'
+2364.6762 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.6920 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.6920 	EXP 	unnamed TextStim: text = 'Completely'
+2364.6920 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.7095 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.7095 	EXP 	unnamed TextStim: text = 'Completely'
+2364.7095 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.7263 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.7263 	EXP 	unnamed TextStim: text = 'Completely'
+2364.7263 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.7607 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.7607 	EXP 	unnamed TextStim: text = 'Completely'
+2364.7607 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.7919 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.7919 	EXP 	unnamed TextStim: text = 'Completely'
+2364.7919 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.8251 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.8251 	EXP 	unnamed TextStim: text = 'Completely'
+2364.8251 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.8432 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.8432 	EXP 	unnamed TextStim: text = 'Completely'
+2364.8432 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.8756 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.8756 	EXP 	unnamed TextStim: text = 'Completely'
+2364.8756 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.8932 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.8932 	EXP 	unnamed TextStim: text = 'Completely'
+2364.8932 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.9099 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.9099 	EXP 	unnamed TextStim: text = 'Completely'
+2364.9099 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.9416 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.9416 	EXP 	unnamed TextStim: text = 'Completely'
+2364.9416 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.9603 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.9603 	EXP 	unnamed TextStim: text = 'Completely'
+2364.9603 	EXP 	unnamed TextStim: text = 'Not at all'
+2364.9917 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2364.9917 	EXP 	unnamed TextStim: text = 'Completely'
+2364.9917 	EXP 	unnamed TextStim: text = 'Not at all'
+2365.0096 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2365.0096 	EXP 	unnamed TextStim: text = 'Completely'
+2365.0096 	EXP 	unnamed TextStim: text = 'Not at all'
+2365.0413 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2365.0413 	EXP 	unnamed TextStim: text = 'Completely'
+2365.0413 	EXP 	unnamed TextStim: text = 'Not at all'
+2365.0749 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2365.0749 	EXP 	unnamed TextStim: text = 'Completely'
+2365.0749 	EXP 	unnamed TextStim: text = 'Not at all'
+2365.0880 	DATA 	Keypress: return
+2365.0881 	DATA 	RatingScale unnamed RatingScale: (key response) rating=9.0
+2365.0882 	DATA 	RatingScale unnamed RatingScale: rating RT=0.689
+2365.0882 	DATA 	RatingScale unnamed RatingScale: history=[(8, 0.0), (9.0, 0.689)]
+2365.0938 	EXP 	unnamed TextStim: text = 'My thoughts were focused on an external task or activity:'
+2365.0938 	EXP 	unnamed TextStim: text = 'Completely'
+2365.0938 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.0947 	EXP 	New trial (rep=0, index=1): OrderedDict([('Questions', 'My thoughts involved future events:'), ('Label', 'Future'), ('Scale_low', 'Not at all'), ('Scale_high', 'Completely')])
+2366.1428 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.1428 	EXP 	unnamed TextStim: text = 'Completely'
+2366.1428 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.1765 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.1765 	EXP 	unnamed TextStim: text = 'Completely'
+2366.1765 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.2099 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.2099 	EXP 	unnamed TextStim: text = 'Completely'
+2366.2099 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.2434 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.2434 	EXP 	unnamed TextStim: text = 'Completely'
+2366.2434 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.2618 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.2618 	EXP 	unnamed TextStim: text = 'Completely'
+2366.2618 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.2970 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.2970 	EXP 	unnamed TextStim: text = 'Completely'
+2366.2970 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.3263 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.3263 	EXP 	unnamed TextStim: text = 'Completely'
+2366.3263 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.3445 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.3445 	EXP 	unnamed TextStim: text = 'Completely'
+2366.3445 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.3763 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.3763 	EXP 	unnamed TextStim: text = 'Completely'
+2366.3763 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.3947 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.3947 	EXP 	unnamed TextStim: text = 'Completely'
+2366.3947 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.4265 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.4265 	EXP 	unnamed TextStim: text = 'Completely'
+2366.4265 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.4601 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.4601 	EXP 	unnamed TextStim: text = 'Completely'
+2366.4601 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.4782 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.4782 	EXP 	unnamed TextStim: text = 'Completely'
+2366.4782 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.4954 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.4954 	EXP 	unnamed TextStim: text = 'Completely'
+2366.4954 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.5269 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.5269 	EXP 	unnamed TextStim: text = 'Completely'
+2366.5269 	EXP 	unnamed TextStim: text = 'Not at all'
+2366.5403 	DATA 	Keypress: return
+2366.5405 	DATA 	RatingScale unnamed RatingScale: (key response) rating=5.0
+2366.5451 	EXP 	unnamed TextStim: text = 'My thoughts involved future events:'
+2366.5451 	EXP 	unnamed TextStim: text = 'Completely'
+2366.5451 	EXP 	unnamed TextStim: text = 'Not at all'
+2367.5628 	EXP 	Created instruction = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='instruction', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='default text', units='norm', win=Window(...), wrapWidth=1)
+2367.6703 	EXP 	window1: mouseVisible = True

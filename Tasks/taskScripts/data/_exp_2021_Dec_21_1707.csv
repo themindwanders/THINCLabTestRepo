@@ -1,0 +1,3 @@
+﻿trials.thisRepN,trials.thisTrialN,trials.thisN,trials.thisIndex,memoryPrompt.started,memoryPrompt.stopped,textbox.text,textbox.started,textbox.stopped,key_resp.keys,key_resp.rt,key_resp.started,key_resp.stopped,text.started,text.stopped,text_3.started,text_3.stopped,key_resp_3.keys,key_resp_3.rt,key_resp_3.started,key_resp_3.stopped,text_4.started,text_4.stopped,participant,session,date,expName,psychopyVersion,frameRate,
+0,0,0,0,77.13529960002052,None,"Type response here
+",77.13529960002052,None,return,0.3350778999738395,77.13529960002052,None,82.00059090001741,None,81.52019710000604,None,return,0.4651385000324808,81.52019710000604,None,92.01763289998053,None,,001,2021_Dec_21_1707,exp,2021.2.3,76.18380103485875,

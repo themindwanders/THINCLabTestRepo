@@ -167,7 +167,10 @@ def get_settings(env, ver):
 
     return settings
 
-def runexp(filename, timer, win, writer, resdict, trialnum, runtime,dfile):
+def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed):
+    random.seed(a=seed)
+    rs = random.randint(0,10000)
+    random.seed(a=rs)
     print(os.path.dirname(os.path.abspath(__file__)))
     instr_path = './taskScripts/resources/ESQ/'  # path for instructions
     instr_name = '_instr.txt' # filename (preceded by subtask name) for instructions
@@ -236,53 +239,54 @@ def runexp(filename, timer, win, writer, resdict, trialnum, runtime,dfile):
     QuestionText = visual.TextStim(win, color = 'black', text = None , anchorHoriz = 'center', anchorVert= 'top')
     scale_high = visual.TextStim(win, text=None,  wrapWidth=None,color='black', pos=(0.5,-0.5))
     scale_low = visual.TextStim(win, text=None, wrapWidth=None, color='black',pos=(-0.5,-0.5))
-    
+    random.shuffle(ES_fixed.trialList)
     
 
     #       get each question from Questionnaire:
-    for enum, i in enumerate(range(0, len(ES_fixed.trialList))):
-        if enum < trialnum:
-            if i < len(ES_fixed.trialList):
-                question = ES_fixed.next()
-                resdict['Timepoint'], resdict['Time'], resdict['Experience Sampling Question'] = 'ESQ', timer.getTime(), str(question['Label'] + "_start")
-                writer.writerow(resdict)
-                resdict['Timepoint'], resdict['Time'],resdict['Experience Sampling Question'],resdict['Experience Sampling Response'], resdict['Auxillary Data'] = None,None,None,None,None
-            ratingScale.noResponse = True
-            rand = random.randrange(1,10,1)
-            ratingScale.markerStart = rand
-            keyState=key.KeyStateHandler()
-            win.winHandle.push_handlers(keyState)
-
-            pos = ratingScale.markerStart
-            inc=0.1
-            while ratingScale.noResponse:  #key 4 not pressed
-                if keyState[key.LEFT] is True:
-                    pos -= inc
-                elif keyState[key.RIGHT] is True:
-                    pos += inc
-                if pos > 9:
-                    pos = 9
-                elif pos < 0:
-                    pos = 0
-
-                ratingScale.setMarkerPos(pos)
-                QuestionText.setText(question['Questions'])
-                QuestionText.draw()
-                scale_high.setText(question['Scale_high'])
-                scale_low.setText(question['Scale_low'])
-                scale_high.draw()
-                scale_low.draw()
-                ratingScale.draw()
-                win.flip()
-            time.sleep(1)
-            responded = ratingScale.getRating()
-
-            resdict['Timepoint'], resdict['Time'], resdict['Experience Sampling Question'], resdict['Experience Sampling Response'],resdict['Auxillary Data'] = 'ESQ', timer.getTime(), str(question['Label'] + "_response"), responded, str("Marker Started at " + str(rand +1))
-            
-            writer.writerow(resdict)
-            
-            resdict['Timepoint'], resdict['Time'],resdict['Experience Sampling Question'],resdict['Experience Sampling Response'], resdict['Auxillary Data'] = None,None,None,None,None
+    for enum, i in enumerate(range(0, 2)):
         
+        #if i < len(ES_fixed.trialList):
+        if i < len(ES_fixed.trialList):
+            question = ES_fixed.next()
+            resdict['Timepoint'], resdict['Time'], resdict['Experience Sampling Question'] = 'ESQ', timer.getTime(), str(question['Label'] + "_start")
+            writer.writerow(resdict)
+            resdict['Timepoint'], resdict['Time'],resdict['Experience Sampling Question'],resdict['Experience Sampling Response'], resdict['Auxillary Data'] = None,None,None,None,None
+        ratingScale.noResponse = True
+        rand = random.randrange(1,10,1)
+        ratingScale.markerStart = rand
+        keyState=key.KeyStateHandler()
+        win.winHandle.push_handlers(keyState)
+
+        pos = ratingScale.markerStart
+        inc=0.1
+        while ratingScale.noResponse:  #key 4 not pressed
+            if keyState[key.LEFT] is True:
+                pos -= inc
+            elif keyState[key.RIGHT] is True:
+                pos += inc
+            if pos > 9:
+                pos = 9
+            elif pos < 0:
+                pos = 0
+
+            ratingScale.setMarkerPos(pos)
+            QuestionText.setText(question['Questions'])
+            QuestionText.draw()
+            scale_high.setText(question['Scale_high'])
+            scale_low.setText(question['Scale_low'])
+            scale_high.draw()
+            scale_low.draw()
+            ratingScale.draw()
+            win.flip()
+        time.sleep(1)
+        responded = ratingScale.getRating()
+
+        resdict['Timepoint'], resdict['Time'], resdict['Experience Sampling Question'], resdict['Experience Sampling Response'],resdict['Auxillary Data'] = 'ESQ', timer.getTime(), str(question['Label'] + "_response"), responded, str("Marker Started at " + str(rand +1))
+        
+        writer.writerow(resdict)
+        
+        resdict['Timepoint'], resdict['Time'],resdict['Experience Sampling Question'],resdict['Experience Sampling Response'], resdict['Auxillary Data'] = None,None,None,None,None
+    
 
     
     
