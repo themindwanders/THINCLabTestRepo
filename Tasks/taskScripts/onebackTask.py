@@ -1989,7 +1989,7 @@ def runexp(logfile, expClock, win, writer, resultdict, numtrial, runtime,dfile):
 
                 listof.append(test)
         import random
-        block_a = random.sample(listof, len(listof)/2)
+        block_a = random.sample(listof, int(len(listof)/2))
         for val in block_a:
                         listof[:] = [x for x in listof if x != val]
         block_b = listof
