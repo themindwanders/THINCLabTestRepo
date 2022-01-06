@@ -1,19 +1,5 @@
 METADATA:
 Block Runtime,Experiment Seed,Subject
-10,1,2
-24.76137029999518
+70,1,2
+4.1156050999998115
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data
-EXPERIMENT DATA:,You Task
-Start Time,25.027640400017845
-Self_Task_Start,50.80205670002033,,,,You Task,1,1,,
-Start_of_self-assured,53.43375779999769,,,,You Task,1,1,,
-End_of_self-assured,53.43375779999769,,,,You Task,1,1,left,
-Start_of_boastful,56.71044290001737,,,,You Task,1,1,,
-End_of_boastful,56.71044290001737,,,,You Task,1,1,left,
-Start_of_studious,60.00806740002008,,,,You Task,1,1,,
-End_of_studious,60.00806740002008,,,,You Task,1,1,left,
-EXPERIMENT DATA:,Experience Sampling Questions
-Start Time,61.40940820000833
-ESQ,66.74669900001027,,Deliberate_start,,Experience Sampling Questions,1,1,,
-ESQ,72.13709940001718,,Deliberate_response,6.800000000000008,Experience Sampling Questions,1,1,,Marker Started at 9
-ESQ,72.13803689999622,,Future_start,,Experience Sampling Questions,1,1,,
