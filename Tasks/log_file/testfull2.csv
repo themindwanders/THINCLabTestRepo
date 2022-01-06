@@ -1,26 +1,5 @@
 METADATA:
 Block Runtime,Experiment Seed,Subject
-70,1,2
-4.559344000001147
+10,1,2
+12.195535699982429
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data
-EXPERIMENT DATA:,You Task
-Start Time,4.580876800000624
-Self_Task_Start,7.276021300000139,,,,You Task,1,1,,
-Start_of_self-assured,9.82645600000069,,,,You Task,1,1,,
-End_of_self-assured,9.82645600000069,,,,You Task,1,1,None,
-Start_of_boastful,17.876837100000557,,,,You Task,1,1,,
-End_of_boastful,17.876837100000557,,,,You Task,1,1,None,
-Start_of_studious,25.924403800001528,,,,You Task,1,1,,
-End_of_studious,25.924403800001528,,,,You Task,1,1,None,
-Start_of_disobedient,33.972661400001016,,,,You Task,1,1,,
-End_of_disobedient,33.972661400001016,,,,You Task,1,1,None,
-Start_of_loud-mouthed,42.021262000000206,,,,You Task,1,1,,
-End_of_loud-mouthed,42.021262000000206,,,,You Task,1,1,None,
-Start_of_stubborn,50.0708252000004,,,,You Task,1,1,,
-End_of_stubborn,50.0708252000004,,,,You Task,1,1,None,
-Start_of_conceited,58.119902800001,,,,You Task,1,1,,
-End_of_conceited,58.119902800001,,,,You Task,1,1,None,
-Start_of_bashful,66.16814850000083,,,,You Task,1,1,,
-End_of_bashful,66.16814850000083,,,,You Task,1,1,None,
-Start_of_self-critical,74.21733450000102,,,,You Task,1,1,,
-End_of_self-critical,74.21733450000102,,,,You Task,1,1,None,
