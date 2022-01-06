@@ -1,26 +1,19 @@
 METADATA:
 Block Runtime,Experiment Seed,Subject
-70,1,2
-4.559344000001147
+10,1,2
+24.76137029999518
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data
 EXPERIMENT DATA:,You Task
-Start Time,4.580876800000624
-Self_Task_Start,7.276021300000139,,,,You Task,1,1,,
-Start_of_self-assured,9.82645600000069,,,,You Task,1,1,,
-End_of_self-assured,9.82645600000069,,,,You Task,1,1,None,
-Start_of_boastful,17.876837100000557,,,,You Task,1,1,,
-End_of_boastful,17.876837100000557,,,,You Task,1,1,None,
-Start_of_studious,25.924403800001528,,,,You Task,1,1,,
-End_of_studious,25.924403800001528,,,,You Task,1,1,None,
-Start_of_disobedient,33.972661400001016,,,,You Task,1,1,,
-End_of_disobedient,33.972661400001016,,,,You Task,1,1,None,
-Start_of_loud-mouthed,42.021262000000206,,,,You Task,1,1,,
-End_of_loud-mouthed,42.021262000000206,,,,You Task,1,1,None,
-Start_of_stubborn,50.0708252000004,,,,You Task,1,1,,
-End_of_stubborn,50.0708252000004,,,,You Task,1,1,None,
-Start_of_conceited,58.119902800001,,,,You Task,1,1,,
-End_of_conceited,58.119902800001,,,,You Task,1,1,None,
-Start_of_bashful,66.16814850000083,,,,You Task,1,1,,
-End_of_bashful,66.16814850000083,,,,You Task,1,1,None,
-Start_of_self-critical,74.21733450000102,,,,You Task,1,1,,
-End_of_self-critical,74.21733450000102,,,,You Task,1,1,None,
+Start Time,25.027640400017845
+Self_Task_Start,50.80205670002033,,,,You Task,1,1,,
+Start_of_self-assured,53.43375779999769,,,,You Task,1,1,,
+End_of_self-assured,53.43375779999769,,,,You Task,1,1,left,
+Start_of_boastful,56.71044290001737,,,,You Task,1,1,,
+End_of_boastful,56.71044290001737,,,,You Task,1,1,left,
+Start_of_studious,60.00806740002008,,,,You Task,1,1,,
+End_of_studious,60.00806740002008,,,,You Task,1,1,left,
+EXPERIMENT DATA:,Experience Sampling Questions
+Start Time,61.40940820000833
+ESQ,66.74669900001027,,Deliberate_start,,Experience Sampling Questions,1,1,,
+ESQ,72.13709940001718,,Deliberate_response,6.800000000000008,Experience Sampling Questions,1,1,,Marker Started at 9
+ESQ,72.13803689999622,,Future_start,,Experience Sampling Questions,1,1,,
