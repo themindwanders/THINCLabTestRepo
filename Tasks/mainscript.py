@@ -6,7 +6,7 @@ import csv
 import taskScripts
 import os
 import random
-
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # This class is responsible for creating and holding the information about how each task should run.
 # It contains the number of repetitions and a global runtime variable.
 # It also contains the subject ID, and will eventually use the experiment seed to randomize trial order.
@@ -49,7 +49,7 @@ class taskbattery(metadatacollection):
                 self.ESQtask = ESQtask
                 self.INFO = INFO
                 self.taskexeclist = []
-        win = visual.Window(size=(1280, 800),color='white', winType='pyglet')
+        win = visual.Window(size=(1920, 1080),color='white', winType='pyglet')
         #def initializeBattery(self):
                 #for i in self.tasklist:
 
